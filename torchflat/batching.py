@@ -214,4 +214,4 @@ def compute_max_batch(
     if peak_per_star <= 0:
         return 1
     max_batch = int(available * safety_factor / peak_per_star)
-    return max(1, min(max_batch, 100))
+    return max(1, min(max_batch, 90))
