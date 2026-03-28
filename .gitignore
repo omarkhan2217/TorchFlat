@@ -7,6 +7,12 @@ __pycache__/
 docs/
 TORCHFLAT-DESIGN*.md
 
+# Virtual environments
+.venv*/
+
+# Logs and benchmarks output
+logs/
+
 # C extensions
 *.so
 
