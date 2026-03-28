@@ -26,8 +26,8 @@ MIN_SEGMENT_LENGTH: int = 50    # Minimum valid points in a biweight window's se
 def masked_median(x: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
     """Compute median along the last dimension, only over positions where *mask* is True.
 
-    Uses topk-based approach (design doc section 4.3). Matches numpy.median
-    convention for even-length arrays (averages two middle values).
+    Matches numpy.median convention for even-length arrays (averages two
+    middle values).
 
     Args:
         x: Tensor of any shape ``[..., N]``.
@@ -37,7 +37,6 @@ def masked_median(x: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
         Tensor of shape ``[...]`` with the median of valid values along the
         last dimension.  Returns NaN where no valid values exist.
     """
-    # Handle empty last dimension
     if x.shape[-1] == 0:
         out_shape = x.shape[:-1]
         return torch.full(out_shape, float("nan"), dtype=x.dtype, device=x.device)
@@ -50,8 +49,7 @@ def masked_median(x: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
 
     n_valid = mask.sum(dim=-1)  # [...]
 
-    # torch.sort ascending: valid values first, +inf values last.
-    # Profiling showed sort is ~2x faster than topk on ROCm for W=361.
+    # Sort ascending: valid values first, +inf values last
     sorted_vals = torch.sort(working, dim=-1).values
 
     # Median indices (numpy even-length convention: average two middle values)
