@@ -41,6 +41,7 @@ def main():
     parser.add_argument("--data-dir", type=str, required=True)
     parser.add_argument("--n-stars", type=int, default=500)
     parser.add_argument("--device", type=str, default="cuda")
+    parser.add_argument("--skip-track-b", action="store_true", help="Skip Track B (FFT highpass)")
     args = parser.parse_args()
 
     data_dir = Path(args.data_dir)
@@ -68,11 +69,14 @@ def main():
         torch.cuda.empty_cache()
         torch.cuda.reset_peak_memory_stats()
 
+    print(f"Track B: {'SKIPPED' if args.skip_track_b else 'enabled'}")
+
     t0 = time.perf_counter()
     results, skipped = torchflat.preprocess_sector(
         star_data,
         device=device,
         window_scales=[(256, 128), (2048, 512)],
+        skip_track_b=args.skip_track_b,
     )
     elapsed = time.perf_counter() - t0
 

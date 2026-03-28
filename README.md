@@ -17,7 +17,7 @@ Benchmarked on AMD Radeon RX 9060 XT (16 GB VRAM) with real TESS sector 6 data:
 | wotan 12-worker CPU | 4.2 stars/sec | ~78 min |
 | **TorchFlat GPU** | **35.8 stars/sec** | **9.1 min** |
 
-8.5x faster than 12-worker CPU on a full TESS sector. Track B (anomaly detection) can be disabled with `skip_track_b=True` for even faster processing when only transit search is needed. Precision: p99 relative error < 3e-6 vs wotan reference. 135/135 tests passing.
+8.5x faster than 12-worker CPU on a full TESS sector. TorchFlat does *more work* than wotan alone: the 9.1 min includes quality filtering, gap interpolation, sigma clipping, biweight detrending, normalization, window extraction (Track A), and FFT highpass anomaly detection (Track B). The Celix 78 min includes equivalent CPU steps. Track B can optionally be disabled with `skip_track_b=True`. Precision: p99 relative error < 3e-6 vs wotan reference. 135/135 tests passing.
 
 ## Installation
 
