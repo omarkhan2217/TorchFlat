@@ -15,9 +15,9 @@ Benchmarked on AMD Radeon RX 9060 XT (16 GB VRAM) with real TESS sector 6 data:
 |--------|------|-----------------------|
 | wotan single-thread | ~1 star/sec | ~5.4 hours |
 | wotan 12-worker CPU | 4.2 stars/sec | ~78 min |
-| **TorchFlat GPU** | **32.8 stars/sec** | **~10 min** |
+| **TorchFlat GPU** | **35.8 stars/sec** | **9.1 min** |
 
-7.8x faster than 12-worker CPU. Precision: p99 relative error < 3e-6 vs wotan reference.
+8.5x faster than 12-worker CPU on a full TESS sector. Track B (anomaly detection) can be disabled with `skip_track_b=True` for even faster processing when only transit search is needed. Precision: p99 relative error < 3e-6 vs wotan reference. 135/135 tests passing.
 
 ## Installation
 
