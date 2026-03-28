@@ -3,6 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Internal docs and design files
+docs/
+TORCHFLAT-DESIGN*.md
+
 # C extensions
 *.so
 
