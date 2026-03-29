@@ -147,11 +147,32 @@ def assemble_batch(
     valid_mask = torch.zeros(B, pad_length, dtype=torch.bool)
 
     for j, idx in enumerate(star_indices):
-        L = len(times[idx])
+        t = times[idx]
+        f = fluxes[idx].astype(np.float32)
+        q = qualities[idx]
+        L = len(t)
         n = min(L, pad_length)
-        time_batch[j, :n] = torch.from_numpy(times[idx][:n].astype(np.float64))
-        flux_batch[j, :n] = torch.from_numpy(fluxes[idx][:n].astype(np.float32))
-        quality_batch[j, :n] = torch.from_numpy(qualities[idx][:n].astype(np.int32))
+
+        # CPU gap interpolation (faster than GPU cummax/cummin, <1% of points)
+        v = ((q[:n] & QUALITY_BITMASK) == 0) & np.isfinite(f[:n]) & np.isfinite(t[:n])
+        i = 0
+        while i < n:
+            if not v[i]:
+                gs = i
+                while i < n and not v[i]:
+                    i += 1
+                ge = i
+                if gs > 0 and ge < n and (ge - gs) <= 4:
+                    for k in range(ge - gs):
+                        frac = (k + 1) / (ge - gs + 1)
+                        f[gs + k] = f[gs - 1] + frac * (f[ge] - f[gs - 1])
+                        v[gs + k] = True
+            else:
+                i += 1
+
+        time_batch[j, :n] = torch.from_numpy(t[:n].astype(np.float64))
+        flux_batch[j, :n] = torch.from_numpy(f[:n])
+        quality_batch[j, :n] = torch.from_numpy(q[:n].astype(np.int32))
         lengths[j] = n
         valid_mask[j, :n] = True
 
@@ -214,4 +235,4 @@ def compute_max_batch(
     if peak_per_star <= 0:
         return 1
     max_batch = int(available * safety_factor / peak_per_star)
-    return max(1, min(max_batch, 90))
+    return max(1, min(max_batch, 50))

@@ -42,7 +42,7 @@ def _make_stars(n_stars: int, n_points: int = 18000, seed: int = 42):
 def profile_pipeline_steps(n_stars: int = 20, n_points: int = 18000):
     """Profile each pipeline step individually."""
     from torchflat.batching import assemble_batch, bucket_stars, cpu_prescan
-    from torchflat.biweight import biweight_detrend
+    from torchflat.umi import umi_detrend as biweight_detrend
     from torchflat.clipping import rolling_clip
     from torchflat.gaps import detect_gaps, interpolate_small_gaps
     from torchflat.highpass import fft_highpass
@@ -315,7 +315,7 @@ def main():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     print("=" * 60)
-    print(f"TorchFlat Profiler — {timestamp}")
+    print(f"TorchFlat Profiler - {timestamp}")
     print(f"Device: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'}")
     print(f"PyTorch: {torch.__version__}")
     print("=" * 60)

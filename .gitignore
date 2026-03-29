@@ -6,12 +6,19 @@ __pycache__/
 # Internal docs and design files
 docs/
 TORCHFLAT-DESIGN*.md
+TODO.md
 
 # Virtual environments
 .venv*/
 
 # Logs and benchmarks output
 logs/
+
+# Compiled kernel build artifacts
+torchflat/csrc/build/
+*.o
+*.so
+*.pyd
 
 # C extensions
 *.so

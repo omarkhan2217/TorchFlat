@@ -56,7 +56,7 @@ def _make_sector_data(n_stars: int, n_points: int = 18000, seed: int = 0):
 
 def bench_biweight_kernel(n_stars: int = 50, n_points: int = 18000):
     """Benchmark biweight kernel only."""
-    from torchflat.biweight import biweight_detrend
+    from torchflat.umi import umi_detrend as biweight_detrend
 
     print(f"\n=== Biweight Kernel: {n_stars} stars x {n_points} points ===")
 
@@ -169,7 +169,7 @@ def bench_scaling_length():
 
 def bench_precision_profile():
     """Float32 vs float64 accuracy and performance."""
-    from torchflat.biweight import biweight_detrend
+    from torchflat.umi import umi_detrend as biweight_detrend
 
     print("\n=== Precision Profile ===")
 
@@ -220,7 +220,7 @@ def bench_vram_profile():
         return
 
     from torchflat.batching import estimate_peak_vram
-    from torchflat.biweight import biweight_detrend
+    from torchflat.umi import umi_detrend as biweight_detrend
 
     print("\n=== VRAM Profile ===")
     batch_sizes = [1, 5, 10, 20]

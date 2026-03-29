@@ -64,12 +64,18 @@ def main():
     import torchflat
 
     device = args.device
-    print(f"\nProcessing on {device}...")
+    print(f"\nTorchFlat v{torchflat.__version__}")
     if device == "cuda":
+        print(f"GPU: {torch.cuda.get_device_name(0)}")
         torch.cuda.empty_cache()
         torch.cuda.reset_peak_memory_stats()
+        # Check UMI kernel
+        from torchflat._kernel_loader import _get_umi_kernel
+        kern = _get_umi_kernel()
+        print(f"UMI kernel: {'LOADED (fused quickselect)' if kern else 'fallback (histogram)'}")
 
     print(f"Track B: {'SKIPPED' if args.skip_track_b else 'enabled'}")
+    print(f"Processing {len(star_data)} stars...")
 
     t0 = time.perf_counter()
     results, skipped = torchflat.preprocess_sector(

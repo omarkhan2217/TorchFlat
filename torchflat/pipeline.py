@@ -14,7 +14,7 @@ from torchflat.batching import (
     compute_max_batch,
     cpu_prescan,
 )
-from torchflat.biweight import biweight_detrend
+from torchflat.umi import umi_detrend
 from torchflat.clipping import conservative_clip, rolling_clip
 from torchflat.gaps import detect_gaps, interpolate_small_gaps
 from torchflat.highpass import fft_highpass
@@ -41,6 +41,8 @@ def preprocess_track_a(
     clip_sigma: float = 5.0,
     biweight_iter: int = 10,
     dtype: torch.dtype = torch.float32,
+    asymmetry: float = 1.5,
+    progress_callback: callable | None = None,
 ) -> tuple[list[dict | None], list[dict]]:
     """Full Track A preprocessing on GPU.
 
@@ -108,15 +110,14 @@ def preprocess_track_a(
             quality_t = batch["quality"]
             valid_mask = batch["valid_mask"]
 
-            # Pipeline steps
+            # Pipeline steps (gap interpolation done in assemble_batch on CPU)
             valid_mask = quality_filter(flux, time_t, quality_t) & valid_mask
-            flux, valid_mask = interpolate_small_gaps(flux, time_t, valid_mask)
             segment_id, median_cadence = detect_gaps(time_t, valid_mask)
             valid_mask = rolling_clip(flux, valid_mask, segment_id, sigma=clip_sigma)
-            detrended, trend = biweight_detrend(
+            detrended, trend = umi_detrend(
                 flux, time_t, valid_mask, segment_id,
                 window_length_days=window_length_days,
-                n_iter=biweight_iter, dtype=dtype,
+                n_iter=biweight_iter, dtype=dtype, asymmetry=asymmetry,
             )
             normalized = normalize_track_a(detrended, valid_mask)
             windows_dict = extract_windows(
@@ -138,6 +139,10 @@ def preprocess_track_a(
                         star_result[f"windows_{win_size}"] = wd["windows"][star_mask].numpy()
                         star_result[f"window_times_{win_size}"] = wd["window_times"][star_mask].numpy()
                 results[orig_idx] = star_result
+
+            if progress_callback is not None:
+                done = sum(1 for r in results if r is not None)
+                progress_callback(done, n_processable)
 
     return results, skipped_stars
 
@@ -205,7 +210,6 @@ def preprocess_track_b(
             valid_mask = batch["valid_mask"]
 
             valid_mask = quality_filter(flux, time_t, quality_t) & valid_mask
-            flux, valid_mask = interpolate_small_gaps(flux, time_t, valid_mask)
             segment_id, median_cadence = detect_gaps(time_t, valid_mask)
             valid_mask = conservative_clip(flux, valid_mask, sigma=clip_sigma)
             filtered = fft_highpass(
@@ -240,6 +244,7 @@ def preprocess_sector(
     max_batch: int | None = None,
     window_scales: list[tuple[int, int]] = DEFAULT_WINDOW_SCALES,
     skip_track_b: bool = False,
+    progress_callback: callable | None = None,
     **kwargs,
 ) -> tuple[list[dict], list[dict]]:
     """Full sector preprocessing: runs Track A + Track B.
@@ -268,7 +273,8 @@ def preprocess_sector(
     track_a_results, skipped_a = preprocess_track_a(
         times, pdcsap, qualities,
         device=device, vram_budget_gb=vram_budget_gb, max_batch=max_batch,
-        window_scales=window_scales, **kwargs,
+        window_scales=window_scales, progress_callback=progress_callback,
+        **kwargs,
     )
 
     if skip_track_b:
@@ -321,6 +327,69 @@ def preprocess_sector(
 # ---------------------------------------------------------------------------
 # Hybrid CPU+GPU processing
 # ---------------------------------------------------------------------------
+
+_cached_cpu_fraction: float | None = None
+
+
+def _auto_calibrate_split(
+    star_data, gpu_device, vram_budget_gb, max_batch,
+    window_scales, skip_track_b, cpu_workers, **kwargs,
+) -> float:
+    """Benchmark GPU and CPU on a small sample to find optimal split."""
+    global _cached_cpu_fraction
+    if _cached_cpu_fraction is not None:
+        return _cached_cpu_fraction
+
+    import time as _time
+    from concurrent.futures import ProcessPoolExecutor
+
+    n_sample = min(20, len(star_data))
+    sample = star_data[:n_sample]
+
+    # GPU rate
+    try:
+        preprocess_sector(sample, device=gpu_device,
+                          vram_budget_gb=vram_budget_gb, max_batch=max_batch,
+                          window_scales=window_scales, skip_track_b=skip_track_b,
+                          **kwargs)
+        torch.cuda.synchronize()
+        t0 = _time.perf_counter()
+        preprocess_sector(sample, device=gpu_device,
+                          vram_budget_gb=vram_budget_gb, max_batch=max_batch,
+                          window_scales=window_scales, skip_track_b=skip_track_b,
+                          **kwargs)
+        torch.cuda.synchronize()
+        gpu_rate = n_sample / (_time.perf_counter() - t0)
+    except Exception:
+        gpu_rate = 0.0
+
+    # CPU rate (single worker, extrapolate to cpu_workers)
+    try:
+        cpu_args = [(0, sample[0], window_scales, skip_track_b)]
+        # Warmup Numba
+        _process_star_cpu(cpu_args[0])
+        t0 = _time.perf_counter()
+        for i in range(min(5, n_sample)):
+            _process_star_cpu((i, sample[i], window_scales, skip_track_b))
+        single_rate = min(5, n_sample) / (_time.perf_counter() - t0)
+        cpu_rate = single_rate * cpu_workers
+    except Exception:
+        cpu_rate = 0.0
+
+    total = gpu_rate + cpu_rate
+    if total <= 0:
+        _cached_cpu_fraction = 0.5
+    else:
+        _cached_cpu_fraction = cpu_rate / total
+
+    logger.info(
+        "Calibration: GPU=%.1f/sec, CPU=%d workers x %.1f/sec = %.1f/sec, "
+        "optimal split=%.0f%% CPU",
+        gpu_rate, cpu_workers, cpu_rate / max(cpu_workers, 1),
+        cpu_rate, _cached_cpu_fraction * 100,
+    )
+    return _cached_cpu_fraction
+
 
 def _process_star_cpu(args: tuple) -> tuple[int, dict | None, dict | None]:
     """Process a single star on CPU using the Numba biweight kernel.
@@ -409,8 +478,8 @@ def preprocess_sector_hybrid(
     max_batch: int | None = None,
     window_scales: list[tuple[int, int]] = DEFAULT_WINDOW_SCALES,
     skip_track_b: bool = False,
-    cpu_fraction: float = 0.65,
-    cpu_workers: int = 12,
+    cpu_fraction: float | str = "auto",
+    cpu_workers: int | None = None,
     **kwargs,
 ) -> tuple[list[dict], list[dict]]:
     """Hybrid CPU+GPU sector preprocessing.
@@ -428,20 +497,34 @@ def preprocess_sector_hybrid(
         max_batch: Direct batch-size override.
         window_scales: Window extraction scales for Track A.
         skip_track_b: If True, skip Track B.
-        cpu_fraction: Fraction of stars to process on CPU (default 0.25).
-        cpu_workers: Number of CPU worker processes (default 12).
+        cpu_fraction: Fraction of stars for CPU workers. ``"auto"``
+            (default) calibrates by running a small benchmark on first
+            call.  Set to a float (0.0-1.0) to override.
+        cpu_workers: Number of CPU worker processes.  Defaults to
+            ``os.cpu_count()`` (all available cores).
         **kwargs: Forwarded to :func:`preprocess_track_a`.
 
     Returns:
         ``(results, skipped_stars)``
     """
+    import multiprocessing
     from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 
     n_total = len(star_data)
     if n_total == 0:
         return [], []
 
-    cpu_fraction = max(0.0, min(1.0, cpu_fraction))
+    if cpu_workers is None:
+        cpu_workers = multiprocessing.cpu_count() or 4
+
+    if cpu_fraction == "auto":
+        cpu_fraction = _auto_calibrate_split(
+            star_data, gpu_device, vram_budget_gb, max_batch,
+            window_scales, skip_track_b, cpu_workers, **kwargs,
+        )
+        logger.info("Auto-calibrated cpu_fraction=%.2f", cpu_fraction)
+
+    cpu_fraction = max(0.0, min(1.0, float(cpu_fraction)))
     n_cpu = int(n_total * cpu_fraction)
     n_gpu = n_total - n_cpu
 
@@ -483,9 +566,11 @@ def preprocess_sector_hybrid(
         gpu_future = gpu_pool.submit(run_gpu)
 
         # CPU workers run in parallel with GPU
+        # Large chunksize reduces IPC overhead (each chunk = one pickle round trip)
+        chunk = max(1, n_cpu // cpu_workers // 2)
         with ProcessPoolExecutor(max_workers=cpu_workers) as cpu_pool:
             for idx, result, skip_info in cpu_pool.map(
-                _process_star_cpu, cpu_args, chunksize=max(1, n_cpu // cpu_workers),
+                _process_star_cpu, cpu_args, chunksize=chunk,
             ):
                 combined[idx] = result
                 if skip_info is not None:

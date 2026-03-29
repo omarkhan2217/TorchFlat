@@ -5,42 +5,68 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-TorchFlat replaces the standard CPU preprocessing workflow (quality filtering, gap handling, sigma clipping, biweight detrending, normalization, and windowing) with a hybrid GPU+CPU pipeline. It uses batched PyTorch tensor operations on GPU and a Numba JIT biweight kernel on CPU, running both simultaneously for maximum throughput.
+TorchFlat replaces the standard CPU preprocessing workflow (quality filtering, gap handling, sigma clipping, detrending, normalization, and windowing) with a GPU-accelerated pipeline. It uses **UMI** (Unified Median Iterative), a novel asymmetric robust location estimator implemented as a fused HIP/CUDA kernel, to detrend light curves faster and more accurately than existing methods.
 
 ## Performance
 
-Benchmarked on AMD Radeon RX 9060 XT (16 GB VRAM) + 12 CPU threads with real TESS sector 6 data (19,618 stars):
+Benchmarked on AMD Radeon RX 9060 XT (16 GB VRAM) with real TESS sector 6 data (19,618 stars):
 
-| Method | Rate | Full Sector |
-|--------|------|-------------|
-| wotan single-thread | ~1 star/sec | ~5.4 hours |
-| Celix wotan 12-worker | 4.2 stars/sec | ~78 min |
-| TorchFlat GPU-only | 35.8 stars/sec | ~9.1 min |
-| **TorchFlat Hybrid (GPU+CPU)** | **59.3 stars/sec** | **~5.5 min** |
+| Method | Rate | Full Sector | Speedup |
+|--------|------|-------------|---------|
+| Celix wotan 12-worker | 4.2 stars/sec | ~78 min | baseline |
+| TorchFlat v0.5.0 (hybrid) | 59.3 stars/sec | ~5.5 min | 14.2x |
+| **TorchFlat v0.8.0 + UMI kernel** | **87.5 stars/sec** | **~3.7 min** | **20.9x** |
 
-14.2x faster than Celix 12-worker CPU pipeline. TorchFlat does more work than wotan alone: the timing includes quality filtering, gap interpolation, sigma clipping, biweight detrending, normalization, window extraction (Track A), and FFT highpass anomaly detection (Track B). Track B can optionally be disabled with `skip_track_b=True`.
+### Transit Depth Recovery Accuracy
 
-Precision: p99 relative error < 2.1e-5 vs GPU path, < 6.8e-6 vs wotan reference. 135/135 tests passing.
+Injection-recovery test on 500 real TESS stars, median per-star error (lower = better):
+
+| Depth | wotan biweight | TorchFlat UMI | Winner |
+|-------|---------------|---------------|--------|
+| 0.1% (super-Earths) | 19.0% | **15.8%** | TorchFlat |
+| 0.3% (sub-Neptunes) | 10.5% | **5.7%** | TorchFlat |
+| 0.5% (Neptunes) | 4.0% | **2.6%** | TorchFlat |
+| 1.0% (hot Jupiters) | **0.5%** | 1.2% | wotan |
+| 5.0% (deep transits) | **0.0%** | 0.2% | both perfect |
+
+TorchFlat is more accurate at the transit depths where most detectable planets live (0.1-0.5%).
+
+Validated on 3 TESS sectors (6, 7, 12), 42 confirmed planets, and 1000-star train/test split. Results in `results/`.
+
+## The UMI Algorithm
+
+UMI (Unified Median Iterative) is a three-phase robust location estimator:
+
+1. **Quickselect median** -- exact median via O(n) selection algorithm, computed per-thread on GPU
+2. **Quickselect MAD** -- exact median absolute deviation (scale estimate), same kernel call
+3. **Asymmetric bisquare iterations** -- weighted location refinement where downward deviations (transit dips) are penalized 1.5x more than upward ones
+
+The asymmetric weight function exploits the fact that **transits are always below the continuum**. Standard biweight treats dips and spikes equally. UMI penalizes dips more aggressively, so the trend stays above the transit and transit depth is preserved.
+
+All three phases run in a single fused GPU kernel call -- median, MAD, and 5 iterations happen per-thread in registers with zero global memory traffic between steps.
+
+When the GPU kernel is not available (no ROCm/CUDA toolkit), UMI falls back to a pure-PyTorch path using histogram-based approximate median + Welsch scale cleaning.
 
 ## Installation
 
 ```bash
-pip install torchflat
+git clone https://github.com/omarkhan2217/TorchFlat.git
+cd TorchFlat
+pip install -e .
 ```
 
 **Requirements:** PyTorch >= 2.1.0, NumPy >= 1.24.0, Numba >= 0.57.0, SciPy >= 1.10.0
 
-Works with both **NVIDIA CUDA** and **AMD ROCm** (via PyTorch's unified CUDA API).
+Works with both **NVIDIA CUDA** and **AMD ROCm** (via PyTorch's unified CUDA API). The UMI kernel compiles automatically on first use via JIT (requires ROCm SDK or CUDA toolkit).
 
 ## Quick Start
 
-### Hybrid mode (recommended, fastest)
+### Process a TESS sector
 
 ```python
 import numpy as np
 import torchflat
 
-# Prepare your TESS sector data as a list of dicts
 star_data = [
     {
         "time": np.load("star_001_time.npy"),
@@ -51,54 +77,29 @@ star_data = [
     # ... for each star in the sector
 ]
 
-# Process entire sector using GPU + CPU simultaneously
-results, skipped = torchflat.preprocess_sector_hybrid(
+results, skipped = torchflat.preprocess_sector(
     star_data,
-    gpu_device="cuda",       # GPU for batched tensor ops
-    cpu_fraction=0.65,       # 65% of stars on CPU (Numba), 35% on GPU
-    cpu_workers=12,          # Number of CPU worker processes
+    device="cuda",
 )
 
-# Access results
 for i, result in enumerate(results):
     if not result:
         continue
-    windows = result["windows_2048"]          # [N_windows, 2048] transit search windows
-    trend = result["trend"]                   # Estimated stellar trend
-    anomaly_curve = result.get("track_b_curve")  # Anomaly detection curve (if Track B enabled)
+    windows = result["windows_2048"]
+    trend = result["trend"]
 ```
 
-### GPU-only mode
-
-```python
-results, skipped = torchflat.preprocess_sector(
-    star_data,
-    device="cuda",
-    vram_budget_gb=12.0,
-)
-```
-
-### Skip Track B for transit-search-only
-
-```python
-results, skipped = torchflat.preprocess_sector(
-    star_data,
-    device="cuda",
-    skip_track_b=True,
-)
-```
-
-### Standalone biweight kernel
+### Standalone UMI detrending
 
 ```python
 import torch
-from torchflat import biweight_detrend
+from torchflat import umi_detrend
 
 # flux, time, valid_mask, segment_id are [B, L] tensors on GPU
-detrended, trend = biweight_detrend(
+detrended, trend = umi_detrend(
     flux, time, valid_mask, segment_id,
     window_length_days=0.5,
-    dtype=torch.float32,
+    asymmetry=1.5,       # dip penalty (1.0 = standard biweight)
 )
 ```
 
@@ -106,63 +107,71 @@ detrended, trend = biweight_detrend(
 
 TorchFlat implements two processing tracks:
 
-- **Track A (Transit Search):** Quality filter > gap interpolation > sigma clipping > biweight detrending > normalization > multi-scale window extraction
+- **Track A (Transit Search):** Quality filter > gap interpolation > sigma clipping > UMI detrending > normalization > multi-scale window extraction
 - **Track B (Anomaly Detection):** Quality filter > gap interpolation > conservative clipping > FFT highpass filter > MAD normalization > fixed-length padding
 
-### Hybrid CPU+GPU design
+### UMI kernel
 
-In hybrid mode, stars are split between GPU and CPU:
+The fused HIP/CUDA kernel (`torchflat/csrc/umi_kernel.cu`) runs one thread per sliding-window position. Each thread:
+1. Gathers valid points into a 512-element local buffer
+2. Runs quickselect to find the exact median (O(n))
+3. Computes absolute deviations and runs quickselect again for exact MAD
+4. Re-gathers original values and runs 5 asymmetric bisquare iterations
+5. Writes the final location estimate
 
-- **GPU path** (`torchflat/biweight.py`): Batched tensor operations using `torch.sort` for masked median. Processes multiple stars simultaneously in VRAM.
-- **CPU path** (`torchflat/biweight_cpu.py`): Numba JIT kernel using `numpy.median` (quickselect, O(n) vs GPU's O(n log n) sort). Runs 12+ worker processes in parallel.
+The kernel compiles via JIT on first import and is cached for subsequent runs.
 
-Both paths produce identical results (p99 error < 2.1e-5). The optimal split (default `cpu_fraction=0.65`) was determined by benchmarking on real TESS data.
+## Validation
 
-### Batching strategy
+All validation results are saved as JSON in `results/`:
 
-Stars are batched by post-filter length into buckets, minimizing padding waste. Batch sizes are computed dynamically from available VRAM (capped at 90 stars to prevent VRAM spill to shared memory). The biweight kernel uses a segment-aware masked median to prevent trend estimation from crossing data gaps.
+| Validation | Result | File |
+|-----------|--------|------|
+| Asymmetry train/test split | optimal=1.5, generalizes across held-out stars | `asymmetry_validation.json` |
+| Known planet recovery | TorchFlat wins 24/41 (59%) confirmed planets | `known_planet_recovery.json` |
+| Multi-sector consistency | UMI wins 10/15 depth-sector combos across sectors 6,7,12 | `multisector_validation.json` |
+
+135/135 unit tests passing.
+
+## Benchmarks
+
+```bash
+# Full sector speed benchmark
+python benchmarks/bench_real_tess.py --data-dir /path/to/fits/sector_6 --n-stars 19618
+
+# Asymmetry parameter validation
+python benchmarks/validate_asymmetry.py
+
+# Known planet recovery
+python benchmarks/validate_known_planets.py
+
+# Multi-sector validation
+python benchmarks/validate_multisector.py
+```
+
+**Note:** Set `$env:TORCHFLAT_NO_KERNEL = "0"` (PowerShell) or `export TORCHFLAT_NO_KERNEL=0` (bash) to enable the UMI kernel.
 
 ## API Reference
 
 ### Main Entry Points
 
-- **`torchflat.preprocess_sector_hybrid(star_data, ...)`** - Hybrid CPU+GPU processing (fastest).
-- **`torchflat.preprocess_sector(star_data, ...)`** - GPU-only or CPU-only processing.
-- **`torchflat.preprocess_track_a(times, fluxes, qualities, ...)`** - Track A only (biweight detrending).
-- **`torchflat.preprocess_track_b(times, sap_fluxes, qualities, ...)`** - Track B only (FFT highpass).
-- **`torchflat.biweight_detrend(flux, time, valid_mask, segment_id, ...)`** - Standalone GPU biweight kernel.
+- **`torchflat.preprocess_sector(star_data, ...)`** -- Full pipeline (Track A + Track B).
+- **`torchflat.preprocess_track_a(times, fluxes, qualities, ...)`** -- Track A only.
+- **`torchflat.preprocess_track_b(times, sap_fluxes, qualities, ...)`** -- Track B only.
+- **`torchflat.umi_detrend(flux, time, valid_mask, segment_id, ...)`** -- Standalone UMI kernel.
 
 ### Key Parameters
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `device` / `gpu_device` | `"cuda"` | Torch device (`"cuda"` for GPU, `"cpu"` for CPU) |
-| `cpu_fraction` | `0.65` | Fraction of stars for CPU workers (hybrid mode) |
-| `cpu_workers` | `12` | Number of CPU worker processes (hybrid mode) |
-| `vram_budget_gb` | Auto-detect | Available VRAM budget in GB |
-| `max_batch` | Auto (cap 90) | Override batch size directly |
-| `window_scales` | 4 scales | `[(256,128), (512,256), (2048,512), (8192,2048)]` |
-| `window_length_days` | `0.5` | Biweight sliding window width (days) |
-| `dtype` | `float32` | Computation precision (`torch.float32` or `torch.float64`) |
+| `device` | `"cuda"` | Torch device |
+| `window_length_days` | `0.5` | Sliding window width (days) |
+| `asymmetry` | `1.5` | Dip penalty factor (1.0 = standard biweight) |
+| `n_iter` | `5` | Number of bisquare iterations |
+| `cval` | `5.0` | Rejection threshold in MAD units |
 | `skip_track_b` | `False` | Skip Track B (FFT highpass) |
-
-## Benchmarks
-
-```bash
-# Full benchmark suite
-python benchmarks/bench_vs_wotan.py
-
-# Individual benchmarks
-python benchmarks/bench_vs_wotan.py --bench biweight
-python benchmarks/bench_vs_wotan.py --bench scaling
-python benchmarks/bench_vs_wotan.py --bench precision
-
-# Real TESS data benchmark
-python benchmarks/bench_real_tess.py --data-dir /path/to/fits/sector_6 --n-stars 1000
-
-# GPU profiler
-python benchmarks/profile_pipeline.py
-```
+| `window_scales` | 4 scales | `[(256,128), (512,256), (2048,512), (8192,2048)]` |
+| `dtype` | `float32` | Computation precision |
 
 ## Development
 
@@ -173,12 +182,6 @@ pip install -e ".[dev]"
 pytest tests/ -v
 ```
 
-## Roadmap
-
-- **v0.5.0** (current): Hybrid CPU+GPU pipeline, Numba JIT CPU kernel, 14.2x faster than Celix
-- **v0.6.0**: Custom HIP kernel for O(n) masked quickselect on GPU (targeting 100+ stars/sec)
-- **v1.0.0**: Celix integration, full validation on multi-sector data
-
 ## Citation
 
 If you use TorchFlat in your research, please cite:
@@ -186,7 +189,7 @@ If you use TorchFlat in your research, please cite:
 ```bibtex
 @software{torchflat,
   author = {Khan, Omar},
-  title = {TorchFlat},
+  title = {TorchFlat: GPU-Accelerated Photometric Preprocessing with UMI Detrending},
   year = {2026},
   url = {https://github.com/omarkhan2217/TorchFlat}
 }

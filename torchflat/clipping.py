@@ -46,9 +46,12 @@ def rolling_clip(
     elif rolling_med.shape[1] < flux.shape[1]:
         rolling_med = F.pad(rolling_med, (0, flux.shape[1] - rolling_med.shape[1]), mode="replicate")
 
-    # Residuals and MAD
+    # Residuals and MAD — mask invalid before torch.median to avoid
+    # padding/NaN affecting the result (faster than full masked sort on [B,L])
     residuals = (flux - rolling_med).abs()
-    mad = masked_median(residuals, valid_mask)  # [B]
+    res_masked = residuals.clone()
+    res_masked[~valid_mask] = float("inf")
+    mad = torch.median(res_masked, dim=-1).values  # [B]
 
     # MAD -> sigma threshold  (MAD / 0.6745 ≈ std for normal)
     threshold = (sigma * mad.clamp(min=1e-10) / 0.6745).unsqueeze(1)  # [B, 1]

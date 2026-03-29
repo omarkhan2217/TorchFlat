@@ -1,4 +1,4 @@
-"""Tests for torchflat.biweight — Tier 1 kernel accuracy."""
+"""Tests for torchflat.umi - UMI (Unified Median Iterative) detrending."""
 
 import math
 
@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 import torch
 
-from torchflat.biweight import biweight_detrend
+from torchflat.umi import umi_detrend
 
 CADENCE = 2.0 / 1440.0  # 2-min cadence in days
 
@@ -24,11 +24,11 @@ def _make_lc(n_points: int = 5000, noise_std: float = 0.0, seed: int = 42):
 
 
 class TestBiweightSynthetic:
-    """Core correctness tests — no external dependencies."""
+    """Core correctness tests - no external dependencies."""
 
     def test_constant_flux(self):
         time, flux, valid, seg_id = _make_lc(5000, noise_std=0.0)
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
         # Interior trend should be exactly 1.0
         finite_trend = trend[torch.isfinite(trend)]
         assert finite_trend.numel() > 0
@@ -43,16 +43,18 @@ class TestBiweightSynthetic:
         # Inject slow sinusoidal trend (2-day period)
         trend_signal = 0.01 * torch.sin(2.0 * math.pi * time / 2.0)
         flux = flux + trend_signal
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
 
         # Where trend is finite, it should track the injected sinusoid
         finite_mask = torch.isfinite(trend[0])
         recovered_trend = trend[0, finite_mask]
         expected_trend = (1.0 + trend_signal[0, finite_mask])
         # RMSE should be small (biweight is a local estimator with finite window,
-        # so it won't perfectly track the sinusoid — some smoothing error is expected)
+        # so it won't perfectly track the sinusoid - some smoothing error is expected)
         rmse = ((recovered_trend - expected_trend) ** 2).mean().sqrt().item()
-        assert rmse < 1e-3
+        # UMI's asymmetric weight introduces a small bias on symmetric
+        # variability (~0.02% for default asymmetry=1.5)
+        assert rmse < 2e-3
 
     def test_outlier_rejection(self):
         rng = np.random.default_rng(42)
@@ -63,7 +65,7 @@ class TestBiweightSynthetic:
         outlier_idx = rng.choice(n, n_outliers, replace=False)
         flux[0, outlier_idx] += 0.01 * rng.choice([-1, 1], n_outliers)
 
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
 
         # Trend should still be close to 1.0 (outliers rejected by biweight)
         finite_trend = trend[torch.isfinite(trend)]
@@ -77,7 +79,7 @@ class TestBiweightSynthetic:
         transit_end = n // 2 + 30
         flux[0, transit_start:transit_end] -= 0.01
 
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
 
         # Transit should not be absorbed into trend
         # Detrended values at transit should show the dip
@@ -89,7 +91,7 @@ class TestBiweightSynthetic:
 
     def test_edge_nan_behavior(self):
         time, flux, valid, seg_id = _make_lc(5000, noise_std=0.0)
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
 
         # Compute expected W
         W = round(0.5 / CADENCE)
@@ -112,7 +114,7 @@ class TestBiweightSynthetic:
         seg_id = torch.zeros(1, n, dtype=torch.int32)
         seg_id[0, n // 2:] = 1
 
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
 
         # Trend in segment 0 (interior) should be ~1.0
         W = round(0.5 / CADENCE) | 1
@@ -131,7 +133,7 @@ class TestBiweightSynthetic:
     def test_zero_mad_constant(self):
         # Perfectly constant flux: MAD=0, clamp prevents div-by-zero
         time, flux, valid, seg_id = _make_lc(2000, noise_std=0.0)
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
         finite_trend = trend[torch.isfinite(trend)]
         assert finite_trend.numel() > 0
         assert torch.allclose(finite_trend, torch.ones_like(finite_trend), atol=1e-10)
@@ -145,13 +147,13 @@ class TestBiweightSynthetic:
         seg_id = torch.zeros(1, n, dtype=torch.int32)
 
         # Window for 0.5 days at 2-min cadence = ~360 samples > 100
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
         assert torch.isnan(trend).all()
         assert torch.isnan(detrended).all()
 
     def test_dtype_float64(self):
         time, flux, valid, seg_id = _make_lc(5000, noise_std=0.001)
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
         # Should produce valid finite output
         finite_trend = trend[torch.isfinite(trend)]
         assert finite_trend.numel() > 0
@@ -159,7 +161,7 @@ class TestBiweightSynthetic:
 
     def test_dtype_float32(self):
         time, flux, valid, seg_id = _make_lc(5000, noise_std=0.001)
-        detrended, trend = biweight_detrend(
+        detrended, trend = umi_detrend(
             flux.float(), time, valid, seg_id, dtype=torch.float32,
         )
         finite_trend = trend[torch.isfinite(trend)]
@@ -176,7 +178,7 @@ class TestBiweightSynthetic:
         valid = torch.ones(B, n, dtype=torch.bool)
         seg_id = torch.zeros(B, n, dtype=torch.int32)
 
-        detrended, trend = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        detrended, trend = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
 
         for b, expected_level in enumerate([1.0, 2.0, 0.5]):
             finite_trend = trend[b][torch.isfinite(trend[b])]
@@ -194,8 +196,8 @@ class TestBiweightSynthetic:
         valid = torch.ones(1, n, dtype=torch.bool)
         seg_id = torch.zeros(1, n, dtype=torch.int32)
 
-        _, trend_f64 = biweight_detrend(flux, time, valid, seg_id, dtype=torch.float64)
-        _, trend_f32 = biweight_detrend(flux.float(), time, valid, seg_id, dtype=torch.float32)
+        _, trend_f64 = umi_detrend(flux, time, valid, seg_id, dtype=torch.float64)
+        _, trend_f32 = umi_detrend(flux.float(), time, valid, seg_id, dtype=torch.float32)
 
         # Compare where both are finite
         both_finite = torch.isfinite(trend_f64[0]) & torch.isfinite(trend_f32[0])
