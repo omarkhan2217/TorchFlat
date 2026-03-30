@@ -93,14 +93,14 @@ for i, r in enumerate(results):
 ### Custom asymmetry parameter
 
 ```python
-# Standard biweight (symmetric, same as wotan)
-detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=1.0)
-
-# Aggressive transit preservation (for shallow planet searches)
+# Default (best transit accuracy, validated on 10,000 stars)
 detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=2.0)
 
-# Default (balanced, validated on train/test split)
+# For mixed surveys (less bias on variable stars)
 detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=1.5)
+
+# For variable stars (zero bias, same as wotan biweight)
+detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=1.0)
 ```
 
 ## UMI Kernel

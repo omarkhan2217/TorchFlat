@@ -2,9 +2,9 @@
  * umi_kernel.cu - UMI (Unified Median Iterative) GPU kernel
  *
  * Two entry points:
- *   1. umi_median_mad: exact median + MAD (for diagnostics/testing)
- *   2. umi_detrend: fused median → MAD → biweight iterations → location
- *      (single kernel call, no Python loop overhead)
+ *   1. umi_median_mad: exact median + MAD via quickselect (diagnostics)
+ *   2. umi_detrend_direct: fused median + upper-RMS + asymmetric bisquare
+ *      from raw [B, L] arrays (no unfold needed)
  *
  * Compiles on both AMD ROCm (via hipify) and NVIDIA CUDA.
  */
@@ -98,7 +98,7 @@ __device__ scalar_t compute_median(scalar_t* buf, int n) {
 }
 
 // ---------------------------------------------------------------------------
-// Kernel 1: median + MAD only (for diagnostics)
+// Kernel 1: median + MAD only (for diagnostics/testing)
 // ---------------------------------------------------------------------------
 template <typename scalar_t>
 __global__ void umi_median_mad_kernel(
@@ -142,90 +142,92 @@ __global__ void umi_median_mad_kernel(
 }
 
 // ---------------------------------------------------------------------------
-// Kernel 2: FUSED median → MAD → UMI weight iterations → location
+// Kernel 2: DIRECT - takes raw [B, L] arrays, no unfold needed
 // ---------------------------------------------------------------------------
-// Everything happens per-thread in registers/local memory.
-// Zero global memory traffic between iterations - no Python loop overhead.
+// Each thread processes one (star, position) pair. Reads W values directly
+// from the raw flux array, checks segment validity inline.
 //
-// The UMI weight function is an asymmetric variant of Tukey's bisquare:
-//   u_eff = u * asymmetry  (if u < 0, i.e. below the location)
-//   u_eff = u              (if u >= 0)
-//   w = (1 - u_eff^2)^2    (if |u_eff| < 1, else 0)
-//
-// With asymmetry=1.0 this is standard biweight.  With asymmetry>1,
-// downward deviations (transit dips) are rejected more aggressively,
-// preserving transit depth in the detrended output.
+// Algorithm per thread:
+//   1. Gather valid points into local buffer
+//   2. Quickselect for exact median
+//   3. Upper-RMS scale (only above-median points)
+//   4. Asymmetric bisquare iterations
 // ---------------------------------------------------------------------------
 template <typename scalar_t>
-__global__ void umi_detrend_kernel(
-    const scalar_t* __restrict__ x,         // [n_rows, W]
-    const bool*     __restrict__ mask,       // [n_rows, W]
-    scalar_t*       __restrict__ out_loc,    // [n_rows]
+__global__ void umi_detrend_direct_kernel(
+    const scalar_t* __restrict__ flux,       // [B, L]
+    const bool*     __restrict__ valid,      // [B, L]
+    const int*      __restrict__ seg,        // [B, L]
+    scalar_t*       __restrict__ out_loc,    // [B, N_pos]
+    const int B,
+    const int L,
     const int W,
-    const int64_t n_rows,
-    const scalar_t cval,                     // rejection threshold (default 5.0)
-    const scalar_t asymmetry,               // dip penalty factor (default 1.3)
-    const int n_iter,                        // iterations (default 5)
-    const int min_valid                      // minimum valid points (default 50)
+    const int N_pos,
+    const scalar_t cval,
+    const scalar_t asymmetry,
+    const int n_iter,
+    const int min_valid
 ) {
-    const int64_t row_idx = static_cast<int64_t>(blockIdx.x) * blockDim.x + threadIdx.x;
-    if (row_idx >= n_rows) return;
+    const int64_t tid = static_cast<int64_t>(blockIdx.x) * blockDim.x + threadIdx.x;
+    const int64_t total = static_cast<int64_t>(B) * N_pos;
+    if (tid >= total) return;
 
-    const scalar_t* row_x    = x    + row_idx * W;
-    const bool*     row_mask = mask + row_idx * W;
+    const int star = static_cast<int>(tid / N_pos);
+    const int pos = static_cast<int>(tid % N_pos);
+    const int half_w = W / 2;
+    const int center = pos + half_w;
 
-    // Step 1: Gather valid elements
+    const scalar_t* f = flux + static_cast<int64_t>(star) * L;
+    const bool* v = valid + static_cast<int64_t>(star) * L;
+    const int* s = seg + static_cast<int64_t>(star) * L;
+
+    const int center_seg = s[center];
+
+    // Gather valid elements (same segment as center)
     scalar_t buf[MAX_LOCAL_SIZE];
     int n = 0;
     for (int i = 0; i < W; i++) {
-        if (row_mask[i]) {
-            buf[n++] = row_x[i];
+        int idx = pos + i;
+        if (v[idx] && s[idx] == center_seg) {
+            buf[n++] = f[idx];
         }
     }
 
     if (n < min_valid) {
-        out_loc[row_idx] = static_cast<scalar_t>(NAN);
+        out_loc[tid] = static_cast<scalar_t>(NAN);
         return;
     }
 
-    // Step 2: Quickselect for median
+    // Quickselect for median
     scalar_t location = compute_median(buf, n);
 
-    // Step 3: Compute absolute deviations in-place for MAD
-    // (buf is already partially reordered by quickselect - that's fine,
-    //  we just need the values, not their order)
+    // Upper-RMS scale: RMS of points above median only.
+    // Transit dips (below median) never contaminate the scale estimate.
+    scalar_t upper_sq_sum = 0;
+    int n_above = 0;
     for (int i = 0; i < n; i++) {
         scalar_t d = buf[i] - location;
-        buf[i] = d < 0 ? -d : d;
-    }
-
-    // Step 4: Quickselect for MAD
-    scalar_t mad = compute_median(buf, n);
-    if (mad < static_cast<scalar_t>(1e-10))
-        mad = static_cast<scalar_t>(1e-10);
-    scalar_t safe_scale = cval * mad;
-
-    // Step 5: Re-gather original values (buf was overwritten by abs deviations)
-    for (int i = 0; i < W; i++) {
-        if (row_mask[i]) {
-            // Recount is wasteful but we need original values for biweight
-            break;
+        if (d > 0) {
+            upper_sq_sum += d * d;
+            n_above++;
         }
     }
-    n = 0;
-    for (int i = 0; i < W; i++) {
-        if (row_mask[i]) {
-            buf[n++] = row_x[i];
-        }
+    scalar_t scale;
+    if (n_above > 0) {
+        scalar_t upper_rms = sqrt(upper_sq_sum / static_cast<scalar_t>(n_above));
+        scale = upper_rms * static_cast<scalar_t>(0.6745);
+    } else {
+        scale = static_cast<scalar_t>(1e-10);
     }
+    if (scale < static_cast<scalar_t>(1e-10))
+        scale = static_cast<scalar_t>(1e-10);
+    scalar_t safe_scale = cval * scale;
 
-    // Step 6: UMI weight iterations (asymmetric bisquare)
+    // Asymmetric bisquare iterations (buf still has original values)
     for (int iter = 0; iter < n_iter; iter++) {
-        scalar_t w_sum = 0;
-        scalar_t wx_sum = 0;
+        scalar_t w_sum = 0, wx_sum = 0;
         for (int j = 0; j < n; j++) {
             scalar_t u = (buf[j] - location) / safe_scale;
-            // Asymmetric: penalize downward dips (u < 0) more
             scalar_t u_abs = u < 0 ? -u * asymmetry : u;
             if (u_abs < static_cast<scalar_t>(1)) {
                 scalar_t u2 = u_abs * u_abs;
@@ -235,12 +237,11 @@ __global__ void umi_detrend_kernel(
                 wx_sum += w * buf[j];
             }
         }
-        if (w_sum > static_cast<scalar_t>(1e-10)) {
+        if (w_sum > static_cast<scalar_t>(1e-10))
             location = wx_sum / w_sum;
-        }
     }
 
-    out_loc[row_idx] = location;
+    out_loc[tid] = location;
 }
 
 // ---------------------------------------------------------------------------
@@ -290,45 +291,43 @@ std::vector<torch::Tensor> umi_median_mad_cuda(
 }
 
 
-torch::Tensor umi_detrend_cuda(
-    torch::Tensor x,
-    torch::Tensor mask,
+torch::Tensor umi_detrend_direct_cuda(
+    torch::Tensor flux,
+    torch::Tensor valid_mask,
+    torch::Tensor segment_id,
+    int64_t W,
     double cval,
     double asymmetry,
     int64_t n_iter,
     int64_t min_valid
 ) {
-    TORCH_CHECK(x.is_cuda(), "x must be a CUDA/HIP tensor");
-    TORCH_CHECK(mask.is_cuda(), "mask must be a CUDA/HIP tensor");
-    TORCH_CHECK(x.sizes() == mask.sizes(), "x and mask must have the same shape");
-    TORCH_CHECK(mask.dtype() == torch::kBool, "mask must be boolean");
+    TORCH_CHECK(flux.is_cuda(), "flux must be a CUDA/HIP tensor");
+    TORCH_CHECK(flux.dim() == 2, "flux must be [B, L]");
 
-    const int W = x.size(-1);
-    TORCH_CHECK(W <= MAX_LOCAL_SIZE,
-                "Last dimension ", W, " exceeds kernel limit of ", MAX_LOCAL_SIZE);
+    auto f = flux.contiguous();
+    auto v = valid_mask.contiguous();
+    auto s = segment_id.contiguous().to(torch::kInt32);
 
-    auto x_c = x.contiguous();
-    auto mask_c = mask.contiguous();
+    const int B = f.size(0);
+    const int L = f.size(1);
+    const int N_pos = L - W + 1;
 
-    auto out_sizes = x_c.sizes().vec();
-    out_sizes.pop_back();
-    const int64_t n_rows = x_c.numel() / W;
+    if (N_pos <= 0) return torch::empty({B, 0}, f.options());
 
-    auto out_loc = torch::empty(out_sizes, x_c.options());
+    auto out_loc = torch::empty({B, N_pos}, f.options());
 
-    if (n_rows == 0) return out_loc;
-
+    const int64_t total = static_cast<int64_t>(B) * N_pos;
     const int threads = 256;
-    const int blocks = static_cast<int>((n_rows + threads - 1) / threads);
+    const int blocks = static_cast<int>((total + threads - 1) / threads);
 
-    AT_DISPATCH_FLOATING_TYPES(x_c.scalar_type(), "umi_detrend_cuda", [&] {
-        umi_detrend_kernel<scalar_t><<<blocks, threads, 0,
+    AT_DISPATCH_FLOATING_TYPES(f.scalar_type(), "umi_detrend_direct_cuda", [&] {
+        umi_detrend_direct_kernel<scalar_t><<<blocks, threads, 0,
             c10::cuda::getCurrentCUDAStream()>>>(
-            x_c.data_ptr<scalar_t>(),
-            mask_c.data_ptr<bool>(),
+            f.data_ptr<scalar_t>(),
+            v.data_ptr<bool>(),
+            s.data_ptr<int>(),
             out_loc.data_ptr<scalar_t>(),
-            W,
-            n_rows,
+            B, L, static_cast<int>(W), N_pos,
             static_cast<scalar_t>(cval),
             static_cast<scalar_t>(asymmetry),
             static_cast<int>(n_iter),

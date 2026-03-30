@@ -29,18 +29,24 @@ For each sliding window position (W ~ 361 points, 0.5 days):
 Quickselect (O(n)) finds the exact sample median. This is a rank
 statistic - immune to outlier contamination regardless of depth.
 
-### Phase 2: Exact MAD (scale estimate)
+### Phase 2: Upper-RMS Scale
 
-Compute absolute deviations from the median, then quickselect again
-to find their median = MAD (Median Absolute Deviation). Also a rank
-statistic - immune to contamination.
+Compute RMS of only the points ABOVE the median. Transit dips (below
+median) never contaminate the scale estimate. This gives a tighter
+and more accurate noise measurement than standard MAD, which uses
+all deviations including transit-contaminated ones.
+
+    upper_rms = sqrt(mean((x - median)^2 for x > median))
+    scale = upper_rms * 0.6745   (convert to MAD-equivalent)
+
+No extra sort needed - just a sum-of-squares loop over the buffer.
 
 ### Phase 3: Asymmetric Bisquare Iterations
 
 Refine the location using the UMI weight function:
 
 ```
-u = (flux - location) / (cval * MAD)
+u = (flux - location) / (cval * scale)
 
 if u < 0:  u_eff = u * asymmetry    (penalize downward dips)
 else:      u_eff = u                 (standard for upward)
@@ -59,20 +65,20 @@ Repeat for `n_iter` iterations (default 5).
 
 The trend stays above the transit. Transit depth is preserved.
 
-### Fused GPU Kernel
+### Direct GPU Kernel
 
 All three phases run in a single kernel call. One GPU thread per
-window position:
+(star, window position) pair. Reads directly from raw [B, L] flux
+arrays, no unfold or tensor copies needed.
 
-1. Gather valid points into local buffer (read global memory once)
-2. Quickselect for median (in-register, O(n))
-3. Absolute deviations + quickselect for MAD (in-register)
-4. Re-gather original values (read global memory once)
-5. 5 asymmetric bisquare iterations (in-register, no memory traffic)
-6. Write final location (one write)
+1. Read W values from raw flux array, check segment validity inline
+2. Quickselect for median (in local buffer, O(n))
+3. Upper-RMS of above-median points (sum-of-squares, no sort)
+4. 5 asymmetric bisquare iterations (in local buffer, no memory traffic)
+5. Write final location (one write)
 
-Total: 2 global memory reads + 1 write per window position.
-Zero memory traffic between iterations.
+No unfold, no [B, N_pos, W] tensor allocation. VRAM usage: 319 MB
+for a full 50-star batch.
 
 ## Parameters
 
@@ -88,12 +94,12 @@ Zero memory traffic between iterations.
 | Property | wotan biweight | UMI |
 |----------|---------------|-----|
 | Weight function | Symmetric (1-u^2)^2 | Asymmetric: 1.5x penalty for dips |
-| Median | numpy quickselect (CPU) | GPU quickselect (fused kernel) |
-| MAD | numpy quickselect (CPU) | GPU quickselect (same kernel call) |
-| Speed | 4.2 stars/sec (12 workers) | 87.5 stars/sec (single GPU) |
-| Accuracy 0.1% | 19.0% median error | 15.8% (17% better) |
-| Accuracy 0.3% | 10.5% median error | 5.7% (46% better) |
-| Bias on flat stars | 0 ppm | -190 ppm (below noise floor) |
+| Scale estimate | MAD (both sides) | Upper-RMS (above-median only) |
+| Median | numpy quickselect (CPU) | GPU quickselect (direct kernel) |
+| Speed | 4.2 stars/sec (12 workers) | 154 stars/sec (single GPU) |
+| Accuracy 0.1% | 19.8% median error | 14.7% (26% better) |
+| Accuracy 0.3% | 8.4% median error | 3.7% (56% better) |
+| Bias on flat stars | 0 ppm | -208 ppm (below noise floor) |
 
 ## Theoretical Properties
 

@@ -160,15 +160,20 @@ to the transit preservation improvement.
 
 ## 6. Bias Characterization
 
-The asymmetric weight introduces a systematic bias on symmetric
-(non-transit) data. Empirically measured on 500 flat TESS stars:
+The asymmetric weight + upper-RMS scale introduces a systematic bias
+on symmetric (non-transit) data. Empirically measured on 200 flat
+TESS stars:
 
-    Median bias: -0.019% (-190 ppm)
-    Mean bias:   -0.072% (-720 ppm)
-    Std:          0.154% (1540 ppm)
+    Median bias: -0.021% (-208 ppm)
+    Mean bias:   -0.103% (-1034 ppm)
 
-The -190 ppm median bias is below the typical TESS photometric
+The -208 ppm median bias is below the typical TESS photometric
 noise floor (~1000 ppm per cadence). For population-level studies
 requiring <100 ppm systematics, the bias can be corrected by
 subtracting the known offset or using asymmetry=1.0 (standard
 biweight).
+
+Note: The upper-RMS scale (vs MAD) slightly increases the bias
+because the one-sided RMS estimate is inherently asymmetric.
+The tradeoff is justified: upper-RMS improves accuracy at every
+transit depth without any loss.

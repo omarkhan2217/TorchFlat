@@ -8,11 +8,12 @@ import torch
 # Constants
 # ---------------------------------------------------------------------------
 
-# TESS quality bitmask - bits that indicate bad data
-# Bits: 1(attitude tweak), 2(safe mode), 4(coarse point), 8(Earth point),
-#       16(desat), 32(1-sec data), 128(manual exclude), 1024(stray light),
-#       2048(impulsive outlier)
-QUALITY_BITMASK: int = 0b0000110101111111  # = 3455
+# Mission-specific quality bitmasks
+TESS_QUALITY_BITMASK: int = 0b0000110101111111  # = 3455
+KEPLER_QUALITY_BITMASK: int = 0b0001111111111111  # = 8191 (all Kepler quality flags)
+
+# Default is TESS (most common use case)
+QUALITY_BITMASK: int = TESS_QUALITY_BITMASK
 
 MIN_POINTS: int = 100           # Minimum valid points for a star to be processed
 GAP_THRESHOLD: float = 5.0      # Gap ratio above this = large gap (segment boundary)

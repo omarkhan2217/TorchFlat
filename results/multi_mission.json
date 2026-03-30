@@ -1,0 +1,46 @@
+{
+  "title": "Multi-Mission Validation (Kepler + K2)",
+  "date": "2026-03-30T21:17:24.976353",
+  "missions": {
+    "Kepler": {
+      "speed_umi": 563.7,
+      "speed_wotan": 69.9,
+      "0.001": {
+        "wotan": 36.6,
+        "umi": 10.5
+      },
+      "0.005": {
+        "wotan": 1.4,
+        "umi": 1.1
+      },
+      "0.01": {
+        "wotan": 0.2,
+        "umi": 0.5
+      },
+      "0.05": {
+        "wotan": 0.0,
+        "umi": 0.1
+      }
+    },
+    "K2": {
+      "speed_umi": 2111.5,
+      "speed_wotan": 87.5,
+      "0.001": {
+        "wotan": 702.4,
+        "umi": 483.3
+      },
+      "0.005": {
+        "wotan": 46.6,
+        "umi": 4.5
+      },
+      "0.01": {
+        "wotan": 1.2,
+        "umi": 2.1
+      },
+      "0.05": {
+        "wotan": 17.6,
+        "umi": 10.5
+      }
+    }
+  }
+}

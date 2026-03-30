@@ -15,47 +15,52 @@ Benchmarked on AMD Radeon RX 9060 XT (16 GB VRAM) with real TESS sector 6 data (
 |--------|------|-------------|---------|
 | Celix wotan 12-worker | 4.2 stars/sec | ~78 min | baseline |
 | TorchFlat v0.5.0 (hybrid) | 59.3 stars/sec | ~5.5 min | 14.2x |
-| **TorchFlat v0.8.0 + UMI kernel** | **87.5 stars/sec** | **~3.7 min** | **20.9x** |
+| **TorchFlat v0.9.1 + UMI kernel** | **154 stars/sec** | **~2.1 min** | **37x** |
 
 ### Transit Depth Recovery Accuracy
 
-Injection-recovery test on 500 real TESS stars, median per-star error (lower = better):
+Injection-recovery test on 200 real TESS stars, median per-star error (lower = better):
 
 | Depth | wotan biweight | TorchFlat UMI | Winner |
 |-------|---------------|---------------|--------|
-| 0.1% (super-Earths) | 19.0% | **15.8%** | TorchFlat |
-| 0.3% (sub-Neptunes) | 10.5% | **5.7%** | TorchFlat |
-| 0.5% (Neptunes) | 4.0% | **2.6%** | TorchFlat |
-| 1.0% (hot Jupiters) | **0.5%** | 1.2% | wotan |
-| 5.0% (deep transits) | **0.0%** | 0.2% | both perfect |
+| 0.1% (super-Earths) | 19.8% | **14.7%** | TorchFlat |
+| 0.3% (sub-Neptunes) | 8.4% | **3.7%** | TorchFlat |
+| 0.5% (Neptunes) | 1.5% | **1.5%** | tie |
+| 1.0% (hot Jupiters) | **0.4%** | 0.7% | wotan |
+| 5.0% (deep transits) | **0.0%** | 0.1% | both perfect |
 
 TorchFlat is more accurate at the transit depths where most detectable planets live (0.1-0.5%).
 
-Validated on 3 TESS sectors (6, 7, 12), 42 confirmed planets, and 1000-star train/test split. Results in `results/`.
+Validated on 3 TESS sectors (6, 7, 12), Kepler, K2, 42 confirmed planets, and 10,000-star parameter validation. Results in `results/`.
 
 ## The UMI Algorithm
 
 UMI (Unified Median Iterative) is a three-phase robust location estimator:
 
 1. **Quickselect median** -- exact median via O(n) selection algorithm, computed per-thread on GPU
-2. **Quickselect MAD** -- exact median absolute deviation (scale estimate), same kernel call
-3. **Asymmetric bisquare iterations** -- weighted location refinement where downward deviations (transit dips) are penalized 1.5x more than upward ones
+2. **Upper-RMS scale** -- RMS of points above the median only. Transit dips never contaminate the scale estimate, giving a tighter and more accurate noise measurement than standard MAD
+3. **Asymmetric bisquare iterations** -- weighted location refinement where downward deviations (transit dips) are penalized 2x more than upward ones
 
 The asymmetric weight function exploits the fact that **transits are always below the continuum**. Standard biweight treats dips and spikes equally. UMI penalizes dips more aggressively, so the trend stays above the transit and transit depth is preserved.
 
-All three phases run in a single fused GPU kernel call -- median, MAD, and 5 iterations happen per-thread in registers with zero global memory traffic between steps.
+All three phases run in a single fused GPU kernel call -- median, upper-RMS, and 5 iterations happen per-thread with zero global memory traffic between steps.
 
-When the GPU kernel is not available (no ROCm/CUDA toolkit), UMI falls back to a pure-PyTorch path using histogram-based approximate median + Welsch scale cleaning.
+When the GPU kernel is not available (no ROCm/CUDA toolkit), UMI falls back to a pure-PyTorch path using torch.sort for median + upper-RMS scale.
 
 ## Installation
 
+```bash
+pip install torchflat
+```
+
+Or from source:
 ```bash
 git clone https://github.com/omarkhan2217/TorchFlat.git
 cd TorchFlat
 pip install -e .
 ```
 
-**Requirements:** PyTorch >= 2.1.0, NumPy >= 1.24.0, Numba >= 0.57.0, SciPy >= 1.10.0
+**Requirements:** PyTorch >= 2.1.0, NumPy >= 1.24.0, SciPy >= 1.10.0
 
 Works with both **NVIDIA CUDA** and **AMD ROCm** (via PyTorch's unified CUDA API). The UMI kernel compiles automatically on first use via JIT (requires ROCm SDK or CUDA toolkit).
 
@@ -99,7 +104,7 @@ from torchflat import umi_detrend
 detrended, trend = umi_detrend(
     flux, time, valid_mask, segment_id,
     window_length_days=0.5,
-    asymmetry=1.5,       # dip penalty (1.0 = standard biweight)
+    asymmetry=2.0,       # 2.0=best accuracy, 1.0=variable stars, 1.5=mixed
 )
 ```
 
@@ -112,14 +117,15 @@ TorchFlat implements two processing tracks:
 
 ### UMI kernel
 
-The fused HIP/CUDA kernel (`torchflat/csrc/umi_kernel.cu`) runs one thread per sliding-window position. Each thread:
-1. Gathers valid points into a 512-element local buffer
-2. Runs quickselect to find the exact median (O(n))
-3. Computes absolute deviations and runs quickselect again for exact MAD
-4. Re-gathers original values and runs 5 asymmetric bisquare iterations
+The direct HIP/CUDA kernel (`torchflat/csrc/umi_kernel.cu`) runs one thread per (star, window position) pair. Each thread reads directly from the raw `[B, L]` flux array, no unfold or tensor copies needed:
+
+1. Reads W values from raw flux, checks segment validity inline
+2. Quickselect for exact median (O(n))
+3. Upper-RMS scale from above-median points (no sort needed)
+4. 5 asymmetric bisquare iterations
 5. Writes the final location estimate
 
-The kernel compiles via JIT on first import and is cached for subsequent runs.
+VRAM usage: 319 MB for a 50-star batch. The kernel compiles via JIT on first import and is cached for subsequent runs.
 
 ## Validation
 
@@ -127,11 +133,32 @@ All validation results are saved as JSON in `results/`:
 
 | Validation | Result | File |
 |-----------|--------|------|
-| Asymmetry train/test split | optimal=1.5, generalizes across held-out stars | `asymmetry_validation.json` |
+| Asymmetry train/test split | optimal=2.0, validated on 2000+10,000 stars | `asymmetry_validation_2k.json` |
 | Known planet recovery | TorchFlat wins 24/41 (59%) confirmed planets | `known_planet_recovery.json` |
-| Multi-sector consistency | UMI wins 10/15 depth-sector combos across sectors 6,7,12 | `multisector_validation.json` |
+| Multi-sector consistency | UMI wins 9/15 across sectors 6, 7, 12 (2000 stars each) | `multisector_validation_2k.json` |
+| Multi-mission | Kepler: 10.5% vs wotan 36.6% at 0.1%. K2: 4.5% vs 46.6% at 0.5% | `multi_mission.json` |
+| Method comparison | UMI #1 at 0.1% vs 8 methods (biweight, welsch, lowess, etc.) | `method_comparison.md` |
 
 135/135 unit tests passing.
+
+## CLI
+
+```bash
+# Detrend a TESS sector
+torchflat umi_detrend --input /path/to/fits/
+
+# Detrend a single star
+torchflat umi_detrend --input star.fits --output-format fits
+
+# Kepler data
+torchflat umi_detrend --input /path/to/kepler/ --mission kepler
+
+# Plot a star
+torchflat plot --fits star.fits --save output.png
+
+# Speed benchmark
+torchflat benchmark --input /path/to/fits/ --n-stars 500
+```
 
 ## Benchmarks
 
@@ -166,12 +193,20 @@ python benchmarks/validate_multisector.py
 |-----------|---------|-------------|
 | `device` | `"cuda"` | Torch device |
 | `window_length_days` | `0.5` | Sliding window width (days) |
-| `asymmetry` | `1.5` | Dip penalty factor (1.0 = standard biweight) |
+| `asymmetry` | `2.0` | Dip penalty: 2.0 (quiet stars), 1.5 (mixed), 1.0 (variable stars) |
 | `n_iter` | `5` | Number of bisquare iterations |
 | `cval` | `5.0` | Rejection threshold in MAD units |
 | `skip_track_b` | `False` | Skip Track B (FFT highpass) |
 | `window_scales` | 4 scales | `[(256,128), (512,256), (2048,512), (8192,2048)]` |
 | `dtype` | `float32` | Computation precision |
+
+## Limitations
+
+- **CUDA untested.** The HIP kernel is validated on AMD ROCm (RX 9060 XT). The CUDA compilation path exists but has not been tested on NVIDIA GPUs. The torch.sort fallback works on any device.
+- **Fallback is slower.** Without the compiled HIP/CUDA kernel, UMI uses torch.sort (6x slower). Install the ROCm or CUDA toolkit to enable the fused kernel.
+- **Asymmetry bias.** The default asymmetry=2.0 introduces a -451 ppm bias on flat stars. This is below TESS noise (~1000 ppm) but may matter for population-level radius studies. Use `--bias-correct` to remove it, or `--asymmetry 1.0` for zero bias.
+- **Variable star bias.** On stars with >1% variability, asymmetry=2.0 causes -7240 ppm bias. Use `--asymmetry 1.0` for variable stars.
+- **8-hour transits.** Both UMI and wotan fail on transits longer than ~5 hours with the default 0.5-day window. Use `--window-length 1.5` for long-duration transits.
 
 ## Development
 

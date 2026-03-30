@@ -1,8 +1,9 @@
 """JIT-compile and load UMI CUDA/HIP kernels.
 
 Provides two kernels:
-  - ``masked_median``: O(n) median via quickselect (legacy, used by rolling_clip)
-  - ``umi_median_mad``: O(n) median + MAD in single call (used by umi_detrend)
+  - ``umi_median_mad``: O(n) median + MAD via quickselect (diagnostics)
+  - ``umi_detrend_direct``: fused median + upper-RMS + asymmetric bisquare
+    from raw [B, L] arrays (used by umi_detrend)
 
 Kernels are compiled on first use and cached for subsequent imports.
 Falls back gracefully if compilation fails (no GPU, no toolkit, etc.).

@@ -1,0 +1,37 @@
+{
+  "title": "Systematic Error Analysis",
+  "categories": {
+    "normal": {
+      "n_stars": 200,
+      "bias_a10_ppm": -2,
+      "bias_a20_ppm": -340,
+      "median_std_a10": 0.0008,
+      "median_std_a20": 0.0008,
+      "median_skew_a10": 0.1029,
+      "median_skew_a20": 0.079
+    },
+    "eclipsing_binary": {
+      "n_stars": 20,
+      "bias_a10_ppm": -231,
+      "bias_a20_ppm": -1473,
+      "median_std_a10": 0.0063,
+      "median_std_a20": 0.0064,
+      "median_skew_a10": -1.7772,
+      "median_skew_a20": -1.8024
+    },
+    "variable": {
+      "n_stars": 100,
+      "bias_a10_ppm": -41,
+      "bias_a20_ppm": -7240,
+      "median_std_a10": 0.0165,
+      "median_std_a20": 0.0169,
+      "median_skew_a10": 0.0384,
+      "median_skew_a20": 0.0345
+    },
+    "flare_test": {
+      "n_stars": 100,
+      "median_max_detrended": 1.0516,
+      "flares_preserved": true
+    }
+  }
+}

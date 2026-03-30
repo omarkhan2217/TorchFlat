@@ -21,7 +21,7 @@ pytestmark = pytest.mark.skipif(
 @pytest.fixture(autouse=True)
 def _check_kernel():
     """Skip tests if the kernel couldn't compile."""
-    from torchflat._kernel_loader import _get_kernel
+    from torchflat._kernel_loader import _get_umi_kernel as _get_kernel
 
     if _get_kernel() is None:
         pytest.skip("Kernel not compiled (no toolkit or compilation failed)")
@@ -156,7 +156,7 @@ class TestKernelMatchesSort:
 
         # Sort result (force fallback)
         os.environ["TORCHFLAT_NO_KERNEL"] = "1"
-        from torchflat._kernel_loader import _get_kernel
+        from torchflat._kernel_loader import _get_umi_kernel as _get_kernel
         import torchflat._kernel_loader as kl
         old_attempted = kl._kernel_load_attempted
         old_module = kl._kernel_module

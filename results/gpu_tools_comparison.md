@@ -19,7 +19,7 @@ estimation (biweight-family) detrending for bulk light curve preprocessing.
 
 - **wotan** (Hippke et al. 2019) is the only direct competitor - same
   algorithm family, CPU-only. TorchFlat's UMI algorithm extends wotan's
-  biweight with asymmetric weights and runs 23x faster on GPU.
+  biweight with asymmetric weights and upper-RMS scale, running 33x faster on GPU.
 
 - **jaxoplanet** (Foreman-Mackey et al.) is the only other GPU-accelerated
   exoplanet tool, but it performs transit model evaluation and gradient

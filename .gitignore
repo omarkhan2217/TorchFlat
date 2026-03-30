@@ -11,6 +11,9 @@ TODO.md
 # Virtual environments
 .venv*/
 
+# Data files (FITS, too large for git)
+data/
+
 # Logs and benchmarks output
 logs/
 
