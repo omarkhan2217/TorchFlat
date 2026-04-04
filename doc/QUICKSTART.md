@@ -93,13 +93,13 @@ for i, r in enumerate(results):
 ### Custom asymmetry parameter
 
 ```python
-# Default (best transit accuracy, validated on 10,000 stars)
+# TESS default (optimal for ~1000 ppm noise)
 detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=2.0)
 
-# For mixed surveys (less bias on variable stars)
-detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=1.5)
+# Kepler/high-precision data (optimal for ~100 ppm noise)
+detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=3.0)
 
-# For variable stars (zero bias, same as wotan biweight)
+# Variable stars (zero bias, same as wotan biweight)
 detrended, trend = umi_detrend(flux, time, valid, seg, asymmetry=1.0)
 ```
 

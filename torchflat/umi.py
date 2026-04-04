@@ -82,6 +82,12 @@ def umi_detrend(
     W = max(W, 3)
     W = W | 1  # ensure odd
 
+    # Auto-scale min_segment_points to window size.
+    # Default MIN_SEGMENT_LENGTH=50 assumes TESS 2-min cadence (W~361).
+    # Kepler long-cadence (W~25) needs a proportionally smaller threshold.
+    if min_segment_points > W // 2:
+        min_segment_points = max(W // 3, 5)
+
     if L < W:
         nan_tensor = torch.full((B, L), float("nan"), dtype=flux.dtype, device=device)
         return nan_tensor, nan_tensor.clone()

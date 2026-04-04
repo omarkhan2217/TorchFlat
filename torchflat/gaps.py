@@ -82,20 +82,6 @@ def interpolate_small_gaps(
     if not invalid.any():
         return flux_out, valid_out
 
-    # Label each contiguous run of invalid points with a unique ID per star.
-    # Transitions from valid->invalid start a new gap.
-    # We compute gap IDs via cumsum on the "start of gap" transitions.
-    # Pad left with True (valid) so diff at position 0 works correctly.
-    padded_valid = torch.cat(
-        [torch.ones(B, 1, dtype=torch.bool, device=device), valid_mask], dim=1,
-    )  # [B, L+1]
-    # A gap starts where padded_valid transitions from True to False
-    gap_starts = padded_valid[:, :-1] & ~padded_valid[:, 1:]  # [B, L]
-    # But we only care about invalid positions, so shift: gap_starts marks the
-    # position BEFORE the gap. We want the first invalid position.
-    # Actually gap_starts[b, i] = True means position i is valid and i+1 is invalid.
-    # Let's just work differently: label invalid runs directly.
-
     # For each invalid position, compute distance to the nearest valid position
     # on the left and on the right. Then we can compute gap size and interpolation
     # fraction in one vectorized pass.

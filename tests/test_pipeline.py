@@ -1,8 +1,6 @@
 """Tests for torchflat.pipeline — Tier 2 pipeline accuracy."""
 
 import numpy as np
-import pytest
-import torch
 
 from torchflat.pipeline import preprocess_track_a, preprocess_track_b, preprocess_sector
 

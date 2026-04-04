@@ -30,7 +30,7 @@ torchflat umi_detrend --input /path/to/fits/ [options]
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `--asymmetry` | `2.0` | Dip penalty: 2.0 (quiet stars), 1.5 (mixed), 1.0 (variable stars) |
+| `--asymmetry` | `2.0` | Dip penalty: 2.0 (TESS default), 3.0 (Kepler/high-precision), 1.0 (variable stars) |
 | `--window-length` | `0.5` | Sliding window width in days |
 | `--cval` | `5.0` | Rejection threshold in scale units |
 | `--n-iter` | `5` | Number of bisquare iterations |
@@ -117,7 +117,7 @@ detrended, trend = umi_detrend(
 | `window_length_days` | `float` | `0.5` | Window width in days (0.5 = 12 hours) |
 | `n_iter` | `int` | `5` | Asymmetric bisquare iterations |
 | `cval` | `float` | `5.0` | Rejection threshold in scale units |
-| `min_segment_points` | `int` | `50` | Minimum valid points per window |
+| `min_segment_points` | `int` | `50` | Minimum valid points per window. Auto-scales to W//3 if larger than W//2 (e.g., Kepler long-cadence). |
 | `dtype` | `torch.dtype` | `float32` | Computation precision |
 | `asymmetry` | `float` | `2.0` | Dip penalty. 2.0 for quiet stars, 1.0 for variable stars. |
 

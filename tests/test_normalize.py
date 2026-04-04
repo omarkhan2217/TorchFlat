@@ -1,6 +1,5 @@
 """Tests for torchflat.normalize."""
 
-import math
 
 import numpy as np
 import pytest

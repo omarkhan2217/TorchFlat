@@ -1,0 +1,64 @@
+{
+  "title": "Method Comparison (1000 stars)",
+  "date": "2026-03-31T09:52:54.355647",
+  "n_stars": 1000,
+  "period_days": 3.0,
+  "duration_hours": 3.0,
+  "accuracy": {
+    "0.001": {
+      "UMI": 12.7,
+      "biweight": 19.3,
+      "median": 19.4,
+      "mean": 21.8,
+      "trim_mean": 20.6,
+      "welsch": 16.9,
+      "huber": 21.0,
+      "lowess": 36.0,
+      "savgol": 50.9
+    },
+    "0.005": {
+      "UMI": 2.0,
+      "biweight": 4.1,
+      "median": 7.9,
+      "mean": 22.6,
+      "trim_mean": 18.4,
+      "welsch": 0.9,
+      "huber": 20.0,
+      "lowess": 2.6,
+      "savgol": 48.2
+    },
+    "0.01": {
+      "UMI": 1.0,
+      "biweight": 0.4,
+      "median": 4.1,
+      "mean": 23.2,
+      "trim_mean": 18.2,
+      "welsch": 0.3,
+      "huber": 19.0,
+      "lowess": 0.3,
+      "savgol": 27.3
+    },
+    "0.05": {
+      "UMI": 0.2,
+      "biweight": 0.0,
+      "median": 0.8,
+      "mean": 23.6,
+      "trim_mean": 17.9,
+      "welsch": 0.0,
+      "huber": 5.6,
+      "lowess": 0.0,
+      "savgol": 0.2
+    }
+  },
+  "speed_ms_per_star": {
+    "UMI": 4.0,
+    "biweight": 253,
+    "median": 55,
+    "mean": 14,
+    "trim_mean": 154,
+    "welsch": 420,
+    "huber": 4124,
+    "lowess": 473,
+    "savgol": 6.0
+  }
+}

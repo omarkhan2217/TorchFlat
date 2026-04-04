@@ -201,7 +201,7 @@ def cmd_detrend(args):
         fits_dir = input_path
         output_dir = Path(args.output) if args.output else fits_dir.parent / "torchflat_output"
         output_dir.mkdir(parents=True, exist_ok=True)
-        print(f"\nLoading FITS files...")
+        print("\nLoading FITS files...")
         t0 = time.perf_counter()
         star_data = _load_fits(fits_dir, args.n_stars, mission=args.mission,
                                    col_time=args.col_time, col_flux=args.col_flux,
@@ -274,7 +274,6 @@ def cmd_detrend(args):
         stem = Path(fname).stem
 
         if fmt == "fits":
-            from astropy.io import fits as pyfits
             from astropy.table import Table
 
             table_data = {}
@@ -337,7 +336,7 @@ def cmd_benchmark(args):
     print(f"TorchFlat v{torchflat.__version__}")
 
     # Load
-    print(f"\nLoading FITS files...")
+    print("\nLoading FITS files...")
     t0 = time.perf_counter()
     star_data = _load_fits(fits_dir, args.n_stars, mission=args.mission,
                                col_time=args.col_time, col_flux=args.col_flux,
@@ -370,7 +369,7 @@ def cmd_benchmark(args):
     n_ok = sum(1 for r in results if r)
     rate = n_ok / elapsed if elapsed > 0 else 0
 
-    print(f"\n=== Results ===")
+    print("\n=== Results ===")
     print(f"  Stars:     {n_ok} processed, {len(skipped)} skipped")
     print(f"  Time:      {elapsed:.1f}s")
     print(f"  Rate:      {rate:.1f} stars/sec")
@@ -383,7 +382,7 @@ def cmd_benchmark(args):
     total_stars = 19618
     projected = total_stars / rate if rate > 0 else float("inf")
     print(f"\n  Full sector ({total_stars} stars): {projected / 60:.1f} min")
-    print(f"  vs Celix wotan 12-worker: ~78 min")
+    print("  vs Celix wotan 12-worker: ~78 min")
     print(f"  Speedup: {78 * 60 / projected:.1f}x")
 
 

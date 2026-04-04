@@ -16,7 +16,7 @@ from torchflat.batching import (
 )
 from torchflat.umi import umi_detrend
 from torchflat.clipping import conservative_clip, rolling_clip
-from torchflat.gaps import detect_gaps, interpolate_small_gaps
+from torchflat.gaps import detect_gaps
 from torchflat.highpass import fft_highpass
 from torchflat.normalize import normalize_track_a, normalize_track_b
 from torchflat.quality import quality_filter

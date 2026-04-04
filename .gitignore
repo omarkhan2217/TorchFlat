@@ -17,6 +17,20 @@ data/
 # Logs and benchmarks output
 logs/
 
+# Overleaf upload folder (duplicate of paper/ + figures/)
+overleaf/
+
+# Paper (lives on arxiv, not GitHub)
+paper/
+
+# Email drafts (private)
+paper/email_hippke_draft.md
+
+# pytest-benchmark cache
+.benchmarks/
+
+# Keep PNGs for GitHub README rendering (GitHub can't display PDFs inline)
+
 # Compiled kernel build artifacts
 torchflat/csrc/build/
 *.o

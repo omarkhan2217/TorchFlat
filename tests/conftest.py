@@ -4,7 +4,6 @@ import numpy as np
 import pytest
 import torch
 
-from torchflat._utils import QUALITY_BITMASK
 
 
 # ---------------------------------------------------------------------------

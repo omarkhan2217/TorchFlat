@@ -140,5 +140,7 @@
         ]
       }
     }
-  }
+  },
+  "_status": "OLD",
+  "_superseded_by": "SUPERSEDED by multisector_validation_2k.json (2000 stars instead of 500)"
 }

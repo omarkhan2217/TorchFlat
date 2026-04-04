@@ -42,8 +42,6 @@ def masked_median(x: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
         out_shape = x.shape[:-1]
         return torch.full(out_shape, float("nan"), dtype=x.dtype, device=x.device)
 
-    W = x.shape[-1]
-
     # torch.sort (O(n log n))
     # Clone and push invalid values to +inf so they sort last
     working = x.clone()

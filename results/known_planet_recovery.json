@@ -531,5 +531,7 @@
       "wotan_error_pct": 16.0,
       "umi_error_pct": 16.7
     }
-  ]
+  ],
+  "_status": "OLD",
+  "_superseded_by": "SUPERSEDED by known_planet_recovery_all.json (304 planets across 8 TESS sectors + Kepler)"
 }

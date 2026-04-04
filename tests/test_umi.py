@@ -3,7 +3,6 @@
 import math
 
 import numpy as np
-import pytest
 import torch
 
 from torchflat.umi import umi_detrend

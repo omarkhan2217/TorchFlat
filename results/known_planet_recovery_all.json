@@ -1,0 +1,8555 @@
+{
+  "title": "Known Planet Recovery (umi_detrend wrapper, a=2.0)",
+  "n_tess": 81,
+  "n_kepler": 721,
+  "n_valid": 802,
+  "wins": {
+    "UMI": 425,
+    "biweight": 160,
+    "welsch": 179,
+    "savgol": 38
+  },
+  "per_planet": [
+    {
+      "name": "102.01",
+      "mission": "tess",
+      "depth_ppm": 15062.0,
+      "UMI_err": 15.9,
+      "biweight_err": 15.3,
+      "welsch_err": 15.1,
+      "savgol_err": 48.3
+    },
+    {
+      "name": "106.01",
+      "mission": "tess",
+      "depth_ppm": 7740.4889994654,
+      "UMI_err": 18.8,
+      "biweight_err": 18.4,
+      "welsch_err": 16.7,
+      "savgol_err": 61.5
+    },
+    {
+      "name": "112.01",
+      "mission": "tess",
+      "depth_ppm": 14621.2059647249,
+      "UMI_err": 13.6,
+      "biweight_err": 13.1,
+      "welsch_err": 12.6,
+      "savgol_err": 46.8
+    },
+    {
+      "name": "114.01",
+      "mission": "tess",
+      "depth_ppm": 7005.72479018588,
+      "UMI_err": 14.3,
+      "biweight_err": 17.7,
+      "welsch_err": 12.8,
+      "savgol_err": 57.6
+    },
+    {
+      "name": "434.01",
+      "mission": "tess",
+      "depth_ppm": 24964.5478229721,
+      "UMI_err": 17.6,
+      "biweight_err": 20.2,
+      "welsch_err": 16.7,
+      "savgol_err": 50.5
+    },
+    {
+      "name": "466.01",
+      "mission": "tess",
+      "depth_ppm": 10906.185708004,
+      "UMI_err": 26.2,
+      "biweight_err": 32.1,
+      "welsch_err": 28.3,
+      "savgol_err": 55.4
+    },
+    {
+      "name": "468.01",
+      "mission": "tess",
+      "depth_ppm": 34741.7763036531,
+      "UMI_err": 16.7,
+      "biweight_err": 16.0,
+      "welsch_err": 15.5,
+      "savgol_err": 38.6
+    },
+    {
+      "name": "471.01",
+      "mission": "tess",
+      "depth_ppm": 11813.3029259648,
+      "UMI_err": 11.9,
+      "biweight_err": 11.6,
+      "welsch_err": 11.3,
+      "savgol_err": 32.0
+    },
+    {
+      "name": "473.01",
+      "mission": "tess",
+      "depth_ppm": 16875.790984932,
+      "UMI_err": 19.1,
+      "biweight_err": 23.5,
+      "welsch_err": 20.2,
+      "savgol_err": 46.4
+    },
+    {
+      "name": "474.01",
+      "mission": "tess",
+      "depth_ppm": 16406.5457432305,
+      "UMI_err": 18.4,
+      "biweight_err": 22.1,
+      "welsch_err": 18.2,
+      "savgol_err": 49.9
+    },
+    {
+      "name": "477.01",
+      "mission": "tess",
+      "depth_ppm": 20291.3838652227,
+      "UMI_err": 13.5,
+      "biweight_err": 12.9,
+      "welsch_err": 12.8,
+      "savgol_err": 34.1
+    },
+    {
+      "name": "479.01",
+      "mission": "tess",
+      "depth_ppm": 12808.394080069,
+      "UMI_err": 16.2,
+      "biweight_err": 15.9,
+      "welsch_err": 16.1,
+      "savgol_err": 31.5
+    },
+    {
+      "name": "483.01",
+      "mission": "tess",
+      "depth_ppm": 7074.39313879733,
+      "UMI_err": 15.4,
+      "biweight_err": 44.0,
+      "welsch_err": 22.5,
+      "savgol_err": 81.1
+    },
+    {
+      "name": "489.01",
+      "mission": "tess",
+      "depth_ppm": 8994.57366424846,
+      "UMI_err": 14.0,
+      "biweight_err": 27.6,
+      "welsch_err": 16.1,
+      "savgol_err": 65.0
+    },
+    {
+      "name": "490.01",
+      "mission": "tess",
+      "depth_ppm": 10912.6752582984,
+      "UMI_err": 21.2,
+      "biweight_err": 23.1,
+      "welsch_err": 22.7,
+      "savgol_err": 35.7
+    },
+    {
+      "name": "491.01",
+      "mission": "tess",
+      "depth_ppm": 17008.0,
+      "UMI_err": 27.0,
+      "biweight_err": 34.2,
+      "welsch_err": 27.6,
+      "savgol_err": 61.7
+    },
+    {
+      "name": "492.01",
+      "mission": "tess",
+      "depth_ppm": 6304.91702549857,
+      "UMI_err": 18.5,
+      "biweight_err": 31.3,
+      "welsch_err": 22.5,
+      "savgol_err": 60.9
+    },
+    {
+      "name": "495.01",
+      "mission": "tess",
+      "depth_ppm": 18699.0,
+      "UMI_err": 18.3,
+      "biweight_err": 18.2,
+      "welsch_err": 18.1,
+      "savgol_err": 39.7
+    },
+    {
+      "name": "501.01",
+      "mission": "tess",
+      "depth_ppm": 12680.0,
+      "UMI_err": 34.4,
+      "biweight_err": 34.0,
+      "welsch_err": 34.3,
+      "savgol_err": 46.9
+    },
+    {
+      "name": "505.01",
+      "mission": "tess",
+      "depth_ppm": 10603.986390495,
+      "UMI_err": 10.2,
+      "biweight_err": 10.4,
+      "welsch_err": 9.0,
+      "savgol_err": 63.2
+    },
+    {
+      "name": "508.01",
+      "mission": "tess",
+      "depth_ppm": 11890.0,
+      "UMI_err": 19.8,
+      "biweight_err": 19.3,
+      "welsch_err": 18.8,
+      "savgol_err": 67.3
+    },
+    {
+      "name": "511.01",
+      "mission": "tess",
+      "depth_ppm": 11199.926629927,
+      "UMI_err": 12.0,
+      "biweight_err": 19.5,
+      "welsch_err": 11.3,
+      "savgol_err": 62.0
+    },
+    {
+      "name": "514.01",
+      "mission": "tess",
+      "depth_ppm": 16337.7657791545,
+      "UMI_err": 34.2,
+      "biweight_err": 42.5,
+      "welsch_err": 39.4,
+      "savgol_err": 76.4
+    },
+    {
+      "name": "534.01",
+      "mission": "tess",
+      "depth_ppm": 11850.4722606186,
+      "UMI_err": 13.5,
+      "biweight_err": 14.4,
+      "welsch_err": 16.1,
+      "savgol_err": 35.4
+    },
+    {
+      "name": "535.01",
+      "mission": "tess",
+      "depth_ppm": 28860.8258277955,
+      "UMI_err": 31.6,
+      "biweight_err": 32.7,
+      "welsch_err": 36.2,
+      "savgol_err": 53.4
+    },
+    {
+      "name": "536.01",
+      "mission": "tess",
+      "depth_ppm": 10879.9770333065,
+      "UMI_err": 30.7,
+      "biweight_err": 38.4,
+      "welsch_err": 36.5,
+      "savgol_err": 62.4
+    },
+    {
+      "name": "537.01",
+      "mission": "tess",
+      "depth_ppm": 15242.7058564524,
+      "UMI_err": 45.8,
+      "biweight_err": 46.9,
+      "welsch_err": 44.4,
+      "savgol_err": 67.6
+    },
+    {
+      "name": "545.01",
+      "mission": "tess",
+      "depth_ppm": 25717.008585778,
+      "UMI_err": 20.2,
+      "biweight_err": 22.8,
+      "welsch_err": 23.4,
+      "savgol_err": 40.3
+    },
+    {
+      "name": "546.01",
+      "mission": "tess",
+      "depth_ppm": 13812.3233628416,
+      "UMI_err": 32.2,
+      "biweight_err": 40.8,
+      "welsch_err": 34.8,
+      "savgol_err": 70.4
+    },
+    {
+      "name": "547.01",
+      "mission": "tess",
+      "depth_ppm": 13140.0,
+      "UMI_err": 26.3,
+      "biweight_err": 18.3,
+      "welsch_err": 24.2,
+      "savgol_err": 18.5
+    },
+    {
+      "name": "548.01",
+      "mission": "tess",
+      "depth_ppm": 6312.74627708141,
+      "UMI_err": 34.2,
+      "biweight_err": 40.9,
+      "welsch_err": 40.6,
+      "savgol_err": 75.9
+    },
+    {
+      "name": "567.01",
+      "mission": "tess",
+      "depth_ppm": 17828.6194881916,
+      "UMI_err": 16.5,
+      "biweight_err": 16.2,
+      "welsch_err": 16.1,
+      "savgol_err": 31.7
+    },
+    {
+      "name": "571.01",
+      "mission": "tess",
+      "depth_ppm": 7525.44752304187,
+      "UMI_err": 18.1,
+      "biweight_err": 30.7,
+      "welsch_err": 20.2,
+      "savgol_err": 65.0
+    },
+    {
+      "name": "574.01",
+      "mission": "tess",
+      "depth_ppm": 8027.61220244377,
+      "UMI_err": 22.0,
+      "biweight_err": 40.0,
+      "welsch_err": 37.4,
+      "savgol_err": 74.1
+    },
+    {
+      "name": "578.01",
+      "mission": "tess",
+      "depth_ppm": 8982.08035620182,
+      "UMI_err": 24.7,
+      "biweight_err": 30.2,
+      "welsch_err": 25.5,
+      "savgol_err": 51.0
+    },
+    {
+      "name": "655.01",
+      "mission": "tess",
+      "depth_ppm": 22614.8958862728,
+      "UMI_err": 15.7,
+      "biweight_err": 15.5,
+      "welsch_err": 15.4,
+      "savgol_err": 24.6
+    },
+    {
+      "name": "656.01",
+      "mission": "tess",
+      "depth_ppm": 25866.834740031,
+      "UMI_err": 14.0,
+      "biweight_err": 13.7,
+      "welsch_err": 13.9,
+      "savgol_err": 17.3
+    },
+    {
+      "name": "660.01",
+      "mission": "tess",
+      "depth_ppm": 6241.26190640106,
+      "UMI_err": 21.7,
+      "biweight_err": 48.0,
+      "welsch_err": 44.9,
+      "savgol_err": 82.1
+    },
+    {
+      "name": "661.01",
+      "mission": "tess",
+      "depth_ppm": 7083.70911880668,
+      "UMI_err": 14.2,
+      "biweight_err": 32.9,
+      "welsch_err": 18.1,
+      "savgol_err": 72.0
+    },
+    {
+      "name": "664.01",
+      "mission": "tess",
+      "depth_ppm": 2338.87455589106,
+      "UMI_err": 54.1,
+      "biweight_err": 64.5,
+      "welsch_err": 65.6,
+      "savgol_err": 98.6
+    },
+    {
+      "name": "667.01",
+      "mission": "tess",
+      "depth_ppm": 2512.11924470605,
+      "UMI_err": 9.7,
+      "biweight_err": 11.8,
+      "welsch_err": 10.0,
+      "savgol_err": 16.1
+    },
+    {
+      "name": "675.01",
+      "mission": "tess",
+      "depth_ppm": 11478.1087015052,
+      "UMI_err": 9.3,
+      "biweight_err": 8.8,
+      "welsch_err": 8.4,
+      "savgol_err": 65.9
+    },
+    {
+      "name": "683.01",
+      "mission": "tess",
+      "depth_ppm": 15490.0795355583,
+      "UMI_err": 19.5,
+      "biweight_err": 19.2,
+      "welsch_err": 18.9,
+      "savgol_err": 44.3
+    },
+    {
+      "name": "685.01",
+      "mission": "tess",
+      "depth_ppm": 3480.0,
+      "UMI_err": 25.7,
+      "biweight_err": 49.1,
+      "welsch_err": 43.8,
+      "savgol_err": 78.3
+    },
+    {
+      "name": "744.01",
+      "mission": "tess",
+      "depth_ppm": 11283.0,
+      "UMI_err": 21.9,
+      "biweight_err": 21.8,
+      "welsch_err": 21.8,
+      "savgol_err": 32.3
+    },
+    {
+      "name": "747.01",
+      "mission": "tess",
+      "depth_ppm": 8131.43426106873,
+      "UMI_err": 12.5,
+      "biweight_err": 12.7,
+      "welsch_err": 11.7,
+      "savgol_err": 49.2
+    },
+    {
+      "name": "748.01",
+      "mission": "tess",
+      "depth_ppm": 10040.0,
+      "UMI_err": 18.8,
+      "biweight_err": 19.6,
+      "welsch_err": 18.2,
+      "savgol_err": 46.2
+    },
+    {
+      "name": "750.01",
+      "mission": "tess",
+      "depth_ppm": 21355.7850720915,
+      "UMI_err": 25.2,
+      "biweight_err": 27.5,
+      "welsch_err": 25.1,
+      "savgol_err": 45.5
+    },
+    {
+      "name": "751.01",
+      "mission": "tess",
+      "depth_ppm": 22675.3812671286,
+      "UMI_err": 19.2,
+      "biweight_err": 19.0,
+      "welsch_err": 18.0,
+      "savgol_err": 38.9
+    },
+    {
+      "name": "752.01",
+      "mission": "tess",
+      "depth_ppm": 12259.4473284012,
+      "UMI_err": 14.5,
+      "biweight_err": 13.4,
+      "welsch_err": 12.9,
+      "savgol_err": 42.1
+    },
+    {
+      "name": "755.02",
+      "mission": "tess",
+      "depth_ppm": 450.542064935908,
+      "UMI_err": 64.5,
+      "biweight_err": 59.7,
+      "welsch_err": 61.1,
+      "savgol_err": 71.1
+    },
+    {
+      "name": "766.01",
+      "mission": "tess",
+      "depth_ppm": 16320.7911726026,
+      "UMI_err": 15.4,
+      "biweight_err": 14.8,
+      "welsch_err": 14.5,
+      "savgol_err": 36.4
+    },
+    {
+      "name": "767.01",
+      "mission": "tess",
+      "depth_ppm": 22257.118447,
+      "UMI_err": 12.1,
+      "biweight_err": 12.3,
+      "welsch_err": 12.1,
+      "savgol_err": 35.7
+    },
+    {
+      "name": "769.01",
+      "mission": "tess",
+      "depth_ppm": 18110.0,
+      "UMI_err": 12.3,
+      "biweight_err": 12.0,
+      "welsch_err": 11.8,
+      "savgol_err": 39.8
+    },
+    {
+      "name": "770.01",
+      "mission": "tess",
+      "depth_ppm": 7765.99732862179,
+      "UMI_err": 24.7,
+      "biweight_err": 36.5,
+      "welsch_err": 32.0,
+      "savgol_err": 73.0
+    },
+    {
+      "name": "773.01",
+      "mission": "tess",
+      "depth_ppm": 12130.0,
+      "UMI_err": 18.2,
+      "biweight_err": 20.8,
+      "welsch_err": 16.4,
+      "savgol_err": 57.7
+    },
+    {
+      "name": "774.01",
+      "mission": "tess",
+      "depth_ppm": 17361.1064237715,
+      "UMI_err": 11.5,
+      "biweight_err": 10.3,
+      "welsch_err": 9.9,
+      "savgol_err": 54.7
+    },
+    {
+      "name": "780.01",
+      "mission": "tess",
+      "depth_ppm": 22270.0,
+      "UMI_err": 13.8,
+      "biweight_err": 13.4,
+      "welsch_err": 13.3,
+      "savgol_err": 32.0
+    },
+    {
+      "name": "781.01",
+      "mission": "tess",
+      "depth_ppm": 20039.5506701346,
+      "UMI_err": 17.8,
+      "biweight_err": 19.5,
+      "welsch_err": 17.7,
+      "savgol_err": 40.7
+    },
+    {
+      "name": "818.01",
+      "mission": "tess",
+      "depth_ppm": 12242.731322,
+      "UMI_err": 23.1,
+      "biweight_err": 22.9,
+      "welsch_err": 22.5,
+      "savgol_err": 35.5
+    },
+    {
+      "name": "819.01",
+      "mission": "tess",
+      "depth_ppm": 4950.0,
+      "UMI_err": 15.9,
+      "biweight_err": 33.2,
+      "welsch_err": 27.8,
+      "savgol_err": 75.4
+    },
+    {
+      "name": "820.01",
+      "mission": "tess",
+      "depth_ppm": 9500.430305,
+      "UMI_err": 13.6,
+      "biweight_err": 12.9,
+      "welsch_err": 12.2,
+      "savgol_err": 59.5
+    },
+    {
+      "name": "822.01",
+      "mission": "tess",
+      "depth_ppm": 18037.5300175467,
+      "UMI_err": 10.9,
+      "biweight_err": 9.7,
+      "welsch_err": 9.5,
+      "savgol_err": 40.2
+    },
+    {
+      "name": "825.01",
+      "mission": "tess",
+      "depth_ppm": 4917.33789083141,
+      "UMI_err": 29.0,
+      "biweight_err": 29.0,
+      "welsch_err": 29.3,
+      "savgol_err": 46.0
+    },
+    {
+      "name": "826.01",
+      "mission": "tess",
+      "depth_ppm": 10842.0,
+      "UMI_err": 15.9,
+      "biweight_err": 15.0,
+      "welsch_err": 14.7,
+      "savgol_err": 61.1
+    },
+    {
+      "name": "828.01",
+      "mission": "tess",
+      "depth_ppm": 6562.77948059019,
+      "UMI_err": 13.0,
+      "biweight_err": 12.4,
+      "welsch_err": 11.8,
+      "savgol_err": 58.4
+    },
+    {
+      "name": "834.01",
+      "mission": "tess",
+      "depth_ppm": 14340.9908647799,
+      "UMI_err": 11.3,
+      "biweight_err": 10.6,
+      "welsch_err": 9.7,
+      "savgol_err": 49.0
+    },
+    {
+      "name": "839.01",
+      "mission": "tess",
+      "depth_ppm": 19630.5671979095,
+      "UMI_err": 0.4,
+      "biweight_err": 15.3,
+      "welsch_err": 13.4,
+      "savgol_err": 47.4
+    },
+    {
+      "name": "840.01",
+      "mission": "tess",
+      "depth_ppm": 7590.0,
+      "UMI_err": 10.9,
+      "biweight_err": 14.0,
+      "welsch_err": 13.6,
+      "savgol_err": 34.2
+    },
+    {
+      "name": "843.01",
+      "mission": "tess",
+      "depth_ppm": 15275.758454677,
+      "UMI_err": 19.0,
+      "biweight_err": 27.2,
+      "welsch_err": 20.1,
+      "savgol_err": 56.9
+    },
+    {
+      "name": "1049.01",
+      "mission": "tess",
+      "depth_ppm": 16399.85846405854,
+      "UMI_err": 20.3,
+      "biweight_err": 27.6,
+      "welsch_err": 21.1,
+      "savgol_err": 53.1
+    },
+    {
+      "name": "1050.01",
+      "mission": "tess",
+      "depth_ppm": 17030.0,
+      "UMI_err": 11.9,
+      "biweight_err": 11.7,
+      "welsch_err": 10.8,
+      "savgol_err": 63.6
+    },
+    {
+      "name": "2011.01",
+      "mission": "tess",
+      "depth_ppm": 217.399491764389,
+      "UMI_err": 43.8,
+      "biweight_err": 45.4,
+      "welsch_err": 48.7,
+      "savgol_err": 67.4
+    },
+    {
+      "name": "4304.01",
+      "mission": "tess",
+      "depth_ppm": 380.0,
+      "UMI_err": 37.9,
+      "biweight_err": 44.1,
+      "welsch_err": 48.9,
+      "savgol_err": 66.4
+    },
+    {
+      "name": "4316.01",
+      "mission": "tess",
+      "depth_ppm": 17182.0,
+      "UMI_err": 24.9,
+      "biweight_err": 34.5,
+      "welsch_err": 25.9,
+      "savgol_err": 65.5
+    },
+    {
+      "name": "4411.01",
+      "mission": "tess",
+      "depth_ppm": 309.0,
+      "UMI_err": 58.3,
+      "biweight_err": 55.3,
+      "welsch_err": 56.1,
+      "savgol_err": 78.0
+    },
+    {
+      "name": "4628.01",
+      "mission": "tess",
+      "depth_ppm": 520.8002154462043,
+      "UMI_err": 34.5,
+      "biweight_err": 28.9,
+      "welsch_err": 24.7,
+      "savgol_err": 37.4
+    },
+    {
+      "name": "4630.01",
+      "mission": "tess",
+      "depth_ppm": 2177.931991044364,
+      "UMI_err": 21.3,
+      "biweight_err": 44.0,
+      "welsch_err": 34.4,
+      "savgol_err": 75.8
+    },
+    {
+      "name": "5101.01",
+      "mission": "tess",
+      "depth_ppm": 1059.0,
+      "UMI_err": 75.7,
+      "biweight_err": 69.8,
+      "welsch_err": 72.4,
+      "savgol_err": 79.4
+    },
+    {
+      "name": "5121.01",
+      "mission": "tess",
+      "depth_ppm": 533.0,
+      "UMI_err": 17.4,
+      "biweight_err": 39.0,
+      "welsch_err": 21.3,
+      "savgol_err": 93.9
+    },
+    {
+      "name": "5524.01",
+      "mission": "tess",
+      "depth_ppm": 1354.96409157128,
+      "UMI_err": 2.3,
+      "biweight_err": 4.4,
+      "welsch_err": 1.6,
+      "savgol_err": 13.7
+    },
+    {
+      "name": "6551.01",
+      "mission": "tess",
+      "depth_ppm": 4826.86560365413,
+      "UMI_err": null,
+      "biweight_err": 94.7,
+      "welsch_err": null,
+      "savgol_err": 80.8
+    },
+    {
+      "name": "Kepler-1 b",
+      "mission": "kepler",
+      "depth_ppm": 14230.9,
+      "UMI_err": 21.0,
+      "biweight_err": 21.0,
+      "welsch_err": 20.9,
+      "savgol_err": 31.4
+    },
+    {
+      "name": "Kepler-2 b",
+      "mission": "kepler",
+      "depth_ppm": 6674.7,
+      "UMI_err": 7.2,
+      "biweight_err": 6.7,
+      "welsch_err": 6.6,
+      "savgol_err": 43.3
+    },
+    {
+      "name": "Kepler-8 b",
+      "mission": "kepler",
+      "depth_ppm": 9145.7,
+      "UMI_err": 13.2,
+      "biweight_err": 13.5,
+      "welsch_err": 13.0,
+      "savgol_err": 44.2
+    },
+    {
+      "name": "Kepler-232 b",
+      "mission": "kepler",
+      "depth_ppm": 1010.9,
+      "UMI_err": 21.2,
+      "biweight_err": 34.8,
+      "welsch_err": 34.2,
+      "savgol_err": 53.4
+    },
+    {
+      "name": "Kepler-232 c",
+      "mission": "kepler",
+      "depth_ppm": 1023.5,
+      "UMI_err": 40.6,
+      "biweight_err": 41.5,
+      "welsch_err": 54.2,
+      "savgol_err": 58.6
+    },
+    {
+      "name": "Kepler-681 b",
+      "mission": "kepler",
+      "depth_ppm": 1510.9,
+      "UMI_err": 15.8,
+      "biweight_err": 30.8,
+      "welsch_err": 23.3,
+      "savgol_err": 64.7
+    },
+    {
+      "name": "Kepler-234 b",
+      "mission": "kepler",
+      "depth_ppm": 837.5,
+      "UMI_err": 19.7,
+      "biweight_err": 30.9,
+      "welsch_err": 27.2,
+      "savgol_err": 57.5
+    },
+    {
+      "name": "Kepler-234 c",
+      "mission": "kepler",
+      "depth_ppm": 950.4,
+      "UMI_err": 15.9,
+      "biweight_err": 8.3,
+      "welsch_err": 16.6,
+      "savgol_err": 63.1
+    },
+    {
+      "name": "Kepler-233 b",
+      "mission": "kepler",
+      "depth_ppm": 1123.5,
+      "UMI_err": 16.1,
+      "biweight_err": 30.6,
+      "welsch_err": 27.8,
+      "savgol_err": 61.4
+    },
+    {
+      "name": "Kepler-233 c",
+      "mission": "kepler",
+      "depth_ppm": 931.3,
+      "UMI_err": 74.8,
+      "biweight_err": 76.0,
+      "welsch_err": 75.0,
+      "savgol_err": 96.4
+    },
+    {
+      "name": "Kepler-682 b",
+      "mission": "kepler",
+      "depth_ppm": 6105.6,
+      "UMI_err": 13.6,
+      "biweight_err": 23.2,
+      "welsch_err": 13.7,
+      "savgol_err": 77.2
+    },
+    {
+      "name": "Kepler-683 b",
+      "mission": "kepler",
+      "depth_ppm": 382.1,
+      "UMI_err": 15.0,
+      "biweight_err": 25.0,
+      "welsch_err": 24.6,
+      "savgol_err": 44.8
+    },
+    {
+      "name": "Kepler-684 b",
+      "mission": "kepler",
+      "depth_ppm": 1304.0,
+      "UMI_err": 25.7,
+      "biweight_err": 35.8,
+      "welsch_err": 35.7,
+      "savgol_err": 50.4
+    },
+    {
+      "name": "Kepler-235 d",
+      "mission": "kepler",
+      "depth_ppm": 1494.7,
+      "UMI_err": 0.7,
+      "biweight_err": 26.2,
+      "welsch_err": 10.2,
+      "savgol_err": 53.8
+    },
+    {
+      "name": "Kepler-235 e",
+      "mission": "kepler",
+      "depth_ppm": 1394.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-235 c",
+      "mission": "kepler",
+      "depth_ppm": 520.8,
+      "UMI_err": 68.3,
+      "biweight_err": 51.6,
+      "welsch_err": 55.7,
+      "savgol_err": 8.3
+    },
+    {
+      "name": "Kepler-688 b",
+      "mission": "kepler",
+      "depth_ppm": 8544.8,
+      "UMI_err": 7.5,
+      "biweight_err": 5.9,
+      "welsch_err": 5.7,
+      "savgol_err": 15.1
+    },
+    {
+      "name": "Kepler-689 b",
+      "mission": "kepler",
+      "depth_ppm": 986.8,
+      "UMI_err": 34.9,
+      "biweight_err": 46.3,
+      "welsch_err": 48.1,
+      "savgol_err": 74.6
+    },
+    {
+      "name": "Kepler-685 b",
+      "mission": "kepler",
+      "depth_ppm": 7969.0,
+      "UMI_err": 11.7,
+      "biweight_err": 12.1,
+      "welsch_err": 11.7,
+      "savgol_err": 19.8
+    },
+    {
+      "name": "Kepler-1727 b",
+      "mission": "kepler",
+      "depth_ppm": 1019.8,
+      "UMI_err": 5.8,
+      "biweight_err": 26.7,
+      "welsch_err": 17.5,
+      "savgol_err": 65.6
+    },
+    {
+      "name": "Kepler-30 d",
+      "mission": "kepler",
+      "depth_ppm": 10565.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-30 c",
+      "mission": "kepler",
+      "depth_ppm": 20280.4,
+      "UMI_err": 6.5,
+      "biweight_err": 45.0,
+      "welsch_err": 10.8,
+      "savgol_err": 7.0
+    },
+    {
+      "name": "Kepler-30 b",
+      "mission": "kepler",
+      "depth_ppm": 488.0,
+      "UMI_err": 79.6,
+      "biweight_err": null,
+      "welsch_err": 73.7,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-686 b",
+      "mission": "kepler",
+      "depth_ppm": 15044.5,
+      "UMI_err": 9.7,
+      "biweight_err": 10.0,
+      "welsch_err": 9.5,
+      "savgol_err": 15.8
+    },
+    {
+      "name": "Kepler-1728 b",
+      "mission": "kepler",
+      "depth_ppm": 1008.7,
+      "UMI_err": 2.4,
+      "biweight_err": 14.2,
+      "welsch_err": 14.1,
+      "savgol_err": 38.7
+    },
+    {
+      "name": "Kepler-687 b",
+      "mission": "kepler",
+      "depth_ppm": 2105.5,
+      "UMI_err": 10.5,
+      "biweight_err": 27.2,
+      "welsch_err": 10.6,
+      "savgol_err": 63.4
+    },
+    {
+      "name": "Kepler-235 b",
+      "mission": "kepler",
+      "depth_ppm": 1632.6,
+      "UMI_err": 15.0,
+      "biweight_err": 24.0,
+      "welsch_err": 29.0,
+      "savgol_err": 33.8
+    },
+    {
+      "name": "Kepler-53 b",
+      "mission": "kepler",
+      "depth_ppm": 893.6,
+      "UMI_err": 16.3,
+      "biweight_err": 29.1,
+      "welsch_err": 20.5,
+      "savgol_err": 72.2
+    },
+    {
+      "name": "Kepler-53 d",
+      "mission": "kepler",
+      "depth_ppm": 418.0,
+      "UMI_err": 73.0,
+      "biweight_err": 68.9,
+      "welsch_err": 66.9,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-53 c",
+      "mission": "kepler",
+      "depth_ppm": 993.0,
+      "UMI_err": 28.7,
+      "biweight_err": 56.8,
+      "welsch_err": 57.0,
+      "savgol_err": 82.3
+    },
+    {
+      "name": "Kepler-428 b",
+      "mission": "kepler",
+      "depth_ppm": 22335.0,
+      "UMI_err": 11.0,
+      "biweight_err": 10.5,
+      "welsch_err": 10.7,
+      "savgol_err": 11.3
+    },
+    {
+      "name": "Kepler-690 b",
+      "mission": "kepler",
+      "depth_ppm": 2472.1,
+      "UMI_err": 10.2,
+      "biweight_err": 9.0,
+      "welsch_err": 5.5,
+      "savgol_err": 50.1
+    },
+    {
+      "name": "Kepler-691 b",
+      "mission": "kepler",
+      "depth_ppm": 1558.0,
+      "UMI_err": 35.9,
+      "biweight_err": 33.5,
+      "welsch_err": 42.0,
+      "savgol_err": 46.6
+    },
+    {
+      "name": "Kepler-692 b",
+      "mission": "kepler",
+      "depth_ppm": 1175.4,
+      "UMI_err": 28.7,
+      "biweight_err": 44.0,
+      "welsch_err": 53.1,
+      "savgol_err": 78.2
+    },
+    {
+      "name": "Kepler-694 b",
+      "mission": "kepler",
+      "depth_ppm": 780.7,
+      "UMI_err": 9.7,
+      "biweight_err": 22.2,
+      "welsch_err": 15.4,
+      "savgol_err": 48.4
+    },
+    {
+      "name": "Kepler-695 b",
+      "mission": "kepler",
+      "depth_ppm": 10858.8,
+      "UMI_err": 19.6,
+      "biweight_err": 20.5,
+      "welsch_err": 20.0,
+      "savgol_err": 27.0
+    },
+    {
+      "name": "Kepler-27 b",
+      "mission": "kepler",
+      "depth_ppm": 3081.4,
+      "UMI_err": 0.5,
+      "biweight_err": 5.0,
+      "welsch_err": 4.0,
+      "savgol_err": 48.6
+    },
+    {
+      "name": "Kepler-27 c",
+      "mission": "kepler",
+      "depth_ppm": 5073.8,
+      "UMI_err": 10.2,
+      "biweight_err": 26.9,
+      "welsch_err": 10.8,
+      "savgol_err": 66.2
+    },
+    {
+      "name": "Kepler-238 e",
+      "mission": "kepler",
+      "depth_ppm": 3341.8,
+      "UMI_err": 61.9,
+      "biweight_err": 76.1,
+      "welsch_err": 95.7,
+      "savgol_err": 94.5
+    },
+    {
+      "name": "Kepler-238 d",
+      "mission": "kepler",
+      "depth_ppm": 504.6,
+      "UMI_err": 40.2,
+      "biweight_err": 53.0,
+      "welsch_err": 58.8,
+      "savgol_err": 64.1
+    },
+    {
+      "name": "Kepler-238 c",
+      "mission": "kepler",
+      "depth_ppm": 285.0,
+      "UMI_err": 66.6,
+      "biweight_err": 62.3,
+      "welsch_err": 70.4,
+      "savgol_err": 85.3
+    },
+    {
+      "name": "Kepler-238 b",
+      "mission": "kepler",
+      "depth_ppm": 115.9,
+      "UMI_err": 75.8,
+      "biweight_err": 77.7,
+      "welsch_err": 63.0,
+      "savgol_err": 96.3
+    },
+    {
+      "name": "Kepler-238 f",
+      "mission": "kepler",
+      "depth_ppm": 370.3,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": 5.3
+    },
+    {
+      "name": "Kepler-239 b",
+      "mission": "kepler",
+      "depth_ppm": 1037.3,
+      "UMI_err": 7.2,
+      "biweight_err": 16.0,
+      "welsch_err": 4.9,
+      "savgol_err": 41.0
+    },
+    {
+      "name": "Kepler-239 c",
+      "mission": "kepler",
+      "depth_ppm": 862.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-240 c",
+      "mission": "kepler",
+      "depth_ppm": 875.4,
+      "UMI_err": 17.7,
+      "biweight_err": 27.9,
+      "welsch_err": 30.9,
+      "savgol_err": 57.1
+    },
+    {
+      "name": "Kepler-240 b",
+      "mission": "kepler",
+      "depth_ppm": 391.8,
+      "UMI_err": 46.1,
+      "biweight_err": 41.5,
+      "welsch_err": 31.0,
+      "savgol_err": 62.0
+    },
+    {
+      "name": "Kepler-27 d",
+      "mission": "kepler",
+      "depth_ppm": 655.9,
+      "UMI_err": 66.5,
+      "biweight_err": 59.0,
+      "welsch_err": 57.5,
+      "savgol_err": 65.6
+    },
+    {
+      "name": "Kepler-241 b",
+      "mission": "kepler",
+      "depth_ppm": 1149.4,
+      "UMI_err": 7.5,
+      "biweight_err": 18.1,
+      "welsch_err": 23.5,
+      "savgol_err": 51.6
+    },
+    {
+      "name": "Kepler-241 c",
+      "mission": "kepler",
+      "depth_ppm": 1563.8,
+      "UMI_err": 2.3,
+      "biweight_err": 33.1,
+      "welsch_err": 18.8,
+      "savgol_err": 61.1
+    },
+    {
+      "name": "Kepler-696 b",
+      "mission": "kepler",
+      "depth_ppm": 2877.4,
+      "UMI_err": 15.6,
+      "biweight_err": 12.9,
+      "welsch_err": 13.5,
+      "savgol_err": 42.4
+    },
+    {
+      "name": "Kepler-698 b",
+      "mission": "kepler",
+      "depth_ppm": 1187.5,
+      "UMI_err": 35.6,
+      "biweight_err": 53.2,
+      "welsch_err": 56.1,
+      "savgol_err": 86.2
+    },
+    {
+      "name": "Kepler-699 b",
+      "mission": "kepler",
+      "depth_ppm": 25391.1,
+      "UMI_err": 19.6,
+      "biweight_err": 19.8,
+      "welsch_err": 19.8,
+      "savgol_err": 20.6
+    },
+    {
+      "name": "Kepler-700 b",
+      "mission": "kepler",
+      "depth_ppm": 3604.6,
+      "UMI_err": 66.3,
+      "biweight_err": 77.3,
+      "welsch_err": 91.7,
+      "savgol_err": 97.6
+    },
+    {
+      "name": "Kepler-467 b",
+      "mission": "kepler",
+      "depth_ppm": 269.6,
+      "UMI_err": 56.5,
+      "biweight_err": 67.1,
+      "welsch_err": 66.8,
+      "savgol_err": 90.4
+    },
+    {
+      "name": "Kepler-108 b",
+      "mission": "kepler",
+      "depth_ppm": 1646.2,
+      "UMI_err": 73.1,
+      "biweight_err": 96.4,
+      "welsch_err": 99.9,
+      "savgol_err": 94.1
+    },
+    {
+      "name": "Kepler-108 c",
+      "mission": "kepler",
+      "depth_ppm": 1141.7,
+      "UMI_err": 80.1,
+      "biweight_err": 95.5,
+      "welsch_err": null,
+      "savgol_err": 95.6
+    },
+    {
+      "name": "Kepler-710 b",
+      "mission": "kepler",
+      "depth_ppm": 451.6,
+      "UMI_err": 31.3,
+      "biweight_err": 34.9,
+      "welsch_err": 38.4,
+      "savgol_err": 60.4
+    },
+    {
+      "name": "Kepler-711 b",
+      "mission": "kepler",
+      "depth_ppm": 1200.7,
+      "UMI_err": 52.6,
+      "biweight_err": 59.9,
+      "welsch_err": 56.9,
+      "savgol_err": 84.7
+    },
+    {
+      "name": "Kepler-109 b",
+      "mission": "kepler",
+      "depth_ppm": 298.5,
+      "UMI_err": 22.2,
+      "biweight_err": 29.0,
+      "welsch_err": 20.3,
+      "savgol_err": 62.2
+    },
+    {
+      "name": "Kepler-717 b",
+      "mission": "kepler",
+      "depth_ppm": 549.4,
+      "UMI_err": 41.9,
+      "biweight_err": 49.4,
+      "welsch_err": 49.5,
+      "savgol_err": 84.9
+    },
+    {
+      "name": "Kepler-75 b",
+      "mission": "kepler",
+      "depth_ppm": 16053.4,
+      "UMI_err": 15.0,
+      "biweight_err": 14.9,
+      "welsch_err": 14.7,
+      "savgol_err": 15.9
+    },
+    {
+      "name": "Kepler-714 b",
+      "mission": "kepler",
+      "depth_ppm": 6911.1,
+      "UMI_err": 12.1,
+      "biweight_err": 11.5,
+      "welsch_err": 11.4,
+      "savgol_err": 37.1
+    },
+    {
+      "name": "Kepler-448 b",
+      "mission": "kepler",
+      "depth_ppm": 9065.2,
+      "UMI_err": 10.2,
+      "biweight_err": 55.7,
+      "welsch_err": 55.0,
+      "savgol_err": 14.2
+    },
+    {
+      "name": "Kepler-109 c",
+      "mission": "kepler",
+      "depth_ppm": 366.0,
+      "UMI_err": 51.1,
+      "biweight_err": 59.0,
+      "welsch_err": 63.6,
+      "savgol_err": 87.9
+    },
+    {
+      "name": "Kepler-722 b",
+      "mission": "kepler",
+      "depth_ppm": 538.6,
+      "UMI_err": 40.6,
+      "biweight_err": 42.8,
+      "welsch_err": 46.0,
+      "savgol_err": 55.4
+    },
+    {
+      "name": "Kepler-722 c",
+      "mission": "kepler",
+      "depth_ppm": 685.4,
+      "UMI_err": 75.7,
+      "biweight_err": 76.6,
+      "welsch_err": 70.5,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-730 b",
+      "mission": "kepler",
+      "depth_ppm": 7163.3,
+      "UMI_err": 9.9,
+      "biweight_err": 9.2,
+      "welsch_err": 9.8,
+      "savgol_err": 44.8
+    },
+    {
+      "name": "Kepler-24 b",
+      "mission": "kepler",
+      "depth_ppm": 446.8,
+      "UMI_err": 52.9,
+      "biweight_err": 60.4,
+      "welsch_err": 62.3,
+      "savgol_err": 86.4
+    },
+    {
+      "name": "Kepler-24 e",
+      "mission": "kepler",
+      "depth_ppm": 430.7,
+      "UMI_err": 87.5,
+      "biweight_err": 79.7,
+      "welsch_err": 86.9,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-24 d",
+      "mission": "kepler",
+      "depth_ppm": 174.0,
+      "UMI_err": 53.0,
+      "biweight_err": 48.5,
+      "welsch_err": 64.8,
+      "savgol_err": 51.5
+    },
+    {
+      "name": "Kepler-112 c",
+      "mission": "kepler",
+      "depth_ppm": 824.9,
+      "UMI_err": 11.5,
+      "biweight_err": 33.9,
+      "welsch_err": 21.6,
+      "savgol_err": 75.5
+    },
+    {
+      "name": "Kepler-111 c",
+      "mission": "kepler",
+      "depth_ppm": 3487.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-769 b",
+      "mission": "kepler",
+      "depth_ppm": 443.3,
+      "UMI_err": 13.7,
+      "biweight_err": 12.9,
+      "welsch_err": 11.9,
+      "savgol_err": 50.3
+    },
+    {
+      "name": "Kepler-769 c",
+      "mission": "kepler",
+      "depth_ppm": 178.5,
+      "UMI_err": 8.1,
+      "biweight_err": 19.9,
+      "welsch_err": 34.1,
+      "savgol_err": 29.2
+    },
+    {
+      "name": "Kepler-770 b",
+      "mission": "kepler",
+      "depth_ppm": 640.9,
+      "UMI_err": 71.6,
+      "biweight_err": 71.1,
+      "welsch_err": 68.6,
+      "savgol_err": 89.7
+    },
+    {
+      "name": "Kepler-785 b",
+      "mission": "kepler",
+      "depth_ppm": 30222.4,
+      "UMI_err": 14.3,
+      "biweight_err": 15.0,
+      "welsch_err": 14.7,
+      "savgol_err": 17.0
+    },
+    {
+      "name": "Kepler-21 b",
+      "mission": "kepler",
+      "depth_ppm": 68.9,
+      "UMI_err": 21.9,
+      "biweight_err": 28.8,
+      "welsch_err": 31.7,
+      "savgol_err": 51.7
+    },
+    {
+      "name": "Kepler-755 b",
+      "mission": "kepler",
+      "depth_ppm": 340.9,
+      "UMI_err": 23.9,
+      "biweight_err": 28.5,
+      "welsch_err": 30.5,
+      "savgol_err": 45.8
+    },
+    {
+      "name": "Kepler-755 c",
+      "mission": "kepler",
+      "depth_ppm": 277.1,
+      "UMI_err": 7.9,
+      "biweight_err": 23.8,
+      "welsch_err": 10.8,
+      "savgol_err": 43.4
+    },
+    {
+      "name": "Kepler-1734 b",
+      "mission": "kepler",
+      "depth_ppm": 393.1,
+      "UMI_err": 33.0,
+      "biweight_err": 45.6,
+      "welsch_err": 33.1,
+      "savgol_err": 48.8
+    },
+    {
+      "name": "Kepler-770 c",
+      "mission": "kepler",
+      "depth_ppm": 154.9,
+      "UMI_err": 21.8,
+      "biweight_err": 31.9,
+      "welsch_err": 33.5,
+      "savgol_err": 24.9
+    },
+    {
+      "name": "Kepler-770 d",
+      "mission": "kepler",
+      "depth_ppm": 223.4,
+      "UMI_err": 43.8,
+      "biweight_err": 36.5,
+      "welsch_err": 44.0,
+      "savgol_err": 56.3
+    },
+    {
+      "name": "Kepler-771 b",
+      "mission": "kepler",
+      "depth_ppm": 270.7,
+      "UMI_err": 44.7,
+      "biweight_err": 45.8,
+      "welsch_err": 49.2,
+      "savgol_err": 73.0
+    },
+    {
+      "name": "Kepler-265 c",
+      "mission": "kepler",
+      "depth_ppm": 568.9,
+      "UMI_err": 39.9,
+      "biweight_err": 51.7,
+      "welsch_err": 40.2,
+      "savgol_err": 74.0
+    },
+    {
+      "name": "Kepler-265 b",
+      "mission": "kepler",
+      "depth_ppm": 246.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-265 e",
+      "mission": "kepler",
+      "depth_ppm": 507.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-265 d",
+      "mission": "kepler",
+      "depth_ppm": 447.8,
+      "UMI_err": 40.0,
+      "biweight_err": 52.9,
+      "welsch_err": 39.2,
+      "savgol_err": 69.0
+    },
+    {
+      "name": "Kepler-756 b",
+      "mission": "kepler",
+      "depth_ppm": 196.0,
+      "UMI_err": 62.5,
+      "biweight_err": 38.2,
+      "welsch_err": 43.4,
+      "savgol_err": 44.1
+    },
+    {
+      "name": "Kepler-1736 b",
+      "mission": "kepler",
+      "depth_ppm": 570.3,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-268 b",
+      "mission": "kepler",
+      "depth_ppm": 414.5,
+      "UMI_err": 42.5,
+      "biweight_err": 52.3,
+      "welsch_err": 54.6,
+      "savgol_err": 93.4
+    },
+    {
+      "name": "Kepler-268 c",
+      "mission": "kepler",
+      "depth_ppm": 503.0,
+      "UMI_err": 33.2,
+      "biweight_err": 60.0,
+      "welsch_err": 60.5,
+      "savgol_err": 85.7
+    },
+    {
+      "name": "Kepler-772 b",
+      "mission": "kepler",
+      "depth_ppm": 270.6,
+      "UMI_err": 72.3,
+      "biweight_err": 71.8,
+      "welsch_err": 65.6,
+      "savgol_err": 96.8
+    },
+    {
+      "name": "Kepler-1973 b",
+      "mission": "kepler",
+      "depth_ppm": 790.1,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": 99.1,
+      "savgol_err": 99.9
+    },
+    {
+      "name": "Kepler-260 b",
+      "mission": "kepler",
+      "depth_ppm": 517.6,
+      "UMI_err": 24.6,
+      "biweight_err": 35.9,
+      "welsch_err": 30.8,
+      "savgol_err": 53.7
+    },
+    {
+      "name": "Kepler-260 c",
+      "mission": "kepler",
+      "depth_ppm": 445.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-111 b",
+      "mission": "kepler",
+      "depth_ppm": 178.2,
+      "UMI_err": 29.8,
+      "biweight_err": 32.0,
+      "welsch_err": 36.1,
+      "savgol_err": 52.3
+    },
+    {
+      "name": "Kepler-773 b",
+      "mission": "kepler",
+      "depth_ppm": 182.6,
+      "UMI_err": 11.8,
+      "biweight_err": 7.7,
+      "welsch_err": 6.4,
+      "savgol_err": 20.0
+    },
+    {
+      "name": "Kepler-774 b",
+      "mission": "kepler",
+      "depth_ppm": 148.1,
+      "UMI_err": 1.0,
+      "biweight_err": 37.3,
+      "welsch_err": 30.2,
+      "savgol_err": 75.8
+    },
+    {
+      "name": "Kepler-415 c",
+      "mission": "kepler",
+      "depth_ppm": 1419.6,
+      "UMI_err": 40.3,
+      "biweight_err": 67.7,
+      "welsch_err": 64.6,
+      "savgol_err": 77.8
+    },
+    {
+      "name": "Kepler-415 b",
+      "mission": "kepler",
+      "depth_ppm": 531.5,
+      "UMI_err": 45.7,
+      "biweight_err": 41.1,
+      "welsch_err": 45.3,
+      "savgol_err": 74.2
+    },
+    {
+      "name": "Kepler-261 b",
+      "mission": "kepler",
+      "depth_ppm": 801.5,
+      "UMI_err": 55.4,
+      "biweight_err": 37.4,
+      "welsch_err": 83.7,
+      "savgol_err": 50.6
+    },
+    {
+      "name": "Kepler-261 c",
+      "mission": "kepler",
+      "depth_ppm": 764.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-757 b",
+      "mission": "kepler",
+      "depth_ppm": 129.2,
+      "UMI_err": 33.5,
+      "biweight_err": 30.5,
+      "welsch_err": 37.9,
+      "savgol_err": 35.9
+    },
+    {
+      "name": "Kepler-758 b",
+      "mission": "kepler",
+      "depth_ppm": 284.7,
+      "UMI_err": 78.3,
+      "biweight_err": 78.6,
+      "welsch_err": 91.7,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-758 c",
+      "mission": "kepler",
+      "depth_ppm": 124.5,
+      "UMI_err": 19.3,
+      "biweight_err": 7.0,
+      "welsch_err": 16.7,
+      "savgol_err": 70.9
+    },
+    {
+      "name": "Kepler-758 d",
+      "mission": "kepler",
+      "depth_ppm": 242.9,
+      "UMI_err": 68.4,
+      "biweight_err": 67.7,
+      "welsch_err": 76.9,
+      "savgol_err": 92.7
+    },
+    {
+      "name": "Kepler-786 b",
+      "mission": "kepler",
+      "depth_ppm": 1086.1,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1741 b",
+      "mission": "kepler",
+      "depth_ppm": 563.1,
+      "UMI_err": 16.6,
+      "biweight_err": 34.2,
+      "welsch_err": 32.4,
+      "savgol_err": 65.4
+    },
+    {
+      "name": "Kepler-787 b",
+      "mission": "kepler",
+      "depth_ppm": 376.2,
+      "UMI_err": 12.0,
+      "biweight_err": 12.7,
+      "welsch_err": 2.8,
+      "savgol_err": 20.1
+    },
+    {
+      "name": "Kepler-276 c",
+      "mission": "kepler",
+      "depth_ppm": 910.0,
+      "UMI_err": 35.5,
+      "biweight_err": 54.5,
+      "welsch_err": 50.5,
+      "savgol_err": 77.9
+    },
+    {
+      "name": "Kepler-745 b",
+      "mission": "kepler",
+      "depth_ppm": 398.6,
+      "UMI_err": 74.1,
+      "biweight_err": 73.5,
+      "welsch_err": 70.6,
+      "savgol_err": 95.8
+    },
+    {
+      "name": "Kepler-262 c",
+      "mission": "kepler",
+      "depth_ppm": 355.6,
+      "UMI_err": 52.5,
+      "biweight_err": 48.9,
+      "welsch_err": 46.6,
+      "savgol_err": 4.0
+    },
+    {
+      "name": "Kepler-758 e",
+      "mission": "kepler",
+      "depth_ppm": 115.4,
+      "UMI_err": 50.7,
+      "biweight_err": 30.5,
+      "welsch_err": 20.1,
+      "savgol_err": 86.6
+    },
+    {
+      "name": "Kepler-759 b",
+      "mission": "kepler",
+      "depth_ppm": 434.4,
+      "UMI_err": 1.9,
+      "biweight_err": 30.3,
+      "welsch_err": 29.3,
+      "savgol_err": 61.3
+    },
+    {
+      "name": "Kepler-48 b",
+      "mission": "kepler",
+      "depth_ppm": 473.0,
+      "UMI_err": 21.3,
+      "biweight_err": 38.8,
+      "welsch_err": 31.4,
+      "savgol_err": 58.4
+    },
+    {
+      "name": "Kepler-1740 b",
+      "mission": "kepler",
+      "depth_ppm": 864.3,
+      "UMI_err": 40.1,
+      "biweight_err": 45.2,
+      "welsch_err": 52.5,
+      "savgol_err": 54.9
+    },
+    {
+      "name": "Kepler-262 b",
+      "mission": "kepler",
+      "depth_ppm": 236.6,
+      "UMI_err": 17.8,
+      "biweight_err": 30.4,
+      "welsch_err": 9.0,
+      "savgol_err": 20.2
+    },
+    {
+      "name": "Kepler-275 c",
+      "mission": "kepler",
+      "depth_ppm": 597.8,
+      "UMI_err": 46.0,
+      "biweight_err": 56.5,
+      "welsch_err": 38.1,
+      "savgol_err": 90.7
+    },
+    {
+      "name": "Kepler-275 b",
+      "mission": "kepler",
+      "depth_ppm": 271.8,
+      "UMI_err": 25.8,
+      "biweight_err": 4.9,
+      "welsch_err": 18.5,
+      "savgol_err": 63.2
+    },
+    {
+      "name": "Kepler-275 d",
+      "mission": "kepler",
+      "depth_ppm": 471.2,
+      "UMI_err": 91.3,
+      "biweight_err": null,
+      "welsch_err": 86.9,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-263 b",
+      "mission": "kepler",
+      "depth_ppm": 1331.4,
+      "UMI_err": 11.5,
+      "biweight_err": 31.4,
+      "welsch_err": 37.7,
+      "savgol_err": 61.5
+    },
+    {
+      "name": "Kepler-263 c",
+      "mission": "kepler",
+      "depth_ppm": 931.5,
+      "UMI_err": 8.1,
+      "biweight_err": 29.6,
+      "welsch_err": 22.0,
+      "savgol_err": 60.7
+    },
+    {
+      "name": "Kepler-264 b",
+      "mission": "kepler",
+      "depth_ppm": 313.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-48 c",
+      "mission": "kepler",
+      "depth_ppm": 952.7,
+      "UMI_err": 14.7,
+      "biweight_err": 25.2,
+      "welsch_err": 16.8,
+      "savgol_err": 46.5
+    },
+    {
+      "name": "Kepler-276 b",
+      "mission": "kepler",
+      "depth_ppm": 628.7,
+      "UMI_err": 1.0,
+      "biweight_err": 25.4,
+      "welsch_err": 9.4,
+      "savgol_err": 61.3
+    },
+    {
+      "name": "Kepler-276 d",
+      "mission": "kepler",
+      "depth_ppm": 641.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-788 b",
+      "mission": "kepler",
+      "depth_ppm": 340.1,
+      "UMI_err": 43.7,
+      "biweight_err": 49.1,
+      "welsch_err": 61.0,
+      "savgol_err": 94.5
+    },
+    {
+      "name": "Kepler-789 b",
+      "mission": "kepler",
+      "depth_ppm": 395.9,
+      "UMI_err": 43.2,
+      "biweight_err": 77.4,
+      "welsch_err": 57.9,
+      "savgol_err": 91.6
+    },
+    {
+      "name": "Kepler-264 c",
+      "mission": "kepler",
+      "depth_ppm": 266.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-746 b",
+      "mission": "kepler",
+      "depth_ppm": 135.2,
+      "UMI_err": 69.5,
+      "biweight_err": 67.8,
+      "welsch_err": 76.6,
+      "savgol_err": 78.0
+    },
+    {
+      "name": "Kepler-747 b",
+      "mission": "kepler",
+      "depth_ppm": 4634.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-748 b",
+      "mission": "kepler",
+      "depth_ppm": 442.0,
+      "UMI_err": 78.1,
+      "biweight_err": 70.9,
+      "welsch_err": 72.1,
+      "savgol_err": 75.7
+    },
+    {
+      "name": "Kepler-88 b",
+      "mission": "kepler",
+      "depth_ppm": 1479.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": 99.2
+    },
+    {
+      "name": "Kepler-48 d",
+      "mission": "kepler",
+      "depth_ppm": 555.3,
+      "UMI_err": 22.6,
+      "biweight_err": 43.4,
+      "welsch_err": 39.3,
+      "savgol_err": 45.2
+    },
+    {
+      "name": "Kepler-736 b",
+      "mission": "kepler",
+      "depth_ppm": 777.7,
+      "UMI_err": 18.8,
+      "biweight_err": 21.6,
+      "welsch_err": 23.8,
+      "savgol_err": 42.0
+    },
+    {
+      "name": "Kepler-473 b",
+      "mission": "kepler",
+      "depth_ppm": 956.9,
+      "UMI_err": 47.2,
+      "biweight_err": 56.8,
+      "welsch_err": 94.2,
+      "savgol_err": 88.9
+    },
+    {
+      "name": "Kepler-752 b",
+      "mission": "kepler",
+      "depth_ppm": 1006.2,
+      "UMI_err": 38.2,
+      "biweight_err": 46.3,
+      "welsch_err": 40.1,
+      "savgol_err": 79.8
+    },
+    {
+      "name": "Kepler-753 b",
+      "mission": "kepler",
+      "depth_ppm": 820.1,
+      "UMI_err": 5.4,
+      "biweight_err": 4.2,
+      "welsch_err": 1.8,
+      "savgol_err": 23.9
+    },
+    {
+      "name": "Kepler-418 b",
+      "mission": "kepler",
+      "depth_ppm": 8244.1,
+      "UMI_err": 66.9,
+      "biweight_err": 92.4,
+      "welsch_err": 96.2,
+      "savgol_err": 92.9
+    },
+    {
+      "name": "Kepler-418 c",
+      "mission": "kepler",
+      "depth_ppm": 1843.4,
+      "UMI_err": 11.8,
+      "biweight_err": 19.0,
+      "welsch_err": 12.7,
+      "savgol_err": 42.1
+    },
+    {
+      "name": "Kepler-13 b",
+      "mission": "kepler",
+      "depth_ppm": 4590.6,
+      "UMI_err": 6.1,
+      "biweight_err": 6.2,
+      "welsch_err": 6.2,
+      "savgol_err": 35.4
+    },
+    {
+      "name": "Kepler-1732 b",
+      "mission": "kepler",
+      "depth_ppm": 677.8,
+      "UMI_err": 1.1,
+      "biweight_err": 32.5,
+      "welsch_err": 32.1,
+      "savgol_err": 77.0
+    },
+    {
+      "name": "Kepler-1733 b",
+      "mission": "kepler",
+      "depth_ppm": 492.1,
+      "UMI_err": 13.3,
+      "biweight_err": 30.3,
+      "welsch_err": 32.6,
+      "savgol_err": 67.3
+    },
+    {
+      "name": "Kepler-754 b",
+      "mission": "kepler",
+      "depth_ppm": 290.6,
+      "UMI_err": 17.1,
+      "biweight_err": 26.4,
+      "welsch_err": 30.5,
+      "savgol_err": 73.8
+    },
+    {
+      "name": "Kepler-472 b",
+      "mission": "kepler",
+      "depth_ppm": 1360.1,
+      "UMI_err": 13.5,
+      "biweight_err": 22.4,
+      "welsch_err": 13.7,
+      "savgol_err": 49.5
+    },
+    {
+      "name": "Kepler-766 b",
+      "mission": "kepler",
+      "depth_ppm": 766.6,
+      "UMI_err": 24.7,
+      "biweight_err": 37.5,
+      "welsch_err": 38.5,
+      "savgol_err": 66.6
+    },
+    {
+      "name": "Kepler-112 b",
+      "mission": "kepler",
+      "depth_ppm": 798.9,
+      "UMI_err": 18.4,
+      "biweight_err": 25.0,
+      "welsch_err": 16.6,
+      "savgol_err": 63.7
+    },
+    {
+      "name": "Kepler-1731 b",
+      "mission": "kepler",
+      "depth_ppm": 1300.7,
+      "UMI_err": 30.3,
+      "biweight_err": 67.8,
+      "welsch_err": 64.6,
+      "savgol_err": 68.4
+    },
+    {
+      "name": "Kepler-767 b",
+      "mission": "kepler",
+      "depth_ppm": 4653.6,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-768 b",
+      "mission": "kepler",
+      "depth_ppm": 448.6,
+      "UMI_err": 68.6,
+      "biweight_err": 36.6,
+      "welsch_err": 55.6,
+      "savgol_err": 3.1
+    },
+    {
+      "name": "Kepler-24 c",
+      "mission": "kepler",
+      "depth_ppm": 536.4,
+      "UMI_err": 47.2,
+      "biweight_err": 54.7,
+      "welsch_err": 71.1,
+      "savgol_err": 85.5
+    },
+    {
+      "name": "Kepler-280 b",
+      "mission": "kepler",
+      "depth_ppm": 266.1,
+      "UMI_err": 15.3,
+      "biweight_err": 23.0,
+      "welsch_err": 24.2,
+      "savgol_err": 44.8
+    },
+    {
+      "name": "Kepler-280 c",
+      "mission": "kepler",
+      "depth_ppm": 450.5,
+      "UMI_err": 29.4,
+      "biweight_err": 28.2,
+      "welsch_err": 29.6,
+      "savgol_err": 35.7
+    },
+    {
+      "name": "Kepler-476 b",
+      "mission": "kepler",
+      "depth_ppm": 716.4,
+      "UMI_err": 20.2,
+      "biweight_err": 39.1,
+      "welsch_err": 24.0,
+      "savgol_err": 74.0
+    },
+    {
+      "name": "Kepler-5 b",
+      "mission": "kepler",
+      "depth_ppm": 7251.5,
+      "UMI_err": 11.4,
+      "biweight_err": 12.3,
+      "welsch_err": 10.7,
+      "savgol_err": 70.5
+    },
+    {
+      "name": "Kepler-816 b",
+      "mission": "kepler",
+      "depth_ppm": 13355.5,
+      "UMI_err": 14.1,
+      "biweight_err": 14.2,
+      "welsch_err": 13.7,
+      "savgol_err": 25.6
+    },
+    {
+      "name": "Kepler-817 b",
+      "mission": "kepler",
+      "depth_ppm": 6154.9,
+      "UMI_err": 15.7,
+      "biweight_err": 16.1,
+      "welsch_err": 16.4,
+      "savgol_err": 20.7
+    },
+    {
+      "name": "Kepler-818 b",
+      "mission": "kepler",
+      "depth_ppm": 2829.7,
+      "UMI_err": 14.4,
+      "biweight_err": 15.5,
+      "welsch_err": 14.0,
+      "savgol_err": 55.9
+    },
+    {
+      "name": "Kepler-819 b",
+      "mission": "kepler",
+      "depth_ppm": 1112.5,
+      "UMI_err": 38.3,
+      "biweight_err": 45.3,
+      "welsch_err": 50.0,
+      "savgol_err": 78.8
+    },
+    {
+      "name": "Kepler-288 c",
+      "mission": "kepler",
+      "depth_ppm": 709.1,
+      "UMI_err": 15.4,
+      "biweight_err": 38.9,
+      "welsch_err": 40.6,
+      "savgol_err": 73.9
+    },
+    {
+      "name": "Kepler-288 b",
+      "mission": "kepler",
+      "depth_ppm": 217.6,
+      "UMI_err": 8.3,
+      "biweight_err": 9.7,
+      "welsch_err": 6.1,
+      "savgol_err": 59.6
+    },
+    {
+      "name": "Kepler-288 d",
+      "mission": "kepler",
+      "depth_ppm": 589.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-803 b",
+      "mission": "kepler",
+      "depth_ppm": 1119.3,
+      "UMI_err": 11.8,
+      "biweight_err": 52.4,
+      "welsch_err": 46.1,
+      "savgol_err": 85.6
+    },
+    {
+      "name": "Kepler-820 b",
+      "mission": "kepler",
+      "depth_ppm": 1829.9,
+      "UMI_err": 76.8,
+      "biweight_err": 93.7,
+      "welsch_err": 95.2,
+      "savgol_err": 91.9
+    },
+    {
+      "name": "Kepler-58 b",
+      "mission": "kepler",
+      "depth_ppm": 445.3,
+      "UMI_err": 25.3,
+      "biweight_err": 18.1,
+      "welsch_err": 16.6,
+      "savgol_err": 31.2
+    },
+    {
+      "name": "Kepler-58 c",
+      "mission": "kepler",
+      "depth_ppm": 468.1,
+      "UMI_err": 74.8,
+      "biweight_err": 74.3,
+      "welsch_err": 74.1,
+      "savgol_err": 93.0
+    },
+    {
+      "name": "Kepler-58 d",
+      "mission": "kepler",
+      "depth_ppm": 550.0,
+      "UMI_err": 70.6,
+      "biweight_err": 59.7,
+      "welsch_err": 58.8,
+      "savgol_err": 88.5
+    },
+    {
+      "name": "Kepler-58 e",
+      "mission": "kepler",
+      "depth_ppm": 188.1,
+      "UMI_err": 83.8,
+      "biweight_err": 98.2,
+      "welsch_err": 84.3,
+      "savgol_err": 53.4
+    },
+    {
+      "name": "Kepler-479 b",
+      "mission": "kepler",
+      "depth_ppm": 715.7,
+      "UMI_err": 18.1,
+      "biweight_err": 19.6,
+      "welsch_err": 18.0,
+      "savgol_err": 43.0
+    },
+    {
+      "name": "Kepler-790 b",
+      "mission": "kepler",
+      "depth_ppm": 746.4,
+      "UMI_err": 57.4,
+      "biweight_err": 57.2,
+      "welsch_err": 56.1,
+      "savgol_err": 53.4
+    },
+    {
+      "name": "Kepler-791 b",
+      "mission": "kepler",
+      "depth_ppm": 319.7,
+      "UMI_err": 36.9,
+      "biweight_err": 46.5,
+      "welsch_err": 50.6,
+      "savgol_err": 81.5
+    },
+    {
+      "name": "Kepler-821 b",
+      "mission": "kepler",
+      "depth_ppm": 259.7,
+      "UMI_err": 35.1,
+      "biweight_err": 33.2,
+      "welsch_err": 41.7,
+      "savgol_err": 65.7
+    },
+    {
+      "name": "Kepler-822 b",
+      "mission": "kepler",
+      "depth_ppm": 232.7,
+      "UMI_err": 19.2,
+      "biweight_err": 17.9,
+      "welsch_err": 30.4,
+      "savgol_err": 32.2
+    },
+    {
+      "name": "Kepler-823 b",
+      "mission": "kepler",
+      "depth_ppm": 263.0,
+      "UMI_err": 22.2,
+      "biweight_err": 25.5,
+      "welsch_err": 42.5,
+      "savgol_err": 49.7
+    },
+    {
+      "name": "Kepler-833 b",
+      "mission": "kepler",
+      "depth_ppm": 995.3,
+      "UMI_err": 29.6,
+      "biweight_err": 33.8,
+      "welsch_err": 34.1,
+      "savgol_err": 55.7
+    },
+    {
+      "name": "Kepler-792 b",
+      "mission": "kepler",
+      "depth_ppm": 277.1,
+      "UMI_err": 69.6,
+      "biweight_err": 61.1,
+      "welsch_err": 74.9,
+      "savgol_err": 91.5
+    },
+    {
+      "name": "Kepler-793 b",
+      "mission": "kepler",
+      "depth_ppm": 188.1,
+      "UMI_err": 5.7,
+      "biweight_err": 16.7,
+      "welsch_err": 22.1,
+      "savgol_err": 36.7
+    },
+    {
+      "name": "Kepler-277 b",
+      "mission": "kepler",
+      "depth_ppm": 241.3,
+      "UMI_err": 39.1,
+      "biweight_err": 54.1,
+      "welsch_err": 59.1,
+      "savgol_err": 80.8
+    },
+    {
+      "name": "Kepler-824 b",
+      "mission": "kepler",
+      "depth_ppm": 230.7,
+      "UMI_err": 65.6,
+      "biweight_err": 72.5,
+      "welsch_err": 90.5,
+      "savgol_err": 37.5
+    },
+    {
+      "name": "Kepler-825 b",
+      "mission": "kepler",
+      "depth_ppm": 176.0,
+      "UMI_err": 32.4,
+      "biweight_err": 54.5,
+      "welsch_err": 51.8,
+      "savgol_err": 59.3
+    },
+    {
+      "name": "Kepler-825 c",
+      "mission": "kepler",
+      "depth_ppm": 299.6,
+      "UMI_err": 95.0,
+      "biweight_err": 94.5,
+      "welsch_err": 86.9,
+      "savgol_err": 93.2
+    },
+    {
+      "name": "Kepler-835 b",
+      "mission": "kepler",
+      "depth_ppm": 509.2,
+      "UMI_err": 51.7,
+      "biweight_err": 50.8,
+      "welsch_err": 61.0,
+      "savgol_err": 66.9
+    },
+    {
+      "name": "Kepler-277 c",
+      "mission": "kepler",
+      "depth_ppm": 278.1,
+      "UMI_err": 51.5,
+      "biweight_err": 59.3,
+      "welsch_err": 77.2,
+      "savgol_err": 81.5
+    },
+    {
+      "name": "Kepler-794 b",
+      "mission": "kepler",
+      "depth_ppm": 211.2,
+      "UMI_err": 31.3,
+      "biweight_err": 36.8,
+      "welsch_err": 38.5,
+      "savgol_err": 59.8
+    },
+    {
+      "name": "Kepler-795 b",
+      "mission": "kepler",
+      "depth_ppm": 314.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-826 b",
+      "mission": "kepler",
+      "depth_ppm": 112.0,
+      "UMI_err": 14.9,
+      "biweight_err": 19.4,
+      "welsch_err": 12.3,
+      "savgol_err": 38.9
+    },
+    {
+      "name": "Kepler-796 b",
+      "mission": "kepler",
+      "depth_ppm": 133.6,
+      "UMI_err": 17.6,
+      "biweight_err": 22.8,
+      "welsch_err": 1.9,
+      "savgol_err": 10.5
+    },
+    {
+      "name": "Kepler-278 b",
+      "mission": "kepler",
+      "depth_ppm": 175.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-278 c",
+      "mission": "kepler",
+      "depth_ppm": 141.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-289 c",
+      "mission": "kepler",
+      "depth_ppm": 12389.5,
+      "UMI_err": 64.1,
+      "biweight_err": 86.9,
+      "welsch_err": 99.4,
+      "savgol_err": 7.5
+    },
+    {
+      "name": "Kepler-289 b",
+      "mission": "kepler",
+      "depth_ppm": 429.8,
+      "UMI_err": 51.4,
+      "biweight_err": 48.5,
+      "welsch_err": 97.7,
+      "savgol_err": 45.3
+    },
+    {
+      "name": "Kepler-6 b",
+      "mission": "kepler",
+      "depth_ppm": 10558.7,
+      "UMI_err": 9.6,
+      "biweight_err": 9.6,
+      "welsch_err": 9.3,
+      "savgol_err": 46.1
+    },
+    {
+      "name": "Kepler-475 b",
+      "mission": "kepler",
+      "depth_ppm": 904.6,
+      "UMI_err": 17.4,
+      "biweight_err": 18.6,
+      "welsch_err": 17.5,
+      "savgol_err": 22.7
+    },
+    {
+      "name": "Kepler-1758 b",
+      "mission": "kepler",
+      "depth_ppm": 252.9,
+      "UMI_err": 23.3,
+      "biweight_err": 41.0,
+      "welsch_err": 36.7,
+      "savgol_err": 42.5
+    },
+    {
+      "name": "Kepler-904 b",
+      "mission": "kepler",
+      "depth_ppm": 171.9,
+      "UMI_err": 51.0,
+      "biweight_err": 37.3,
+      "welsch_err": 39.4,
+      "savgol_err": 41.8
+    },
+    {
+      "name": "Kepler-304 b",
+      "mission": "kepler",
+      "depth_ppm": 1745.7,
+      "UMI_err": 15.1,
+      "biweight_err": 15.3,
+      "welsch_err": 15.5,
+      "savgol_err": 17.4
+    },
+    {
+      "name": "Kepler-304 d",
+      "mission": "kepler",
+      "depth_ppm": 1308.6,
+      "UMI_err": 26.5,
+      "biweight_err": 21.6,
+      "welsch_err": 18.7,
+      "savgol_err": 49.6
+    },
+    {
+      "name": "Kepler-304 c",
+      "mission": "kepler",
+      "depth_ppm": 965.9,
+      "UMI_err": 31.6,
+      "biweight_err": 54.5,
+      "welsch_err": 50.2,
+      "savgol_err": 49.6
+    },
+    {
+      "name": "Kepler-304 e",
+      "mission": "kepler",
+      "depth_ppm": 258.9,
+      "UMI_err": 41.4,
+      "biweight_err": 45.8,
+      "welsch_err": 51.6,
+      "savgol_err": 56.9
+    },
+    {
+      "name": "Kepler-906 b",
+      "mission": "kepler",
+      "depth_ppm": 440.8,
+      "UMI_err": 9.8,
+      "biweight_err": 45.5,
+      "welsch_err": 35.2,
+      "savgol_err": 88.0
+    },
+    {
+      "name": "Kepler-427 b",
+      "mission": "kepler",
+      "depth_ppm": 9655.7,
+      "UMI_err": 10.1,
+      "biweight_err": 9.7,
+      "welsch_err": 9.7,
+      "savgol_err": 10.5
+    },
+    {
+      "name": "Kepler-863 b",
+      "mission": "kepler",
+      "depth_ppm": 867.7,
+      "UMI_err": 40.7,
+      "biweight_err": 49.4,
+      "welsch_err": 45.3,
+      "savgol_err": 82.0
+    },
+    {
+      "name": "Kepler-408 b",
+      "mission": "kepler",
+      "depth_ppm": 30.7,
+      "UMI_err": 23.9,
+      "biweight_err": 25.9,
+      "welsch_err": 27.2,
+      "savgol_err": 43.6
+    },
+    {
+      "name": "Kepler-425 b",
+      "mission": "kepler",
+      "depth_ppm": 14431.2,
+      "UMI_err": 12.9,
+      "biweight_err": 13.1,
+      "welsch_err": 13.0,
+      "savgol_err": 13.2
+    },
+    {
+      "name": "Kepler-908 b",
+      "mission": "kepler",
+      "depth_ppm": 107.5,
+      "UMI_err": null,
+      "biweight_err": 32.6,
+      "welsch_err": 57.2,
+      "savgol_err": 55.7
+    },
+    {
+      "name": "Kepler-305 b",
+      "mission": "kepler",
+      "depth_ppm": 1328.6,
+      "UMI_err": 42.5,
+      "biweight_err": 38.8,
+      "welsch_err": 41.5,
+      "savgol_err": 57.3
+    },
+    {
+      "name": "Kepler-305 c",
+      "mission": "kepler",
+      "depth_ppm": 1033.9,
+      "UMI_err": 55.9,
+      "biweight_err": 58.7,
+      "welsch_err": 63.4,
+      "savgol_err": 98.1
+    },
+    {
+      "name": "Kepler-305 e",
+      "mission": "kepler",
+      "depth_ppm": 453.6,
+      "UMI_err": 22.1,
+      "biweight_err": 10.9,
+      "welsch_err": 8.2,
+      "savgol_err": 4.8
+    },
+    {
+      "name": "Kepler-305 d",
+      "mission": "kepler",
+      "depth_ppm": 996.8,
+      "UMI_err": 71.4,
+      "biweight_err": 72.7,
+      "welsch_err": 58.4,
+      "savgol_err": 82.1
+    },
+    {
+      "name": "Kepler-910 b",
+      "mission": "kepler",
+      "depth_ppm": 28.4,
+      "UMI_err": 41.0,
+      "biweight_err": 40.4,
+      "welsch_err": 42.5,
+      "savgol_err": 69.9
+    },
+    {
+      "name": "Kepler-911 b",
+      "mission": "kepler",
+      "depth_ppm": 164.6,
+      "UMI_err": 74.7,
+      "biweight_err": 71.0,
+      "welsch_err": 80.4,
+      "savgol_err": 94.9
+    },
+    {
+      "name": "Kepler-867 b",
+      "mission": "kepler",
+      "depth_ppm": 2378.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-891 b",
+      "mission": "kepler",
+      "depth_ppm": 3437.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-306 c",
+      "mission": "kepler",
+      "depth_ppm": 864.9,
+      "UMI_err": 63.5,
+      "biweight_err": 64.1,
+      "welsch_err": 66.1,
+      "savgol_err": 85.3
+    },
+    {
+      "name": "Kepler-306 b",
+      "mission": "kepler",
+      "depth_ppm": 446.5,
+      "UMI_err": 35.2,
+      "biweight_err": 40.0,
+      "welsch_err": 45.9,
+      "savgol_err": 71.6
+    },
+    {
+      "name": "Kepler-312 c",
+      "mission": "kepler",
+      "depth_ppm": 480.7,
+      "UMI_err": 36.0,
+      "biweight_err": 69.5,
+      "welsch_err": 82.2,
+      "savgol_err": 58.0
+    },
+    {
+      "name": "Kepler-1671 b",
+      "mission": "kepler",
+      "depth_ppm": 168.1,
+      "UMI_err": 37.9,
+      "biweight_err": 38.2,
+      "welsch_err": 39.3,
+      "savgol_err": 42.2
+    },
+    {
+      "name": "Kepler-948 b",
+      "mission": "kepler",
+      "depth_ppm": 217.8,
+      "UMI_err": 6.3,
+      "biweight_err": 13.8,
+      "welsch_err": 17.9,
+      "savgol_err": 48.7
+    },
+    {
+      "name": "Kepler-871 b",
+      "mission": "kepler",
+      "depth_ppm": 804.8,
+      "UMI_err": 33.8,
+      "biweight_err": 42.8,
+      "welsch_err": 42.0,
+      "savgol_err": 80.5
+    },
+    {
+      "name": "Kepler-306 d",
+      "mission": "kepler",
+      "depth_ppm": 800.0,
+      "UMI_err": 63.4,
+      "biweight_err": 59.9,
+      "welsch_err": 60.3,
+      "savgol_err": 64.7
+    },
+    {
+      "name": "Kepler-306 e",
+      "mission": "kepler",
+      "depth_ppm": 1051.6,
+      "UMI_err": 42.6,
+      "biweight_err": 58.6,
+      "welsch_err": 63.3,
+      "savgol_err": 79.2
+    },
+    {
+      "name": "Kepler-422 b",
+      "mission": "kepler",
+      "depth_ppm": 10344.6,
+      "UMI_err": 10.6,
+      "biweight_err": 10.3,
+      "welsch_err": 9.8,
+      "savgol_err": 60.2
+    },
+    {
+      "name": "Kepler-1755 b",
+      "mission": "kepler",
+      "depth_ppm": 2090.8,
+      "UMI_err": 76.4,
+      "biweight_err": 81.6,
+      "welsch_err": 76.3,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-873 b",
+      "mission": "kepler",
+      "depth_ppm": 678.3,
+      "UMI_err": 43.4,
+      "biweight_err": 49.5,
+      "welsch_err": 49.7,
+      "savgol_err": 72.9
+    },
+    {
+      "name": "Kepler-307 b",
+      "mission": "kepler",
+      "depth_ppm": 825.3,
+      "UMI_err": 13.4,
+      "biweight_err": 20.0,
+      "welsch_err": 11.2,
+      "savgol_err": 48.0
+    },
+    {
+      "name": "Kepler-317 b",
+      "mission": "kepler",
+      "depth_ppm": 491.0,
+      "UMI_err": 71.8,
+      "biweight_err": 72.8,
+      "welsch_err": 77.9,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-317 c",
+      "mission": "kepler",
+      "depth_ppm": 351.9,
+      "UMI_err": 34.3,
+      "biweight_err": 37.3,
+      "welsch_err": 23.4,
+      "savgol_err": 45.5
+    },
+    {
+      "name": "Kepler-307 c",
+      "mission": "kepler",
+      "depth_ppm": 662.0,
+      "UMI_err": 3.7,
+      "biweight_err": 16.6,
+      "welsch_err": 16.4,
+      "savgol_err": 51.1
+    },
+    {
+      "name": "Kepler-895 b",
+      "mission": "kepler",
+      "depth_ppm": 599.6,
+      "UMI_err": 23.4,
+      "biweight_err": 23.9,
+      "welsch_err": 33.9,
+      "savgol_err": 32.6
+    },
+    {
+      "name": "Kepler-897 b",
+      "mission": "kepler",
+      "depth_ppm": 486.0,
+      "UMI_err": 46.3,
+      "biweight_err": 49.9,
+      "welsch_err": 48.5,
+      "savgol_err": 79.3
+    },
+    {
+      "name": "Kepler-487 b",
+      "mission": "kepler",
+      "depth_ppm": 14638.1,
+      "UMI_err": 10.8,
+      "biweight_err": 10.9,
+      "welsch_err": 10.2,
+      "savgol_err": 14.5
+    },
+    {
+      "name": "Kepler-1762 b",
+      "mission": "kepler",
+      "depth_ppm": 403.3,
+      "UMI_err": 17.9,
+      "biweight_err": 39.6,
+      "welsch_err": 41.3,
+      "savgol_err": 74.1
+    },
+    {
+      "name": "Kepler-882 b",
+      "mission": "kepler",
+      "depth_ppm": 190.0,
+      "UMI_err": 43.5,
+      "biweight_err": 46.9,
+      "welsch_err": 45.1,
+      "savgol_err": 62.8
+    },
+    {
+      "name": "Kepler-899 b",
+      "mission": "kepler",
+      "depth_ppm": 752.8,
+      "UMI_err": 83.4,
+      "biweight_err": 81.3,
+      "welsch_err": 76.2,
+      "savgol_err": 95.7
+    },
+    {
+      "name": "Kepler-901 b",
+      "mission": "kepler",
+      "depth_ppm": 532.8,
+      "UMI_err": 50.4,
+      "biweight_err": 49.2,
+      "welsch_err": 47.8,
+      "savgol_err": 48.7
+    },
+    {
+      "name": "Kepler-923 b",
+      "mission": "kepler",
+      "depth_ppm": 119.6,
+      "UMI_err": 57.3,
+      "biweight_err": 76.9,
+      "welsch_err": 81.6,
+      "savgol_err": 89.5
+    },
+    {
+      "name": "Kepler-924 b",
+      "mission": "kepler",
+      "depth_ppm": 437.5,
+      "UMI_err": 66.5,
+      "biweight_err": 71.5,
+      "welsch_err": 72.5,
+      "savgol_err": 84.8
+    },
+    {
+      "name": "Kepler-925 b",
+      "mission": "kepler",
+      "depth_ppm": 894.8,
+      "UMI_err": 52.3,
+      "biweight_err": 49.4,
+      "welsch_err": 57.1,
+      "savgol_err": 66.8
+    },
+    {
+      "name": "Kepler-887 b",
+      "mission": "kepler",
+      "depth_ppm": 189.3,
+      "UMI_err": 29.4,
+      "biweight_err": 55.6,
+      "welsch_err": 51.1,
+      "savgol_err": 93.1
+    },
+    {
+      "name": "Kepler-84 b",
+      "mission": "kepler",
+      "depth_ppm": 446.7,
+      "UMI_err": 76.7,
+      "biweight_err": 77.8,
+      "welsch_err": 75.7,
+      "savgol_err": 78.3
+    },
+    {
+      "name": "Kepler-84 c",
+      "mission": "kepler",
+      "depth_ppm": 460.5,
+      "UMI_err": 81.8,
+      "biweight_err": 88.9,
+      "welsch_err": 86.1,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-84 e",
+      "mission": "kepler",
+      "depth_ppm": 472.6,
+      "UMI_err": 58.1,
+      "biweight_err": 14.0,
+      "welsch_err": 30.0,
+      "savgol_err": 37.2
+    },
+    {
+      "name": "Kepler-84 d",
+      "mission": "kepler",
+      "depth_ppm": 159.1,
+      "UMI_err": 17.0,
+      "biweight_err": 4.1,
+      "welsch_err": 12.3,
+      "savgol_err": 71.6
+    },
+    {
+      "name": "Kepler-84 f",
+      "mission": "kepler",
+      "depth_ppm": 362.1,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-926 b",
+      "mission": "kepler",
+      "depth_ppm": 558.3,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-487 d",
+      "mission": "kepler",
+      "depth_ppm": 665.4,
+      "UMI_err": 28.3,
+      "biweight_err": 38.4,
+      "welsch_err": 37.4,
+      "savgol_err": 50.9
+    },
+    {
+      "name": "Kepler-927 b",
+      "mission": "kepler",
+      "depth_ppm": 268.3,
+      "UMI_err": 7.8,
+      "biweight_err": 51.9,
+      "welsch_err": 59.4,
+      "savgol_err": 63.5
+    },
+    {
+      "name": "Kepler-887 c",
+      "mission": "kepler",
+      "depth_ppm": 71.7,
+      "UMI_err": 8.9,
+      "biweight_err": 14.1,
+      "welsch_err": 19.4,
+      "savgol_err": 34.2
+    },
+    {
+      "name": "Kepler-1756 b",
+      "mission": "kepler",
+      "depth_ppm": 266.9,
+      "UMI_err": 13.6,
+      "biweight_err": 20.3,
+      "welsch_err": 20.6,
+      "savgol_err": 33.6
+    },
+    {
+      "name": "Kepler-1764 b",
+      "mission": "kepler",
+      "depth_ppm": 922.4,
+      "UMI_err": 22.3,
+      "biweight_err": 53.6,
+      "welsch_err": 53.1,
+      "savgol_err": 84.4
+    },
+    {
+      "name": "Kepler-928 b",
+      "mission": "kepler",
+      "depth_ppm": 455.5,
+      "UMI_err": 46.4,
+      "biweight_err": 39.0,
+      "welsch_err": 45.2,
+      "savgol_err": 56.8
+    },
+    {
+      "name": "Kepler-419 b",
+      "mission": "kepler",
+      "depth_ppm": 4491.2,
+      "UMI_err": 11.8,
+      "biweight_err": 11.6,
+      "welsch_err": 11.6,
+      "savgol_err": 11.7
+    },
+    {
+      "name": "Kepler-1669 c",
+      "mission": "kepler",
+      "depth_ppm": 728.5,
+      "UMI_err": 46.1,
+      "biweight_err": 45.3,
+      "welsch_err": 37.6,
+      "savgol_err": 64.9
+    },
+    {
+      "name": "Kepler-1669 b",
+      "mission": "kepler",
+      "depth_ppm": 1169.4,
+      "UMI_err": 30.5,
+      "biweight_err": 35.7,
+      "welsch_err": 21.4,
+      "savgol_err": 57.3
+    },
+    {
+      "name": "Kepler-1669 d",
+      "mission": "kepler",
+      "depth_ppm": 434.3,
+      "UMI_err": 93.5,
+      "biweight_err": 64.7,
+      "welsch_err": 75.9,
+      "savgol_err": 73.5
+    },
+    {
+      "name": "Kepler-3 b",
+      "mission": "kepler",
+      "depth_ppm": 4315.8,
+      "UMI_err": 12.8,
+      "biweight_err": 12.3,
+      "welsch_err": 12.4,
+      "savgol_err": 26.8
+    },
+    {
+      "name": "Kepler-12 b",
+      "mission": "kepler",
+      "depth_ppm": 16387.6,
+      "UMI_err": 9.7,
+      "biweight_err": 11.9,
+      "welsch_err": 11.4,
+      "savgol_err": 54.0
+    },
+    {
+      "name": "Kepler-308 b",
+      "mission": "kepler",
+      "depth_ppm": 515.2,
+      "UMI_err": 65.7,
+      "biweight_err": 80.5,
+      "welsch_err": 43.3,
+      "savgol_err": 79.7
+    },
+    {
+      "name": "Kepler-308 c",
+      "mission": "kepler",
+      "depth_ppm": 550.5,
+      "UMI_err": 7.1,
+      "biweight_err": 33.8,
+      "welsch_err": 37.9,
+      "savgol_err": 66.9
+    },
+    {
+      "name": "Kepler-1752 b",
+      "mission": "kepler",
+      "depth_ppm": 2559.6,
+      "UMI_err": 46.2,
+      "biweight_err": 69.6,
+      "welsch_err": 47.5,
+      "savgol_err": 94.2
+    },
+    {
+      "name": "Kepler-858 b",
+      "mission": "kepler",
+      "depth_ppm": 2949.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1650 b",
+      "mission": "kepler",
+      "depth_ppm": 841.0,
+      "UMI_err": 33.3,
+      "biweight_err": 36.0,
+      "welsch_err": 35.5,
+      "savgol_err": 42.7
+    },
+    {
+      "name": "Kepler-1670 b",
+      "mission": "kepler",
+      "depth_ppm": 437.8,
+      "UMI_err": 37.0,
+      "biweight_err": 41.7,
+      "welsch_err": 51.8,
+      "savgol_err": 76.6
+    },
+    {
+      "name": "Kepler-932 b",
+      "mission": "kepler",
+      "depth_ppm": 278.7,
+      "UMI_err": 32.7,
+      "biweight_err": 32.8,
+      "welsch_err": 41.0,
+      "savgol_err": 48.0
+    },
+    {
+      "name": "Kepler-860 b",
+      "mission": "kepler",
+      "depth_ppm": 894.6,
+      "UMI_err": 22.6,
+      "biweight_err": 34.8,
+      "welsch_err": 31.9,
+      "savgol_err": 55.3
+    },
+    {
+      "name": "Kepler-1659 c",
+      "mission": "kepler",
+      "depth_ppm": 363.4,
+      "UMI_err": 53.3,
+      "biweight_err": 68.5,
+      "welsch_err": 66.9,
+      "savgol_err": 92.4
+    },
+    {
+      "name": "Kepler-903 b",
+      "mission": "kepler",
+      "depth_ppm": 273.1,
+      "UMI_err": 54.1,
+      "biweight_err": 69.4,
+      "welsch_err": 58.4,
+      "savgol_err": 88.3
+    },
+    {
+      "name": "Kepler-903 c",
+      "mission": "kepler",
+      "depth_ppm": 417.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-487 c",
+      "mission": "kepler",
+      "depth_ppm": 566.5,
+      "UMI_err": 30.6,
+      "biweight_err": 41.7,
+      "welsch_err": 43.1,
+      "savgol_err": 70.6
+    },
+    {
+      "name": "Kepler-890 b",
+      "mission": "kepler",
+      "depth_ppm": 5805.8,
+      "UMI_err": 11.4,
+      "biweight_err": 52.6,
+      "welsch_err": 49.6,
+      "savgol_err": 87.7
+    },
+    {
+      "name": "Kepler-341 e",
+      "mission": "kepler",
+      "depth_ppm": 334.0,
+      "UMI_err": 69.4,
+      "biweight_err": 66.0,
+      "welsch_err": 78.8,
+      "savgol_err": 95.6
+    },
+    {
+      "name": "Kepler-1063 b",
+      "mission": "kepler",
+      "depth_ppm": 169.5,
+      "UMI_err": 30.2,
+      "biweight_err": 38.9,
+      "welsch_err": 33.3,
+      "savgol_err": 49.3
+    },
+    {
+      "name": "Kepler-1064 b",
+      "mission": "kepler",
+      "depth_ppm": 370.0,
+      "UMI_err": 72.1,
+      "biweight_err": 73.8,
+      "welsch_err": 71.7,
+      "savgol_err": 88.9
+    },
+    {
+      "name": "Kepler-1065 b",
+      "mission": "kepler",
+      "depth_ppm": 1375.1,
+      "UMI_err": 22.7,
+      "biweight_err": 21.5,
+      "welsch_err": 23.6,
+      "savgol_err": 31.9
+    },
+    {
+      "name": "Kepler-964 b",
+      "mission": "kepler",
+      "depth_ppm": 690.6,
+      "UMI_err": 51.6,
+      "biweight_err": 32.7,
+      "welsch_err": 40.4,
+      "savgol_err": 64.2
+    },
+    {
+      "name": "Kepler-967 b",
+      "mission": "kepler",
+      "depth_ppm": 812.0,
+      "UMI_err": 14.1,
+      "biweight_err": 20.4,
+      "welsch_err": 32.8,
+      "savgol_err": 43.9
+    },
+    {
+      "name": "Kepler-331 b",
+      "mission": "kepler",
+      "depth_ppm": 1320.3,
+      "UMI_err": 51.5,
+      "biweight_err": 49.5,
+      "welsch_err": 50.1,
+      "savgol_err": 53.7
+    },
+    {
+      "name": "Kepler-331 c",
+      "mission": "kepler",
+      "depth_ppm": 1562.8,
+      "UMI_err": 70.9,
+      "biweight_err": 64.3,
+      "welsch_err": 67.8,
+      "savgol_err": 69.4
+    },
+    {
+      "name": "Kepler-331 d",
+      "mission": "kepler",
+      "depth_ppm": 1262.0,
+      "UMI_err": 27.4,
+      "biweight_err": 24.8,
+      "welsch_err": 42.0,
+      "savgol_err": 31.1
+    },
+    {
+      "name": "Kepler-1774 b",
+      "mission": "kepler",
+      "depth_ppm": 574.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1029 b",
+      "mission": "kepler",
+      "depth_ppm": 279.2,
+      "UMI_err": 48.3,
+      "biweight_err": 47.4,
+      "welsch_err": 52.1,
+      "savgol_err": 64.0
+    },
+    {
+      "name": "Kepler-1778 b",
+      "mission": "kepler",
+      "depth_ppm": 568.1,
+      "UMI_err": 13.0,
+      "biweight_err": 30.0,
+      "welsch_err": 27.1,
+      "savgol_err": 52.6
+    },
+    {
+      "name": "Kepler-433 b",
+      "mission": "kepler",
+      "depth_ppm": 4676.5,
+      "UMI_err": 12.9,
+      "biweight_err": 50.8,
+      "welsch_err": 45.0,
+      "savgol_err": 85.7
+    },
+    {
+      "name": "Kepler-1007 b",
+      "mission": "kepler",
+      "depth_ppm": 430.1,
+      "UMI_err": 48.3,
+      "biweight_err": 44.5,
+      "welsch_err": 40.8,
+      "savgol_err": 50.1
+    },
+    {
+      "name": "Kepler-1775 b",
+      "mission": "kepler",
+      "depth_ppm": 476.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1032 b",
+      "mission": "kepler",
+      "depth_ppm": 645.3,
+      "UMI_err": 18.9,
+      "biweight_err": 33.3,
+      "welsch_err": 32.9,
+      "savgol_err": 44.4
+    },
+    {
+      "name": "Kepler-1786 b",
+      "mission": "kepler",
+      "depth_ppm": 658.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-326 c",
+      "mission": "kepler",
+      "depth_ppm": 308.3,
+      "UMI_err": 45.5,
+      "biweight_err": 30.4,
+      "welsch_err": 46.2,
+      "savgol_err": 31.3
+    },
+    {
+      "name": "Kepler-326 b",
+      "mission": "kepler",
+      "depth_ppm": 263.2,
+      "UMI_err": 43.5,
+      "biweight_err": 51.7,
+      "welsch_err": 59.9,
+      "savgol_err": 48.9
+    },
+    {
+      "name": "Kepler-326 d",
+      "mission": "kepler",
+      "depth_ppm": 249.3,
+      "UMI_err": 58.4,
+      "biweight_err": 46.3,
+      "welsch_err": 49.1,
+      "savgol_err": 47.9
+    },
+    {
+      "name": "Kepler-970 b",
+      "mission": "kepler",
+      "depth_ppm": 1147.0,
+      "UMI_err": 28.2,
+      "biweight_err": 27.5,
+      "welsch_err": 47.9,
+      "savgol_err": 28.0
+    },
+    {
+      "name": "Kepler-1034 b",
+      "mission": "kepler",
+      "depth_ppm": 788.4,
+      "UMI_err": 20.9,
+      "biweight_err": 27.1,
+      "welsch_err": 17.6,
+      "savgol_err": 51.3
+    },
+    {
+      "name": "Kepler-345 c",
+      "mission": "kepler",
+      "depth_ppm": 384.6,
+      "UMI_err": 30.4,
+      "biweight_err": 37.9,
+      "welsch_err": 39.3,
+      "savgol_err": 45.8
+    },
+    {
+      "name": "Kepler-345 b",
+      "mission": "kepler",
+      "depth_ppm": 150.4,
+      "UMI_err": 38.8,
+      "biweight_err": 50.5,
+      "welsch_err": 63.6,
+      "savgol_err": 61.0
+    },
+    {
+      "name": "Kepler-74 b",
+      "mission": "kepler",
+      "depth_ppm": 8510.5,
+      "UMI_err": 9.7,
+      "biweight_err": 9.8,
+      "welsch_err": 9.8,
+      "savgol_err": 13.1
+    },
+    {
+      "name": "Kepler-333 b",
+      "mission": "kepler",
+      "depth_ppm": 494.1,
+      "UMI_err": 61.4,
+      "biweight_err": 61.4,
+      "welsch_err": 67.7,
+      "savgol_err": 74.8
+    },
+    {
+      "name": "Kepler-493 b",
+      "mission": "kepler",
+      "depth_ppm": 8538.0,
+      "UMI_err": 22.9,
+      "biweight_err": 29.2,
+      "welsch_err": 23.1,
+      "savgol_err": 36.2
+    },
+    {
+      "name": "Kepler-333 c",
+      "mission": "kepler",
+      "depth_ppm": 387.2,
+      "UMI_err": 55.1,
+      "biweight_err": 69.4,
+      "welsch_err": 74.2,
+      "savgol_err": 72.2
+    },
+    {
+      "name": "Kepler-346 b",
+      "mission": "kepler",
+      "depth_ppm": 695.1,
+      "UMI_err": 25.0,
+      "biweight_err": 32.8,
+      "welsch_err": 27.7,
+      "savgol_err": 48.7
+    },
+    {
+      "name": "Kepler-346 c",
+      "mission": "kepler",
+      "depth_ppm": 833.7,
+      "UMI_err": 47.6,
+      "biweight_err": 54.4,
+      "welsch_err": 54.7,
+      "savgol_err": 66.0
+    },
+    {
+      "name": "Kepler-1077 b",
+      "mission": "kepler",
+      "depth_ppm": 599.4,
+      "UMI_err": 34.9,
+      "biweight_err": 39.5,
+      "welsch_err": 38.8,
+      "savgol_err": 58.0
+    },
+    {
+      "name": "Kepler-495 b",
+      "mission": "kepler",
+      "depth_ppm": 3868.7,
+      "UMI_err": 12.2,
+      "biweight_err": 10.9,
+      "welsch_err": 10.4,
+      "savgol_err": 34.2
+    },
+    {
+      "name": "Kepler-975 b",
+      "mission": "kepler",
+      "depth_ppm": 403.2,
+      "UMI_err": 9.8,
+      "biweight_err": 14.3,
+      "welsch_err": 10.3,
+      "savgol_err": 44.6
+    },
+    {
+      "name": "Kepler-975 c",
+      "mission": "kepler",
+      "depth_ppm": 748.3,
+      "UMI_err": 35.6,
+      "biweight_err": 32.6,
+      "welsch_err": 34.6,
+      "savgol_err": 42.4
+    },
+    {
+      "name": "Kepler-977 b",
+      "mission": "kepler",
+      "depth_ppm": 965.8,
+      "UMI_err": 29.7,
+      "biweight_err": 44.1,
+      "welsch_err": 55.2,
+      "savgol_err": 69.8
+    },
+    {
+      "name": "Kepler-355 c",
+      "mission": "kepler",
+      "depth_ppm": 619.5,
+      "UMI_err": 27.5,
+      "biweight_err": 51.2,
+      "welsch_err": 51.4,
+      "savgol_err": 83.4
+    },
+    {
+      "name": "Kepler-355 b",
+      "mission": "kepler",
+      "depth_ppm": 182.3,
+      "UMI_err": 69.7,
+      "biweight_err": 70.5,
+      "welsch_err": 79.8,
+      "savgol_err": 91.5
+    },
+    {
+      "name": "Kepler-356 c",
+      "mission": "kepler",
+      "depth_ppm": 196.9,
+      "UMI_err": 17.3,
+      "biweight_err": 36.2,
+      "welsch_err": 31.9,
+      "savgol_err": 52.6
+    },
+    {
+      "name": "Kepler-336 d",
+      "mission": "kepler",
+      "depth_ppm": 323.9,
+      "UMI_err": 56.3,
+      "biweight_err": 50.8,
+      "welsch_err": 54.2,
+      "savgol_err": 73.8
+    },
+    {
+      "name": "Kepler-336 c",
+      "mission": "kepler",
+      "depth_ppm": 271.2,
+      "UMI_err": 84.0,
+      "biweight_err": 68.3,
+      "welsch_err": 62.3,
+      "savgol_err": 87.0
+    },
+    {
+      "name": "Kepler-336 b",
+      "mission": "kepler",
+      "depth_ppm": 63.3,
+      "UMI_err": 46.5,
+      "biweight_err": 7.9,
+      "welsch_err": 25.8,
+      "savgol_err": 27.6
+    },
+    {
+      "name": "Kepler-1042 b",
+      "mission": "kepler",
+      "depth_ppm": 911.6,
+      "UMI_err": 33.5,
+      "biweight_err": 40.9,
+      "welsch_err": 41.3,
+      "savgol_err": 52.3
+    },
+    {
+      "name": "Kepler-356 b",
+      "mission": "kepler",
+      "depth_ppm": 133.2,
+      "UMI_err": 12.6,
+      "biweight_err": 4.8,
+      "welsch_err": 1.0,
+      "savgol_err": 20.0
+    },
+    {
+      "name": "Kepler-1073 b",
+      "mission": "kepler",
+      "depth_ppm": 540.6,
+      "UMI_err": 18.0,
+      "biweight_err": 33.8,
+      "welsch_err": 30.8,
+      "savgol_err": 50.0
+    },
+    {
+      "name": "Kepler-118 c",
+      "mission": "kepler",
+      "depth_ppm": 5368.1,
+      "UMI_err": 12.3,
+      "biweight_err": 11.6,
+      "welsch_err": 11.4,
+      "savgol_err": 22.8
+    },
+    {
+      "name": "Kepler-1783 b",
+      "mission": "kepler",
+      "depth_ppm": 197.2,
+      "UMI_err": 32.8,
+      "biweight_err": 44.1,
+      "welsch_err": 93.6,
+      "savgol_err": 55.7
+    },
+    {
+      "name": "Kepler-1678 b",
+      "mission": "kepler",
+      "depth_ppm": 1267.1,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1079 b",
+      "mission": "kepler",
+      "depth_ppm": 156.1,
+      "UMI_err": 46.7,
+      "biweight_err": 55.5,
+      "welsch_err": 61.9,
+      "savgol_err": 65.2
+    },
+    {
+      "name": "Kepler-1081 b",
+      "mission": "kepler",
+      "depth_ppm": 127.8,
+      "UMI_err": 3.2,
+      "biweight_err": 10.8,
+      "welsch_err": 11.6,
+      "savgol_err": 23.0
+    },
+    {
+      "name": "Kepler-985 b",
+      "mission": "kepler",
+      "depth_ppm": 1586.3,
+      "UMI_err": 51.0,
+      "biweight_err": 62.7,
+      "welsch_err": 69.3,
+      "savgol_err": 86.9
+    },
+    {
+      "name": "Kepler-416 b",
+      "mission": "kepler",
+      "depth_ppm": 581.1,
+      "UMI_err": 8.0,
+      "biweight_err": 15.4,
+      "welsch_err": 12.7,
+      "savgol_err": 47.3
+    },
+    {
+      "name": "Kepler-416 c",
+      "mission": "kepler",
+      "depth_ppm": 538.1,
+      "UMI_err": 33.6,
+      "biweight_err": 44.0,
+      "welsch_err": 47.4,
+      "savgol_err": 71.6
+    },
+    {
+      "name": "Kepler-416 d",
+      "mission": "kepler",
+      "depth_ppm": 216.7,
+      "UMI_err": 33.8,
+      "biweight_err": 29.9,
+      "welsch_err": 34.7,
+      "savgol_err": 44.5
+    },
+    {
+      "name": "Kepler-409 b",
+      "mission": "kepler",
+      "depth_ppm": 123.3,
+      "UMI_err": 51.8,
+      "biweight_err": 53.0,
+      "welsch_err": 56.3,
+      "savgol_err": 71.9
+    },
+    {
+      "name": "Kepler-950 b",
+      "mission": "kepler",
+      "depth_ppm": 7320.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1772 b",
+      "mission": "kepler",
+      "depth_ppm": 158.0,
+      "UMI_err": 47.2,
+      "biweight_err": 49.7,
+      "welsch_err": 53.2,
+      "savgol_err": 74.7
+    },
+    {
+      "name": "Kepler-118 b",
+      "mission": "kepler",
+      "depth_ppm": 286.7,
+      "UMI_err": 63.5,
+      "biweight_err": 56.7,
+      "welsch_err": 63.3,
+      "savgol_err": 65.2
+    },
+    {
+      "name": "Kepler-1051 b",
+      "mission": "kepler",
+      "depth_ppm": 350.3,
+      "UMI_err": 35.2,
+      "biweight_err": 63.6,
+      "welsch_err": 46.8,
+      "savgol_err": 87.5
+    },
+    {
+      "name": "Kepler-988 b",
+      "mission": "kepler",
+      "depth_ppm": 1287.2,
+      "UMI_err": 11.9,
+      "biweight_err": 16.6,
+      "welsch_err": 12.3,
+      "savgol_err": 28.6
+    },
+    {
+      "name": "Kepler-340 c",
+      "mission": "kepler",
+      "depth_ppm": 322.7,
+      "UMI_err": 42.3,
+      "biweight_err": 31.9,
+      "welsch_err": 62.1,
+      "savgol_err": 58.9
+    },
+    {
+      "name": "Kepler-348 b",
+      "mission": "kepler",
+      "depth_ppm": 130.0,
+      "UMI_err": 27.2,
+      "biweight_err": 28.3,
+      "welsch_err": 32.9,
+      "savgol_err": 49.5
+    },
+    {
+      "name": "Kepler-1053 b",
+      "mission": "kepler",
+      "depth_ppm": 191.0,
+      "UMI_err": 61.2,
+      "biweight_err": 29.3,
+      "welsch_err": 44.8,
+      "savgol_err": 36.7
+    },
+    {
+      "name": "Kepler-1054 b",
+      "mission": "kepler",
+      "depth_ppm": 257.0,
+      "UMI_err": 22.5,
+      "biweight_err": 29.4,
+      "welsch_err": 27.5,
+      "savgol_err": 59.8
+    },
+    {
+      "name": "Kepler-955 b",
+      "mission": "kepler",
+      "depth_ppm": 1355.9,
+      "UMI_err": 28.7,
+      "biweight_err": 30.1,
+      "welsch_err": 38.2,
+      "savgol_err": 55.0
+    },
+    {
+      "name": "Kepler-328 c",
+      "mission": "kepler",
+      "depth_ppm": 2138.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-319 c",
+      "mission": "kepler",
+      "depth_ppm": 825.0,
+      "UMI_err": 75.1,
+      "biweight_err": 54.3,
+      "welsch_err": 64.6,
+      "savgol_err": 58.7
+    },
+    {
+      "name": "Kepler-489 b",
+      "mission": "kepler",
+      "depth_ppm": 10458.0,
+      "UMI_err": 10.4,
+      "biweight_err": 10.2,
+      "welsch_err": 10.2,
+      "savgol_err": 10.4
+    },
+    {
+      "name": "Kepler-319 d",
+      "mission": "kepler",
+      "depth_ppm": 570.2,
+      "UMI_err": null,
+      "biweight_err": 43.6,
+      "welsch_err": 90.2,
+      "savgol_err": 71.6
+    },
+    {
+      "name": "Kepler-319 b",
+      "mission": "kepler",
+      "depth_ppm": 341.6,
+      "UMI_err": 54.2,
+      "biweight_err": 45.0,
+      "welsch_err": 58.4,
+      "savgol_err": 49.1
+    },
+    {
+      "name": "Kepler-1978 b",
+      "mission": "kepler",
+      "depth_ppm": 1122.1,
+      "UMI_err": 57.0,
+      "biweight_err": 70.2,
+      "welsch_err": 68.1,
+      "savgol_err": 88.2
+    },
+    {
+      "name": "Kepler-1777 b",
+      "mission": "kepler",
+      "depth_ppm": 499.3,
+      "UMI_err": 46.8,
+      "biweight_err": 53.8,
+      "welsch_err": 53.4,
+      "savgol_err": 55.6
+    },
+    {
+      "name": "Kepler-1784 b",
+      "mission": "kepler",
+      "depth_ppm": 621.9,
+      "UMI_err": 19.7,
+      "biweight_err": 29.2,
+      "welsch_err": 33.5,
+      "savgol_err": 62.8
+    },
+    {
+      "name": "Kepler-1060 b",
+      "mission": "kepler",
+      "depth_ppm": 539.8,
+      "UMI_err": null,
+      "biweight_err": 98.0,
+      "welsch_err": 97.4,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1773 b",
+      "mission": "kepler",
+      "depth_ppm": 436.1,
+      "UMI_err": 20.8,
+      "biweight_err": 34.3,
+      "welsch_err": 25.3,
+      "savgol_err": 54.3
+    },
+    {
+      "name": "Kepler-44 b",
+      "mission": "kepler",
+      "depth_ppm": 6998.2,
+      "UMI_err": 10.2,
+      "biweight_err": 9.4,
+      "welsch_err": 9.4,
+      "savgol_err": 23.6
+    },
+    {
+      "name": "Kepler-350 c",
+      "mission": "kepler",
+      "depth_ppm": 391.2,
+      "UMI_err": 14.9,
+      "biweight_err": 36.5,
+      "welsch_err": 39.6,
+      "savgol_err": 63.9
+    },
+    {
+      "name": "Kepler-350 d",
+      "mission": "kepler",
+      "depth_ppm": 362.2,
+      "UMI_err": 11.1,
+      "biweight_err": 50.1,
+      "welsch_err": 38.2,
+      "savgol_err": 95.2
+    },
+    {
+      "name": "Kepler-350 b",
+      "mission": "kepler",
+      "depth_ppm": 143.3,
+      "UMI_err": 88.8,
+      "biweight_err": 77.6,
+      "welsch_err": 85.3,
+      "savgol_err": 77.5
+    },
+    {
+      "name": "Kepler-959 b",
+      "mission": "kepler",
+      "depth_ppm": 501.4,
+      "UMI_err": 25.7,
+      "biweight_err": 46.2,
+      "welsch_err": 49.0,
+      "savgol_err": 85.5
+    },
+    {
+      "name": "Kepler-995 b",
+      "mission": "kepler",
+      "depth_ppm": 1160.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-996 b",
+      "mission": "kepler",
+      "depth_ppm": 314.4,
+      "UMI_err": 26.7,
+      "biweight_err": 33.4,
+      "welsch_err": 39.4,
+      "savgol_err": 48.3
+    },
+    {
+      "name": "Kepler-1024 b",
+      "mission": "kepler",
+      "depth_ppm": 2053.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-341 c",
+      "mission": "kepler",
+      "depth_ppm": 294.1,
+      "UMI_err": 73.0,
+      "biweight_err": 65.1,
+      "welsch_err": 72.4,
+      "savgol_err": 90.6
+    },
+    {
+      "name": "Kepler-341 d",
+      "mission": "kepler",
+      "depth_ppm": 324.0,
+      "UMI_err": 65.5,
+      "biweight_err": 65.3,
+      "welsch_err": 64.2,
+      "savgol_err": 97.2
+    },
+    {
+      "name": "Kepler-341 b",
+      "mission": "kepler",
+      "depth_ppm": 116.0,
+      "UMI_err": 43.5,
+      "biweight_err": 43.7,
+      "welsch_err": 51.5,
+      "savgol_err": 57.9
+    },
+    {
+      "name": "Kepler-1672 b",
+      "mission": "kepler",
+      "depth_ppm": 659.9,
+      "UMI_err": 71.3,
+      "biweight_err": 90.5,
+      "welsch_err": 98.5,
+      "savgol_err": 89.7
+    },
+    {
+      "name": "Kepler-323 c",
+      "mission": "kepler",
+      "depth_ppm": 191.8,
+      "UMI_err": 5.0,
+      "biweight_err": 9.1,
+      "welsch_err": 3.7,
+      "savgol_err": 38.4
+    },
+    {
+      "name": "Kepler-323 b",
+      "mission": "kepler",
+      "depth_ppm": 146.3,
+      "UMI_err": 34.8,
+      "biweight_err": 28.9,
+      "welsch_err": 32.5,
+      "savgol_err": 55.7
+    },
+    {
+      "name": "Kepler-1158 b",
+      "mission": "kepler",
+      "depth_ppm": 134.2,
+      "UMI_err": 37.9,
+      "biweight_err": 43.5,
+      "welsch_err": 27.7,
+      "savgol_err": 70.8
+    },
+    {
+      "name": "Kepler-1096 b",
+      "mission": "kepler",
+      "depth_ppm": 360.5,
+      "UMI_err": 53.9,
+      "biweight_err": 40.9,
+      "welsch_err": 47.5,
+      "savgol_err": 48.5
+    },
+    {
+      "name": "Kepler-121 b",
+      "mission": "kepler",
+      "depth_ppm": 1134.3,
+      "UMI_err": 20.7,
+      "biweight_err": 23.0,
+      "welsch_err": 23.4,
+      "savgol_err": 39.2
+    },
+    {
+      "name": "Kepler-1161 b",
+      "mission": "kepler",
+      "depth_ppm": 1198.6,
+      "UMI_err": 28.0,
+      "biweight_err": 34.8,
+      "welsch_err": 34.5,
+      "savgol_err": 55.4
+    },
+    {
+      "name": "Kepler-1164 b",
+      "mission": "kepler",
+      "depth_ppm": 206.0,
+      "UMI_err": 57.4,
+      "biweight_err": 23.2,
+      "welsch_err": 26.3,
+      "savgol_err": 55.4
+    },
+    {
+      "name": "Kepler-498 b",
+      "mission": "kepler",
+      "depth_ppm": 797.9,
+      "UMI_err": 21.4,
+      "biweight_err": 44.4,
+      "welsch_err": 37.1,
+      "savgol_err": 75.7
+    },
+    {
+      "name": "Kepler-1201 b",
+      "mission": "kepler",
+      "depth_ppm": 292.5,
+      "UMI_err": 18.5,
+      "biweight_err": 8.0,
+      "welsch_err": 11.3,
+      "savgol_err": 62.9
+    },
+    {
+      "name": "Kepler-1205 b",
+      "mission": "kepler",
+      "depth_ppm": 300.5,
+      "UMI_err": 36.3,
+      "biweight_err": 37.2,
+      "welsch_err": 45.3,
+      "savgol_err": 33.8
+    },
+    {
+      "name": "Kepler-121 c",
+      "mission": "kepler",
+      "depth_ppm": 1004.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-370 c",
+      "mission": "kepler",
+      "depth_ppm": 401.6,
+      "UMI_err": 88.2,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-370 b",
+      "mission": "kepler",
+      "depth_ppm": 207.1,
+      "UMI_err": 48.7,
+      "biweight_err": 31.0,
+      "welsch_err": 23.2,
+      "savgol_err": 27.4
+    },
+    {
+      "name": "Kepler-1169 b",
+      "mission": "kepler",
+      "depth_ppm": 59.7,
+      "UMI_err": 65.8,
+      "biweight_err": 57.4,
+      "welsch_err": 50.1,
+      "savgol_err": 35.2
+    },
+    {
+      "name": "Kepler-1828 b",
+      "mission": "kepler",
+      "depth_ppm": 352.8,
+      "UMI_err": 50.1,
+      "biweight_err": 44.2,
+      "welsch_err": 35.0,
+      "savgol_err": 36.9
+    },
+    {
+      "name": "Kepler-381 c",
+      "mission": "kepler",
+      "depth_ppm": 48.9,
+      "UMI_err": 0.8,
+      "biweight_err": 17.3,
+      "welsch_err": 22.1,
+      "savgol_err": 50.9
+    },
+    {
+      "name": "Kepler-381 b",
+      "mission": "kepler",
+      "depth_ppm": 39.5,
+      "UMI_err": 27.6,
+      "biweight_err": 45.3,
+      "welsch_err": 49.2,
+      "savgol_err": 62.7
+    },
+    {
+      "name": "Kepler-381 d",
+      "mission": "kepler",
+      "depth_ppm": 37.3,
+      "UMI_err": 12.4,
+      "biweight_err": 8.6,
+      "welsch_err": 23.1,
+      "savgol_err": 31.5
+    },
+    {
+      "name": "Kepler-1106 b",
+      "mission": "kepler",
+      "depth_ppm": 200.0,
+      "UMI_err": 5.4,
+      "biweight_err": 18.2,
+      "welsch_err": 13.8,
+      "savgol_err": 38.6
+    },
+    {
+      "name": "Kepler-1795 b",
+      "mission": "kepler",
+      "depth_ppm": 699.9,
+      "UMI_err": 24.8,
+      "biweight_err": 9.8,
+      "welsch_err": 8.1,
+      "savgol_err": 31.1
+    },
+    {
+      "name": "Kepler-499 b",
+      "mission": "kepler",
+      "depth_ppm": 634.4,
+      "UMI_err": 25.1,
+      "biweight_err": 34.8,
+      "welsch_err": 30.7,
+      "savgol_err": 49.9
+    },
+    {
+      "name": "Kepler-1171 b",
+      "mission": "kepler",
+      "depth_ppm": 166.0,
+      "UMI_err": 13.4,
+      "biweight_err": 26.4,
+      "welsch_err": 27.8,
+      "savgol_err": 37.7
+    },
+    {
+      "name": "Kepler-376 c",
+      "mission": "kepler",
+      "depth_ppm": 246.8,
+      "UMI_err": 45.3,
+      "biweight_err": 58.6,
+      "welsch_err": 48.6,
+      "savgol_err": 81.9
+    },
+    {
+      "name": "Kepler-376 b",
+      "mission": "kepler",
+      "depth_ppm": 81.0,
+      "UMI_err": 19.1,
+      "biweight_err": 35.0,
+      "welsch_err": 34.9,
+      "savgol_err": 26.3
+    },
+    {
+      "name": "Kepler-1830 b",
+      "mission": "kepler",
+      "depth_ppm": 411.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1208 b",
+      "mission": "kepler",
+      "depth_ppm": 771.8,
+      "UMI_err": 55.5,
+      "biweight_err": 45.6,
+      "welsch_err": 50.0,
+      "savgol_err": 48.1
+    },
+    {
+      "name": "Kepler-1107 b",
+      "mission": "kepler",
+      "depth_ppm": 242.1,
+      "UMI_err": 69.7,
+      "biweight_err": 49.1,
+      "welsch_err": 59.4,
+      "savgol_err": 37.5
+    },
+    {
+      "name": "Kepler-1680 b",
+      "mission": "kepler",
+      "depth_ppm": 239.6,
+      "UMI_err": 31.4,
+      "biweight_err": 38.9,
+      "welsch_err": 42.0,
+      "savgol_err": 40.1
+    },
+    {
+      "name": "Kepler-1109 b",
+      "mission": "kepler",
+      "depth_ppm": 427.4,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-122 c",
+      "mission": "kepler",
+      "depth_ppm": 2232.1,
+      "UMI_err": 9.1,
+      "biweight_err": 25.5,
+      "welsch_err": 11.2,
+      "savgol_err": 75.2
+    },
+    {
+      "name": "Kepler-371 b",
+      "mission": "kepler",
+      "depth_ppm": 293.7,
+      "UMI_err": 69.9,
+      "biweight_err": 75.3,
+      "welsch_err": 73.9,
+      "savgol_err": 89.3
+    },
+    {
+      "name": "Kepler-377 c",
+      "mission": "kepler",
+      "depth_ppm": 287.6,
+      "UMI_err": 51.3,
+      "biweight_err": 53.0,
+      "welsch_err": 50.2,
+      "savgol_err": 98.6
+    },
+    {
+      "name": "Kepler-377 b",
+      "mission": "kepler",
+      "depth_ppm": 155.3,
+      "UMI_err": 85.2,
+      "biweight_err": 77.6,
+      "welsch_err": 85.7,
+      "savgol_err": 44.8
+    },
+    {
+      "name": "Kepler-1172 b",
+      "mission": "kepler",
+      "depth_ppm": 1164.4,
+      "UMI_err": 19.1,
+      "biweight_err": 26.9,
+      "welsch_err": 33.5,
+      "savgol_err": 67.4
+    },
+    {
+      "name": "Kepler-1110 b",
+      "mission": "kepler",
+      "depth_ppm": 1130.7,
+      "UMI_err": 18.2,
+      "biweight_err": 8.3,
+      "welsch_err": 13.1,
+      "savgol_err": 28.2
+    },
+    {
+      "name": "Kepler-1139 b",
+      "mission": "kepler",
+      "depth_ppm": 173.5,
+      "UMI_err": 20.2,
+      "biweight_err": 29.7,
+      "welsch_err": 33.9,
+      "savgol_err": 45.6
+    },
+    {
+      "name": "Kepler-1807 b",
+      "mission": "kepler",
+      "depth_ppm": 189.6,
+      "UMI_err": 0.4,
+      "biweight_err": 23.7,
+      "welsch_err": 34.8,
+      "savgol_err": 43.8
+    },
+    {
+      "name": "Kepler-1829 b",
+      "mission": "kepler",
+      "depth_ppm": 712.7,
+      "UMI_err": 9.6,
+      "biweight_err": 7.5,
+      "welsch_err": 13.2,
+      "savgol_err": 20.4
+    },
+    {
+      "name": "Kepler-1111 b",
+      "mission": "kepler",
+      "depth_ppm": 286.3,
+      "UMI_err": 36.8,
+      "biweight_err": 40.7,
+      "welsch_err": 42.0,
+      "savgol_err": 80.0
+    },
+    {
+      "name": "Kepler-1798 b",
+      "mission": "kepler",
+      "depth_ppm": 871.5,
+      "UMI_err": 25.9,
+      "biweight_err": 17.9,
+      "welsch_err": 27.7,
+      "savgol_err": 34.7
+    },
+    {
+      "name": "Kepler-122 b",
+      "mission": "kepler",
+      "depth_ppm": 364.8,
+      "UMI_err": 35.5,
+      "biweight_err": 41.5,
+      "welsch_err": 45.1,
+      "savgol_err": 69.0
+    },
+    {
+      "name": "Kepler-1143 b",
+      "mission": "kepler",
+      "depth_ppm": 402.2,
+      "UMI_err": 91.3,
+      "biweight_err": 87.7,
+      "welsch_err": 78.3,
+      "savgol_err": 76.5
+    },
+    {
+      "name": "Kepler-378 b",
+      "mission": "kepler",
+      "depth_ppm": 128.5,
+      "UMI_err": 52.9,
+      "biweight_err": 40.3,
+      "welsch_err": 37.5,
+      "savgol_err": 51.8
+    },
+    {
+      "name": "Kepler-379 c",
+      "mission": "kepler",
+      "depth_ppm": 325.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1833 b",
+      "mission": "kepler",
+      "depth_ppm": 82.0,
+      "UMI_err": 39.5,
+      "biweight_err": 33.7,
+      "welsch_err": 41.0,
+      "savgol_err": 50.3
+    },
+    {
+      "name": "Kepler-1113 b",
+      "mission": "kepler",
+      "depth_ppm": 507.9,
+      "UMI_err": 12.2,
+      "biweight_err": 15.8,
+      "welsch_err": 2.6,
+      "savgol_err": 56.1
+    },
+    {
+      "name": "Kepler-1114 b",
+      "mission": "kepler",
+      "depth_ppm": 265.4,
+      "UMI_err": 29.2,
+      "biweight_err": 33.9,
+      "welsch_err": 27.1,
+      "savgol_err": 49.6
+    },
+    {
+      "name": "Kepler-1808 b",
+      "mission": "kepler",
+      "depth_ppm": 615.1,
+      "UMI_err": 25.8,
+      "biweight_err": 26.3,
+      "welsch_err": 28.1,
+      "savgol_err": 22.8
+    },
+    {
+      "name": "Kepler-382 b",
+      "mission": "kepler",
+      "depth_ppm": 194.5,
+      "UMI_err": 68.5,
+      "biweight_err": 61.2,
+      "welsch_err": 65.2,
+      "savgol_err": 74.2
+    },
+    {
+      "name": "Kepler-382 c",
+      "mission": "kepler",
+      "depth_ppm": 306.3,
+      "UMI_err": 56.0,
+      "biweight_err": 65.4,
+      "welsch_err": 90.0,
+      "savgol_err": 78.2
+    },
+    {
+      "name": "Kepler-1115 b",
+      "mission": "kepler",
+      "depth_ppm": 95.2,
+      "UMI_err": 42.6,
+      "biweight_err": 65.8,
+      "welsch_err": 65.6,
+      "savgol_err": 85.1
+    },
+    {
+      "name": "Kepler-1116 b",
+      "mission": "kepler",
+      "depth_ppm": 684.8,
+      "UMI_err": 51.6,
+      "biweight_err": 62.5,
+      "welsch_err": 56.4,
+      "savgol_err": 91.8
+    },
+    {
+      "name": "Kepler-122 d",
+      "mission": "kepler",
+      "depth_ppm": 336.8,
+      "UMI_err": 17.1,
+      "biweight_err": 71.1,
+      "welsch_err": 30.9,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1809 b",
+      "mission": "kepler",
+      "depth_ppm": 273.3,
+      "UMI_err": 24.5,
+      "biweight_err": 27.9,
+      "welsch_err": 13.8,
+      "savgol_err": 53.2
+    },
+    {
+      "name": "Kepler-1120 b",
+      "mission": "kepler",
+      "depth_ppm": 358.3,
+      "UMI_err": 19.4,
+      "biweight_err": 27.2,
+      "welsch_err": 29.0,
+      "savgol_err": 40.1
+    },
+    {
+      "name": "Kepler-496 b",
+      "mission": "kepler",
+      "depth_ppm": 836.1,
+      "UMI_err": 34.0,
+      "biweight_err": 40.7,
+      "welsch_err": 41.6,
+      "savgol_err": 69.6
+    },
+    {
+      "name": "Kepler-1181 b",
+      "mission": "kepler",
+      "depth_ppm": 138.3,
+      "UMI_err": 17.3,
+      "biweight_err": 11.9,
+      "welsch_err": 18.2,
+      "savgol_err": 81.5
+    },
+    {
+      "name": "Kepler-495 c",
+      "mission": "kepler",
+      "depth_ppm": 144.0,
+      "UMI_err": 54.4,
+      "biweight_err": 52.7,
+      "welsch_err": 56.7,
+      "savgol_err": 28.7
+    },
+    {
+      "name": "Kepler-1085 c",
+      "mission": "kepler",
+      "depth_ppm": 884.3,
+      "UMI_err": 45.7,
+      "biweight_err": 68.1,
+      "welsch_err": 66.4,
+      "savgol_err": 90.7
+    },
+    {
+      "name": "Kepler-1979 b",
+      "mission": "kepler",
+      "depth_ppm": 758.9,
+      "UMI_err": 83.1,
+      "biweight_err": 81.9,
+      "welsch_err": 76.7,
+      "savgol_err": 89.6
+    },
+    {
+      "name": "Kepler-122 e",
+      "mission": "kepler",
+      "depth_ppm": 403.7,
+      "UMI_err": 21.4,
+      "biweight_err": 37.0,
+      "welsch_err": 39.7,
+      "savgol_err": 73.2
+    },
+    {
+      "name": "Kepler-1183 b",
+      "mission": "kepler",
+      "depth_ppm": 755.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1087 b",
+      "mission": "kepler",
+      "depth_ppm": 49.3,
+      "UMI_err": 39.7,
+      "biweight_err": 32.1,
+      "welsch_err": 48.8,
+      "savgol_err": 28.9
+    },
+    {
+      "name": "Kepler-1790 b",
+      "mission": "kepler",
+      "depth_ppm": 360.6,
+      "UMI_err": 35.3,
+      "biweight_err": 42.6,
+      "welsch_err": 37.5,
+      "savgol_err": 64.5
+    },
+    {
+      "name": "Kepler-1799 b",
+      "mission": "kepler",
+      "depth_ppm": 709.3,
+      "UMI_err": 59.2,
+      "biweight_err": 63.5,
+      "welsch_err": 64.5,
+      "savgol_err": 80.3
+    },
+    {
+      "name": "Kepler-1124 b",
+      "mission": "kepler",
+      "depth_ppm": 1402.9,
+      "UMI_err": 42.8,
+      "biweight_err": 40.8,
+      "welsch_err": 37.8,
+      "savgol_err": 54.4
+    },
+    {
+      "name": "Kepler-1682 b",
+      "mission": "kepler",
+      "depth_ppm": 783.0,
+      "UMI_err": 62.6,
+      "biweight_err": 70.2,
+      "welsch_err": 73.1,
+      "savgol_err": 94.4
+    },
+    {
+      "name": "Kepler-1810 b",
+      "mission": "kepler",
+      "depth_ppm": 1502.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1187 b",
+      "mission": "kepler",
+      "depth_ppm": 588.0,
+      "UMI_err": 9.1,
+      "biweight_err": 36.9,
+      "welsch_err": 34.7,
+      "savgol_err": 53.6
+    },
+    {
+      "name": "Kepler-1822 b",
+      "mission": "kepler",
+      "depth_ppm": 654.6,
+      "UMI_err": 34.1,
+      "biweight_err": 29.7,
+      "welsch_err": 32.1,
+      "savgol_err": 53.5
+    },
+    {
+      "name": "Kepler-120 b",
+      "mission": "kepler",
+      "depth_ppm": 1286.0,
+      "UMI_err": 11.8,
+      "biweight_err": 37.4,
+      "welsch_err": 32.7,
+      "savgol_err": 63.7
+    },
+    {
+      "name": "Kepler-1792 b",
+      "mission": "kepler",
+      "depth_ppm": 874.2,
+      "UMI_err": 32.2,
+      "biweight_err": 41.2,
+      "welsch_err": 39.6,
+      "savgol_err": 55.6
+    },
+    {
+      "name": "Kepler-60 b",
+      "mission": "kepler",
+      "depth_ppm": 145.0,
+      "UMI_err": 57.9,
+      "biweight_err": 64.8,
+      "welsch_err": 59.1,
+      "savgol_err": 85.3
+    },
+    {
+      "name": "Kepler-60 c",
+      "mission": "kepler",
+      "depth_ppm": 180.6,
+      "UMI_err": 29.3,
+      "biweight_err": 40.5,
+      "welsch_err": 49.5,
+      "savgol_err": 79.1
+    },
+    {
+      "name": "Kepler-1800 b",
+      "mission": "kepler",
+      "depth_ppm": 81.6,
+      "UMI_err": 85.3,
+      "biweight_err": 83.2,
+      "welsch_err": 92.7,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1125 b",
+      "mission": "kepler",
+      "depth_ppm": 348.4,
+      "UMI_err": 78.9,
+      "biweight_err": 74.9,
+      "welsch_err": 78.7,
+      "savgol_err": 99.7
+    },
+    {
+      "name": "Kepler-1811 b",
+      "mission": "kepler",
+      "depth_ppm": 578.4,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-122 f",
+      "mission": "kepler",
+      "depth_ppm": 348.8,
+      "UMI_err": 75.2,
+      "biweight_err": 73.6,
+      "welsch_err": 79.3,
+      "savgol_err": 88.2
+    },
+    {
+      "name": "Kepler-1824 b",
+      "mission": "kepler",
+      "depth_ppm": 487.4,
+      "UMI_err": 64.8,
+      "biweight_err": 88.7,
+      "welsch_err": 88.0,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-60 d",
+      "mission": "kepler",
+      "depth_ppm": 130.9,
+      "UMI_err": 12.0,
+      "biweight_err": 1.4,
+      "welsch_err": 17.3,
+      "savgol_err": 15.6
+    },
+    {
+      "name": "Kepler-1793 b",
+      "mission": "kepler",
+      "depth_ppm": 755.7,
+      "UMI_err": 15.1,
+      "biweight_err": 2.1,
+      "welsch_err": 2.4,
+      "savgol_err": 32.0
+    },
+    {
+      "name": "Kepler-497 b",
+      "mission": "kepler",
+      "depth_ppm": 2975.0,
+      "UMI_err": 10.2,
+      "biweight_err": 11.0,
+      "welsch_err": 10.6,
+      "savgol_err": 22.4
+    },
+    {
+      "name": "Kepler-1128 b",
+      "mission": "kepler",
+      "depth_ppm": 1350.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1129 b",
+      "mission": "kepler",
+      "depth_ppm": 777.3,
+      "UMI_err": 55.9,
+      "biweight_err": 59.0,
+      "welsch_err": 74.4,
+      "savgol_err": 63.2
+    },
+    {
+      "name": "Kepler-1812 b",
+      "mission": "kepler",
+      "depth_ppm": 433.8,
+      "UMI_err": 41.6,
+      "biweight_err": 50.8,
+      "welsch_err": 61.9,
+      "savgol_err": 76.8
+    },
+    {
+      "name": "Kepler-1154 b",
+      "mission": "kepler",
+      "depth_ppm": 252.6,
+      "UMI_err": 18.6,
+      "biweight_err": 24.8,
+      "welsch_err": 13.6,
+      "savgol_err": 58.6
+    },
+    {
+      "name": "Kepler-1155 b",
+      "mission": "kepler",
+      "depth_ppm": 370.7,
+      "UMI_err": 13.5,
+      "biweight_err": 34.3,
+      "welsch_err": 40.1,
+      "savgol_err": 74.1
+    },
+    {
+      "name": "Kepler-120 c",
+      "mission": "kepler",
+      "depth_ppm": 816.7,
+      "UMI_err": 32.6,
+      "biweight_err": 49.1,
+      "welsch_err": 41.3,
+      "savgol_err": 65.3
+    },
+    {
+      "name": "Kepler-1157 b",
+      "mission": "kepler",
+      "depth_ppm": 175.7,
+      "UMI_err": 29.5,
+      "biweight_err": 32.8,
+      "welsch_err": 38.1,
+      "savgol_err": 35.8
+    },
+    {
+      "name": "Kepler-1193 b",
+      "mission": "kepler",
+      "depth_ppm": 114.7,
+      "UMI_err": 42.6,
+      "biweight_err": 46.0,
+      "welsch_err": 42.4,
+      "savgol_err": 56.8
+    },
+    {
+      "name": "Kepler-1827 b",
+      "mission": "kepler",
+      "depth_ppm": 68.6,
+      "UMI_err": 36.7,
+      "biweight_err": 37.7,
+      "welsch_err": 62.4,
+      "savgol_err": 61.2
+    },
+    {
+      "name": "Kepler-1194 b",
+      "mission": "kepler",
+      "depth_ppm": 262.3,
+      "UMI_err": 6.3,
+      "biweight_err": 0.9,
+      "welsch_err": 0.6,
+      "savgol_err": 37.1
+    },
+    {
+      "name": "Kepler-1794 b",
+      "mission": "kepler",
+      "depth_ppm": 553.2,
+      "UMI_err": 16.5,
+      "biweight_err": 12.2,
+      "welsch_err": 9.5,
+      "savgol_err": 43.1
+    },
+    {
+      "name": "Kepler-1094 b",
+      "mission": "kepler",
+      "depth_ppm": 656.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1095 b",
+      "mission": "kepler",
+      "depth_ppm": 180.4,
+      "UMI_err": 29.1,
+      "biweight_err": 26.0,
+      "welsch_err": 21.3,
+      "savgol_err": 33.3
+    },
+    {
+      "name": "Kepler-1801 b",
+      "mission": "kepler",
+      "depth_ppm": 821.5,
+      "UMI_err": 54.8,
+      "biweight_err": 38.0,
+      "welsch_err": 80.0,
+      "savgol_err": 67.6
+    },
+    {
+      "name": "Kepler-1276 b",
+      "mission": "kepler",
+      "depth_ppm": 86.5,
+      "UMI_err": 11.6,
+      "biweight_err": 0.4,
+      "welsch_err": 3.6,
+      "savgol_err": 53.4
+    },
+    {
+      "name": "Kepler-1277 b",
+      "mission": "kepler",
+      "depth_ppm": 264.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1299 b",
+      "mission": "kepler",
+      "depth_ppm": 758.9,
+      "UMI_err": 37.7,
+      "biweight_err": 36.2,
+      "welsch_err": 53.2,
+      "savgol_err": 46.5
+    },
+    {
+      "name": "Kepler-1300 b",
+      "mission": "kepler",
+      "depth_ppm": 63.5,
+      "UMI_err": 19.2,
+      "biweight_err": 41.6,
+      "welsch_err": 69.7,
+      "savgol_err": 53.6
+    },
+    {
+      "name": "Kepler-1864 b",
+      "mission": "kepler",
+      "depth_ppm": 36.3,
+      "UMI_err": 45.3,
+      "biweight_err": 29.6,
+      "welsch_err": 68.3,
+      "savgol_err": 22.1
+    },
+    {
+      "name": "Kepler-25 c",
+      "mission": "kepler",
+      "depth_ppm": 1180.1,
+      "UMI_err": 12.6,
+      "biweight_err": 12.1,
+      "welsch_err": 12.1,
+      "savgol_err": 12.9
+    },
+    {
+      "name": "Kepler-383 b",
+      "mission": "kepler",
+      "depth_ppm": 412.4,
+      "UMI_err": 37.0,
+      "biweight_err": 29.0,
+      "welsch_err": 31.8,
+      "savgol_err": 37.0
+    },
+    {
+      "name": "Kepler-1865 b",
+      "mission": "kepler",
+      "depth_ppm": 303.0,
+      "UMI_err": 37.1,
+      "biweight_err": 36.3,
+      "welsch_err": 38.9,
+      "savgol_err": 55.0
+    },
+    {
+      "name": "Kepler-383 c",
+      "mission": "kepler",
+      "depth_ppm": 360.1,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1836 b",
+      "mission": "kepler",
+      "depth_ppm": 461.8,
+      "UMI_err": 75.9,
+      "biweight_err": 78.2,
+      "welsch_err": 87.7,
+      "savgol_err": 83.4
+    },
+    {
+      "name": "Kepler-1837 b",
+      "mission": "kepler",
+      "depth_ppm": 340.7,
+      "UMI_err": 97.1,
+      "biweight_err": 71.2,
+      "welsch_err": 95.9,
+      "savgol_err": 105.9
+    },
+    {
+      "name": "Kepler-1256 b",
+      "mission": "kepler",
+      "depth_ppm": 108.1,
+      "UMI_err": 49.2,
+      "biweight_err": 41.0,
+      "welsch_err": 51.1,
+      "savgol_err": 65.8
+    },
+    {
+      "name": "Kepler-1844 b",
+      "mission": "kepler",
+      "depth_ppm": 463.5,
+      "UMI_err": 36.8,
+      "biweight_err": 25.3,
+      "welsch_err": 24.7,
+      "savgol_err": 82.0
+    },
+    {
+      "name": "Kepler-1845 b",
+      "mission": "kepler",
+      "depth_ppm": 771.7,
+      "UMI_err": 17.2,
+      "biweight_err": 2.6,
+      "welsch_err": 0.8,
+      "savgol_err": 39.6
+    },
+    {
+      "name": "Kepler-1279 b",
+      "mission": "kepler",
+      "depth_ppm": 141.4,
+      "UMI_err": 79.6,
+      "biweight_err": 71.0,
+      "welsch_err": 71.5,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-45 b",
+      "mission": "kepler",
+      "depth_ppm": 36911.9,
+      "UMI_err": 18.4,
+      "biweight_err": 18.5,
+      "welsch_err": 18.4,
+      "savgol_err": 21.0
+    },
+    {
+      "name": "Kepler-1684 b",
+      "mission": "kepler",
+      "depth_ppm": 1161.5,
+      "UMI_err": 55.8,
+      "biweight_err": 68.8,
+      "welsch_err": 63.9,
+      "savgol_err": 95.1
+    },
+    {
+      "name": "Kepler-25 b",
+      "mission": "kepler",
+      "depth_ppm": 401.6,
+      "UMI_err": 10.5,
+      "biweight_err": 7.7,
+      "welsch_err": 8.3,
+      "savgol_err": 42.8
+    },
+    {
+      "name": "Kepler-1234 b",
+      "mission": "kepler",
+      "depth_ppm": 631.7,
+      "UMI_err": 17.8,
+      "biweight_err": 6.8,
+      "welsch_err": 4.2,
+      "savgol_err": 62.7
+    },
+    {
+      "name": "Kepler-49 b",
+      "mission": "kepler",
+      "depth_ppm": 1765.9,
+      "UMI_err": 23.1,
+      "biweight_err": 29.4,
+      "welsch_err": 28.2,
+      "savgol_err": 49.3
+    },
+    {
+      "name": "Kepler-390 b",
+      "mission": "kepler",
+      "depth_ppm": 92.9,
+      "UMI_err": 46.2,
+      "biweight_err": 58.1,
+      "welsch_err": 47.6,
+      "savgol_err": 65.5
+    },
+    {
+      "name": "Kepler-1304 b",
+      "mission": "kepler",
+      "depth_ppm": 389.0,
+      "UMI_err": 52.3,
+      "biweight_err": 53.7,
+      "welsch_err": 67.0,
+      "savgol_err": 80.7
+    },
+    {
+      "name": "Kepler-37 d",
+      "mission": "kepler",
+      "depth_ppm": 610.4,
+      "UMI_err": 11.8,
+      "biweight_err": 10.7,
+      "welsch_err": 10.0,
+      "savgol_err": 6.9
+    },
+    {
+      "name": "Kepler-1262 b",
+      "mission": "kepler",
+      "depth_ppm": 301.6,
+      "UMI_err": 54.0,
+      "biweight_err": 41.8,
+      "welsch_err": 46.5,
+      "savgol_err": 75.1
+    },
+    {
+      "name": "Kepler-49 c",
+      "mission": "kepler",
+      "depth_ppm": 1387.2,
+      "UMI_err": 53.8,
+      "biweight_err": 54.8,
+      "welsch_err": 50.7,
+      "savgol_err": 71.5
+    },
+    {
+      "name": "Kepler-1283 b",
+      "mission": "kepler",
+      "depth_ppm": 168.7,
+      "UMI_err": 48.8,
+      "biweight_err": 82.7,
+      "welsch_err": 44.5,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-37 c",
+      "mission": "kepler",
+      "depth_ppm": 87.3,
+      "UMI_err": 27.1,
+      "biweight_err": 41.9,
+      "welsch_err": 37.6,
+      "savgol_err": 58.3
+    },
+    {
+      "name": "Kepler-1238 b",
+      "mission": "kepler",
+      "depth_ppm": 137.6,
+      "UMI_err": 79.1,
+      "biweight_err": 88.3,
+      "welsch_err": 82.2,
+      "savgol_err": 96.0
+    },
+    {
+      "name": "Kepler-2002 b",
+      "mission": "kepler",
+      "depth_ppm": 542.4,
+      "UMI_err": 77.3,
+      "biweight_err": 75.1,
+      "welsch_err": 73.9,
+      "savgol_err": 83.5
+    },
+    {
+      "name": "Kepler-1658 b",
+      "mission": "kepler",
+      "depth_ppm": 1298.6,
+      "UMI_err": 19.3,
+      "biweight_err": 17.3,
+      "welsch_err": 16.4,
+      "savgol_err": 26.9
+    },
+    {
+      "name": "Kepler-1308 b",
+      "mission": "kepler",
+      "depth_ppm": 242.1,
+      "UMI_err": 5.8,
+      "biweight_err": 13.3,
+      "welsch_err": 13.8,
+      "savgol_err": 7.9
+    },
+    {
+      "name": "Kepler-1309 b",
+      "mission": "kepler",
+      "depth_ppm": 756.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-49 d",
+      "mission": "kepler",
+      "depth_ppm": 852.8,
+      "UMI_err": 28.9,
+      "biweight_err": 42.1,
+      "welsch_err": 39.8,
+      "savgol_err": 48.8
+    },
+    {
+      "name": "Kepler-506 b",
+      "mission": "kepler",
+      "depth_ppm": 487.4,
+      "UMI_err": 14.3,
+      "biweight_err": 19.4,
+      "welsch_err": 15.9,
+      "savgol_err": 36.9
+    },
+    {
+      "name": "Kepler-387 b",
+      "mission": "kepler",
+      "depth_ppm": 102.6,
+      "UMI_err": 56.5,
+      "biweight_err": 62.8,
+      "welsch_err": 77.1,
+      "savgol_err": 78.0
+    },
+    {
+      "name": "Kepler-387 c",
+      "mission": "kepler",
+      "depth_ppm": 92.9,
+      "UMI_err": 54.6,
+      "biweight_err": 58.4,
+      "welsch_err": 73.0,
+      "savgol_err": 61.7
+    },
+    {
+      "name": "Kepler-1241 b",
+      "mission": "kepler",
+      "depth_ppm": 771.5,
+      "UMI_err": 24.0,
+      "biweight_err": 25.9,
+      "welsch_err": 39.3,
+      "savgol_err": 48.1
+    },
+    {
+      "name": "Kepler-37 b",
+      "mission": "kepler",
+      "depth_ppm": 12.2,
+      "UMI_err": 78.0,
+      "biweight_err": 71.2,
+      "welsch_err": 89.1,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1268 b",
+      "mission": "kepler",
+      "depth_ppm": 297.3,
+      "UMI_err": 56.4,
+      "biweight_err": 67.0,
+      "welsch_err": 57.4,
+      "savgol_err": 93.6
+    },
+    {
+      "name": "Kepler-436 c",
+      "mission": "kepler",
+      "depth_ppm": 1023.8,
+      "UMI_err": 60.3,
+      "biweight_err": 66.3,
+      "welsch_err": 71.9,
+      "savgol_err": 75.5
+    },
+    {
+      "name": "Kepler-49 e",
+      "mission": "kepler",
+      "depth_ppm": 813.8,
+      "UMI_err": 41.7,
+      "biweight_err": 50.9,
+      "welsch_err": 48.7,
+      "savgol_err": 38.7
+    },
+    {
+      "name": "Kepler-1852 b",
+      "mission": "kepler",
+      "depth_ppm": 488.4,
+      "UMI_err": 1.5,
+      "biweight_err": 3.8,
+      "welsch_err": 0.7,
+      "savgol_err": 16.0
+    },
+    {
+      "name": "Kepler-1271 b",
+      "mission": "kepler",
+      "depth_ppm": 128.3,
+      "UMI_err": 43.7,
+      "biweight_err": 31.7,
+      "welsch_err": 38.6,
+      "savgol_err": 49.3
+    },
+    {
+      "name": "Kepler-1838 b",
+      "mission": "kepler",
+      "depth_ppm": 70.7,
+      "UMI_err": 46.9,
+      "biweight_err": 48.4,
+      "welsch_err": 45.8,
+      "savgol_err": 75.0
+    },
+    {
+      "name": "Kepler-1248 b",
+      "mission": "kepler",
+      "depth_ppm": 75.7,
+      "UMI_err": 48.2,
+      "biweight_err": 45.7,
+      "welsch_err": 45.8,
+      "savgol_err": 71.2
+    },
+    {
+      "name": "Kepler-1272 b",
+      "mission": "kepler",
+      "depth_ppm": 382.3,
+      "UMI_err": 97.8,
+      "biweight_err": 86.1,
+      "welsch_err": 87.8,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1854 b",
+      "mission": "kepler",
+      "depth_ppm": 388.8,
+      "UMI_err": 47.7,
+      "biweight_err": 33.7,
+      "welsch_err": 23.3,
+      "savgol_err": 68.9
+    },
+    {
+      "name": "Kepler-1218 b",
+      "mission": "kepler",
+      "depth_ppm": 140.3,
+      "UMI_err": 53.1,
+      "biweight_err": 73.1,
+      "welsch_err": 79.3,
+      "savgol_err": 97.6
+    },
+    {
+      "name": "Kepler-68 b",
+      "mission": "kepler",
+      "depth_ppm": 346.5,
+      "UMI_err": 16.3,
+      "biweight_err": 29.1,
+      "welsch_err": 20.6,
+      "savgol_err": 55.7
+    },
+    {
+      "name": "Kepler-391 b",
+      "mission": "kepler",
+      "depth_ppm": 72.6,
+      "UMI_err": 31.4,
+      "biweight_err": 54.5,
+      "welsch_err": 55.0,
+      "savgol_err": 79.3
+    },
+    {
+      "name": "Kepler-1856 b",
+      "mission": "kepler",
+      "depth_ppm": 290.5,
+      "UMI_err": 30.5,
+      "biweight_err": 31.9,
+      "welsch_err": 41.7,
+      "savgol_err": 35.2
+    },
+    {
+      "name": "Kepler-1291 b",
+      "mission": "kepler",
+      "depth_ppm": 325.8,
+      "UMI_err": 48.7,
+      "biweight_err": 48.7,
+      "welsch_err": 48.7,
+      "savgol_err": 69.9
+    },
+    {
+      "name": "Kepler-1834 b",
+      "mission": "kepler",
+      "depth_ppm": 302.5,
+      "UMI_err": 31.7,
+      "biweight_err": 38.1,
+      "welsch_err": 45.3,
+      "savgol_err": 61.2
+    },
+    {
+      "name": "Kepler-1840 b",
+      "mission": "kepler",
+      "depth_ppm": 915.9,
+      "UMI_err": 35.1,
+      "biweight_err": 64.8,
+      "welsch_err": 67.3,
+      "savgol_err": 82.5
+    },
+    {
+      "name": "Kepler-1841 b",
+      "mission": "kepler",
+      "depth_ppm": 217.1,
+      "UMI_err": 43.4,
+      "biweight_err": 55.4,
+      "welsch_err": 46.6,
+      "savgol_err": 74.6
+    },
+    {
+      "name": "Kepler-1857 b",
+      "mission": "kepler",
+      "depth_ppm": 215.1,
+      "UMI_err": 41.1,
+      "biweight_err": 38.8,
+      "welsch_err": 33.1,
+      "savgol_err": 69.6
+    },
+    {
+      "name": "Kepler-1224 b",
+      "mission": "kepler",
+      "depth_ppm": 116.6,
+      "UMI_err": 51.0,
+      "biweight_err": 37.2,
+      "welsch_err": 42.3,
+      "savgol_err": 67.8
+    },
+    {
+      "name": "Kepler-68 c",
+      "mission": "kepler",
+      "depth_ppm": 55.0,
+      "UMI_err": 34.0,
+      "biweight_err": 36.3,
+      "welsch_err": 45.0,
+      "savgol_err": 52.0
+    },
+    {
+      "name": "Kepler-1296 b",
+      "mission": "kepler",
+      "depth_ppm": 108.5,
+      "UMI_err": 80.2,
+      "biweight_err": 67.3,
+      "welsch_err": 68.2,
+      "savgol_err": 82.3
+    },
+    {
+      "name": "Kepler-1863 b",
+      "mission": "kepler",
+      "depth_ppm": 170.2,
+      "UMI_err": 95.4,
+      "biweight_err": null,
+      "welsch_err": 93.2,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1225 b",
+      "mission": "kepler",
+      "depth_ppm": 222.8,
+      "UMI_err": 36.3,
+      "biweight_err": 70.4,
+      "welsch_err": 61.2,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1843 b",
+      "mission": "kepler",
+      "depth_ppm": 138.6,
+      "UMI_err": 56.9,
+      "biweight_err": 67.1,
+      "welsch_err": 76.6,
+      "savgol_err": 84.6
+    },
+    {
+      "name": "Kepler-1318 b",
+      "mission": "kepler",
+      "depth_ppm": 1992.3,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-399 d",
+      "mission": "kepler",
+      "depth_ppm": 807.1,
+      "UMI_err": 23.2,
+      "biweight_err": 41.6,
+      "welsch_err": 41.3,
+      "savgol_err": 66.0
+    },
+    {
+      "name": "Kepler-399 b",
+      "mission": "kepler",
+      "depth_ppm": 221.2,
+      "UMI_err": 28.4,
+      "biweight_err": 14.0,
+      "welsch_err": 20.1,
+      "savgol_err": 42.4
+    },
+    {
+      "name": "Kepler-399 c",
+      "mission": "kepler",
+      "depth_ppm": 474.8,
+      "UMI_err": 2.2,
+      "biweight_err": 20.5,
+      "welsch_err": 16.4,
+      "savgol_err": 41.4
+    },
+    {
+      "name": "Kepler-1320 b",
+      "mission": "kepler",
+      "depth_ppm": 488.5,
+      "UMI_err": 21.2,
+      "biweight_err": 10.1,
+      "welsch_err": 21.2,
+      "savgol_err": 22.8
+    },
+    {
+      "name": "Kepler-400 b",
+      "mission": "kepler",
+      "depth_ppm": 214.6,
+      "UMI_err": 41.8,
+      "biweight_err": 40.4,
+      "welsch_err": 36.7,
+      "savgol_err": 70.9
+    },
+    {
+      "name": "Kepler-400 c",
+      "mission": "kepler",
+      "depth_ppm": 159.0,
+      "UMI_err": 24.2,
+      "biweight_err": 11.7,
+      "welsch_err": 25.5,
+      "savgol_err": 47.0
+    },
+    {
+      "name": "Kepler-96 b",
+      "mission": "kepler",
+      "depth_ppm": 646.7,
+      "UMI_err": 3.5,
+      "biweight_err": 18.6,
+      "welsch_err": 9.2,
+      "savgol_err": 5.3
+    },
+    {
+      "name": "Kepler-1347 b",
+      "mission": "kepler",
+      "depth_ppm": 169.9,
+      "UMI_err": 16.4,
+      "biweight_err": 18.1,
+      "welsch_err": 20.6,
+      "savgol_err": 50.3
+    },
+    {
+      "name": "Kepler-1373 b",
+      "mission": "kepler",
+      "depth_ppm": 66.0,
+      "UMI_err": 11.9,
+      "biweight_err": 22.8,
+      "welsch_err": 1.8,
+      "savgol_err": 38.0
+    },
+    {
+      "name": "Kepler-454 b",
+      "mission": "kepler",
+      "depth_ppm": 298.9,
+      "UMI_err": 27.1,
+      "biweight_err": 27.7,
+      "welsch_err": 25.6,
+      "savgol_err": 38.3
+    },
+    {
+      "name": "Kepler-1324 b",
+      "mission": "kepler",
+      "depth_ppm": 425.8,
+      "UMI_err": 1.1,
+      "biweight_err": 10.8,
+      "welsch_err": 10.2,
+      "savgol_err": 15.9
+    },
+    {
+      "name": "Kepler-1886 b",
+      "mission": "kepler",
+      "depth_ppm": 702.2,
+      "UMI_err": 14.8,
+      "biweight_err": 30.5,
+      "welsch_err": 18.6,
+      "savgol_err": 44.5
+    },
+    {
+      "name": "Kepler-1713 b",
+      "mission": "kepler",
+      "depth_ppm": 107.8,
+      "UMI_err": 66.6,
+      "biweight_err": 69.7,
+      "welsch_err": 69.3,
+      "savgol_err": 91.5
+    },
+    {
+      "name": "Kepler-1876 b",
+      "mission": "kepler",
+      "depth_ppm": 33.4,
+      "UMI_err": 24.9,
+      "biweight_err": 26.4,
+      "welsch_err": 23.2,
+      "savgol_err": 62.7
+    },
+    {
+      "name": "Kepler-450 b",
+      "mission": "kepler",
+      "depth_ppm": 1418.6,
+      "UMI_err": 59.0,
+      "biweight_err": 91.1,
+      "welsch_err": 98.0,
+      "savgol_err": 92.2
+    },
+    {
+      "name": "Kepler-1871 b",
+      "mission": "kepler",
+      "depth_ppm": 403.0,
+      "UMI_err": 32.3,
+      "biweight_err": 30.9,
+      "welsch_err": 31.8,
+      "savgol_err": 40.4
+    },
+    {
+      "name": "Kepler-1694 b",
+      "mission": "kepler",
+      "depth_ppm": 189.0,
+      "UMI_err": 21.4,
+      "biweight_err": 0.3,
+      "welsch_err": 18.1,
+      "savgol_err": 7.9
+    },
+    {
+      "name": "Kepler-1889 b",
+      "mission": "kepler",
+      "depth_ppm": 551.7,
+      "UMI_err": 45.9,
+      "biweight_err": 48.9,
+      "welsch_err": 45.5,
+      "savgol_err": 71.2
+    },
+    {
+      "name": "Kepler-1378 b",
+      "mission": "kepler",
+      "depth_ppm": 855.9,
+      "UMI_err": 41.6,
+      "biweight_err": 44.5,
+      "welsch_err": 43.9,
+      "savgol_err": 85.2
+    },
+    {
+      "name": "Kepler-1379 b",
+      "mission": "kepler",
+      "depth_ppm": 249.9,
+      "UMI_err": 14.5,
+      "biweight_err": 5.3,
+      "welsch_err": 12.4,
+      "savgol_err": 17.3
+    },
+    {
+      "name": "Kepler-1312 b",
+      "mission": "kepler",
+      "depth_ppm": 529.4,
+      "UMI_err": 61.8,
+      "biweight_err": 29.7,
+      "welsch_err": 63.1,
+      "savgol_err": 7.1
+    },
+    {
+      "name": "Kepler-1312 c",
+      "mission": "kepler",
+      "depth_ppm": 109.2,
+      "UMI_err": null,
+      "biweight_err": 30.6,
+      "welsch_err": 90.8,
+      "savgol_err": 48.1
+    },
+    {
+      "name": "Kepler-1688 b",
+      "mission": "kepler",
+      "depth_ppm": 190.1,
+      "UMI_err": 11.4,
+      "biweight_err": 23.6,
+      "welsch_err": 39.7,
+      "savgol_err": 2.7
+    },
+    {
+      "name": "Kepler-1873 b",
+      "mission": "kepler",
+      "depth_ppm": 280.9,
+      "UMI_err": 25.2,
+      "biweight_err": 11.9,
+      "welsch_err": 15.7,
+      "savgol_err": 22.5
+    },
+    {
+      "name": "Kepler-1354 b",
+      "mission": "kepler",
+      "depth_ppm": 498.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-397 c",
+      "mission": "kepler",
+      "depth_ppm": 5038.1,
+      "UMI_err": 19.1,
+      "biweight_err": 69.8,
+      "welsch_err": 54.1,
+      "savgol_err": 77.5
+    },
+    {
+      "name": "Kepler-397 b",
+      "mission": "kepler",
+      "depth_ppm": 618.7,
+      "UMI_err": 0.8,
+      "biweight_err": 5.3,
+      "welsch_err": 6.1,
+      "savgol_err": 9.4
+    },
+    {
+      "name": "Kepler-1330 b",
+      "mission": "kepler",
+      "depth_ppm": 294.9,
+      "UMI_err": 14.0,
+      "biweight_err": 20.9,
+      "welsch_err": 11.9,
+      "savgol_err": 51.9
+    },
+    {
+      "name": "Kepler-1333 b",
+      "mission": "kepler",
+      "depth_ppm": 899.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1334 b",
+      "mission": "kepler",
+      "depth_ppm": 572.1,
+      "UMI_err": 41.8,
+      "biweight_err": 49.6,
+      "welsch_err": 57.7,
+      "savgol_err": 90.1
+    },
+    {
+      "name": "Kepler-1870 b",
+      "mission": "kepler",
+      "depth_ppm": 432.3,
+      "UMI_err": 68.4,
+      "biweight_err": 44.2,
+      "welsch_err": 52.9,
+      "savgol_err": 36.8
+    },
+    {
+      "name": "Kepler-1879 b",
+      "mission": "kepler",
+      "depth_ppm": 150.2,
+      "UMI_err": 33.4,
+      "biweight_err": 51.4,
+      "welsch_err": 46.8,
+      "savgol_err": 48.5
+    },
+    {
+      "name": "Kepler-1382 b",
+      "mission": "kepler",
+      "depth_ppm": 116.4,
+      "UMI_err": 70.4,
+      "biweight_err": 70.9,
+      "welsch_err": 86.6,
+      "savgol_err": 86.2
+    },
+    {
+      "name": "Kepler-398 b",
+      "mission": "kepler",
+      "depth_ppm": 171.9,
+      "UMI_err": 42.9,
+      "biweight_err": 43.6,
+      "welsch_err": 42.5,
+      "savgol_err": 59.6
+    },
+    {
+      "name": "Kepler-398 c",
+      "mission": "kepler",
+      "depth_ppm": 150.5,
+      "UMI_err": 83.5,
+      "biweight_err": 77.6,
+      "welsch_err": 79.0,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-398 d",
+      "mission": "kepler",
+      "depth_ppm": 177.1,
+      "UMI_err": 63.6,
+      "biweight_err": 69.0,
+      "welsch_err": 63.1,
+      "savgol_err": 96.6
+    },
+    {
+      "name": "Kepler-1362 b",
+      "mission": "kepler",
+      "depth_ppm": 1209.3,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1880 b",
+      "mission": "kepler",
+      "depth_ppm": 691.2,
+      "UMI_err": 57.5,
+      "biweight_err": 49.8,
+      "welsch_err": 51.5,
+      "savgol_err": 45.6
+    },
+    {
+      "name": "Kepler-1384 b",
+      "mission": "kepler",
+      "depth_ppm": 468.3,
+      "UMI_err": 34.8,
+      "biweight_err": 45.8,
+      "welsch_err": 49.7,
+      "savgol_err": 63.6
+    },
+    {
+      "name": "Kepler-1689 b",
+      "mission": "kepler",
+      "depth_ppm": 69.1,
+      "UMI_err": 84.3,
+      "biweight_err": 94.0,
+      "welsch_err": 98.1,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1340 b",
+      "mission": "kepler",
+      "depth_ppm": 104.7,
+      "UMI_err": 43.9,
+      "biweight_err": 42.2,
+      "welsch_err": 37.1,
+      "savgol_err": 51.4
+    },
+    {
+      "name": "Kepler-1385 b",
+      "mission": "kepler",
+      "depth_ppm": 40.9,
+      "UMI_err": 75.8,
+      "biweight_err": 70.0,
+      "welsch_err": 89.9,
+      "savgol_err": 88.5
+    },
+    {
+      "name": "Kepler-1316 b",
+      "mission": "kepler",
+      "depth_ppm": 866.7,
+      "UMI_err": 72.9,
+      "biweight_err": 83.9,
+      "welsch_err": 82.6,
+      "savgol_err": 92.4
+    },
+    {
+      "name": "Kepler-1317 b",
+      "mission": "kepler",
+      "depth_ppm": 378.4,
+      "UMI_err": 29.3,
+      "biweight_err": 26.2,
+      "welsch_err": 37.1,
+      "savgol_err": 31.9
+    },
+    {
+      "name": "Kepler-135 b",
+      "mission": "kepler",
+      "depth_ppm": 202.0,
+      "UMI_err": 22.4,
+      "biweight_err": 33.7,
+      "welsch_err": 37.9,
+      "savgol_err": 60.4
+    },
+    {
+      "name": "Kepler-135 c",
+      "mission": "kepler",
+      "depth_ppm": 75.2,
+      "UMI_err": 40.2,
+      "biweight_err": 30.1,
+      "welsch_err": 43.6,
+      "savgol_err": 76.4
+    },
+    {
+      "name": "Kepler-516 b",
+      "mission": "kepler",
+      "depth_ppm": 776.2,
+      "UMI_err": 75.0,
+      "biweight_err": 84.4,
+      "welsch_err": 93.9,
+      "savgol_err": 97.5
+    },
+    {
+      "name": "Kepler-517 b",
+      "mission": "kepler",
+      "depth_ppm": 755.6,
+      "UMI_err": 12.5,
+      "biweight_err": 51.1,
+      "welsch_err": 36.5,
+      "savgol_err": 82.4
+    },
+    {
+      "name": "Kepler-518 b",
+      "mission": "kepler",
+      "depth_ppm": 597.8,
+      "UMI_err": 11.8,
+      "biweight_err": 17.0,
+      "welsch_err": 12.8,
+      "savgol_err": 19.3
+    },
+    {
+      "name": "Kepler-537 b",
+      "mission": "kepler",
+      "depth_ppm": 209.7,
+      "UMI_err": 40.3,
+      "biweight_err": 39.3,
+      "welsch_err": 41.9,
+      "savgol_err": 57.6
+    },
+    {
+      "name": "Kepler-1410 b",
+      "mission": "kepler",
+      "depth_ppm": 714.3,
+      "UMI_err": 70.9,
+      "biweight_err": 63.4,
+      "welsch_err": null,
+      "savgol_err": 90.9
+    },
+    {
+      "name": "Kepler-92 b",
+      "mission": "kepler",
+      "depth_ppm": 425.9,
+      "UMI_err": 38.9,
+      "biweight_err": 60.0,
+      "welsch_err": 55.5,
+      "savgol_err": 84.5
+    },
+    {
+      "name": "Kepler-99 b",
+      "mission": "kepler",
+      "depth_ppm": 440.4,
+      "UMI_err": 18.8,
+      "biweight_err": 24.2,
+      "welsch_err": 17.7,
+      "savgol_err": 45.7
+    },
+    {
+      "name": "Kepler-519 b",
+      "mission": "kepler",
+      "depth_ppm": 677.1,
+      "UMI_err": 25.4,
+      "biweight_err": 22.6,
+      "welsch_err": 28.2,
+      "savgol_err": 21.1
+    },
+    {
+      "name": "Kepler-130 b",
+      "mission": "kepler",
+      "depth_ppm": 77.4,
+      "UMI_err": 23.1,
+      "biweight_err": 39.4,
+      "welsch_err": 38.0,
+      "savgol_err": 88.4
+    },
+    {
+      "name": "Kepler-1903 b",
+      "mission": "kepler",
+      "depth_ppm": 262.4,
+      "UMI_err": 66.2,
+      "biweight_err": 46.8,
+      "welsch_err": 30.8,
+      "savgol_err": 68.2
+    },
+    {
+      "name": "Kepler-1424 b",
+      "mission": "kepler",
+      "depth_ppm": 120.1,
+      "UMI_err": 79.6,
+      "biweight_err": 79.0,
+      "welsch_err": 81.8,
+      "savgol_err": 91.5
+    },
+    {
+      "name": "Kepler-145 c",
+      "mission": "kepler",
+      "depth_ppm": 408.9,
+      "UMI_err": 51.5,
+      "biweight_err": 74.3,
+      "welsch_err": 81.4,
+      "savgol_err": 85.0
+    },
+    {
+      "name": "Kepler-63 b",
+      "mission": "kepler",
+      "depth_ppm": 3977.0,
+      "UMI_err": 12.1,
+      "biweight_err": 20.4,
+      "welsch_err": 14.4,
+      "savgol_err": 32.1
+    },
+    {
+      "name": "Kepler-145 b",
+      "mission": "kepler",
+      "depth_ppm": 129.8,
+      "UMI_err": 26.5,
+      "biweight_err": 43.9,
+      "welsch_err": 49.7,
+      "savgol_err": 81.8
+    },
+    {
+      "name": "Kepler-431 d",
+      "mission": "kepler",
+      "depth_ppm": 43.2,
+      "UMI_err": 31.3,
+      "biweight_err": 40.7,
+      "welsch_err": 47.8,
+      "savgol_err": 53.2
+    },
+    {
+      "name": "Kepler-431 b",
+      "mission": "kepler",
+      "depth_ppm": 32.7,
+      "UMI_err": 87.6,
+      "biweight_err": 80.3,
+      "welsch_err": 72.6,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-431 c",
+      "mission": "kepler",
+      "depth_ppm": 32.0,
+      "UMI_err": 46.5,
+      "biweight_err": 32.5,
+      "welsch_err": 35.3,
+      "savgol_err": 51.0
+    },
+    {
+      "name": "Kepler-92 c",
+      "mission": "kepler",
+      "depth_ppm": 195.0,
+      "UMI_err": 48.0,
+      "biweight_err": 66.1,
+      "welsch_err": 77.0,
+      "savgol_err": 85.1
+    },
+    {
+      "name": "Kepler-1704 b",
+      "mission": "kepler",
+      "depth_ppm": 5060.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-9 b",
+      "mission": "kepler",
+      "depth_ppm": 6660.5,
+      "UMI_err": 98.7,
+      "biweight_err": 98.7,
+      "welsch_err": 98.8,
+      "savgol_err": 98.9
+    },
+    {
+      "name": "Kepler-130 d",
+      "mission": "kepler",
+      "depth_ppm": 136.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-9 c",
+      "mission": "kepler",
+      "depth_ppm": 6159.1,
+      "UMI_err": 98.7,
+      "biweight_err": 99.2,
+      "welsch_err": 98.5,
+      "savgol_err": 98.8
+    },
+    {
+      "name": "Kepler-9 d",
+      "mission": "kepler",
+      "depth_ppm": 248.3,
+      "UMI_err": 32.6,
+      "biweight_err": 41.2,
+      "welsch_err": 39.0,
+      "savgol_err": 42.6
+    },
+    {
+      "name": "Kepler-1906 b",
+      "mission": "kepler",
+      "depth_ppm": 429.3,
+      "UMI_err": 71.3,
+      "biweight_err": 68.3,
+      "welsch_err": 59.1,
+      "savgol_err": 87.5
+    },
+    {
+      "name": "Kepler-92 d",
+      "mission": "kepler",
+      "depth_ppm": 130.2,
+      "UMI_err": 34.5,
+      "biweight_err": 58.5,
+      "welsch_err": 58.9,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-147 c",
+      "mission": "kepler",
+      "depth_ppm": 275.8,
+      "UMI_err": 95.0,
+      "biweight_err": 99.7,
+      "welsch_err": 83.2,
+      "savgol_err": 90.5
+    },
+    {
+      "name": "Kepler-147 b",
+      "mission": "kepler",
+      "depth_ppm": 76.5,
+      "UMI_err": 34.8,
+      "biweight_err": 18.2,
+      "welsch_err": 1.9,
+      "savgol_err": 30.7
+    },
+    {
+      "name": "Kepler-523 b",
+      "mission": "kepler",
+      "depth_ppm": 553.3,
+      "UMI_err": 66.5,
+      "biweight_err": 44.8,
+      "welsch_err": 66.0,
+      "savgol_err": 46.4
+    },
+    {
+      "name": "Kepler-541 b",
+      "mission": "kepler",
+      "depth_ppm": 222.8,
+      "UMI_err": 26.6,
+      "biweight_err": 57.5,
+      "welsch_err": 61.0,
+      "savgol_err": 68.3
+    },
+    {
+      "name": "Kepler-542 b",
+      "mission": "kepler",
+      "depth_ppm": 300.8,
+      "UMI_err": 49.1,
+      "biweight_err": 55.8,
+      "welsch_err": 54.3,
+      "savgol_err": 80.2
+    },
+    {
+      "name": "Kepler-131 b",
+      "mission": "kepler",
+      "depth_ppm": 415.8,
+      "UMI_err": 19.7,
+      "biweight_err": 17.9,
+      "welsch_err": 17.0,
+      "savgol_err": 56.7
+    },
+    {
+      "name": "Kepler-1417 b",
+      "mission": "kepler",
+      "depth_ppm": 101.8,
+      "UMI_err": 79.2,
+      "biweight_err": 67.0,
+      "welsch_err": 61.9,
+      "savgol_err": 88.0
+    },
+    {
+      "name": "Kepler-1434 b",
+      "mission": "kepler",
+      "depth_ppm": 38.3,
+      "UMI_err": 54.6,
+      "biweight_err": 45.1,
+      "welsch_err": 52.4,
+      "savgol_err": 40.0
+    },
+    {
+      "name": "Kepler-146 b",
+      "mission": "kepler",
+      "depth_ppm": 959.0,
+      "UMI_err": 7.7,
+      "biweight_err": 37.5,
+      "welsch_err": 33.1,
+      "savgol_err": 81.5
+    },
+    {
+      "name": "Kepler-146 c",
+      "mission": "kepler",
+      "depth_ppm": 685.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-543 b",
+      "mission": "kepler",
+      "depth_ppm": 1121.7,
+      "UMI_err": 10.2,
+      "biweight_err": 15.7,
+      "welsch_err": 5.3,
+      "savgol_err": 18.1
+    },
+    {
+      "name": "Kepler-1719 b",
+      "mission": "kepler",
+      "depth_ppm": 333.7,
+      "UMI_err": 23.4,
+      "biweight_err": 48.9,
+      "welsch_err": 50.5,
+      "savgol_err": 78.6
+    },
+    {
+      "name": "Kepler-1896 b",
+      "mission": "kepler",
+      "depth_ppm": 636.1,
+      "UMI_err": 97.8,
+      "biweight_err": 43.7,
+      "welsch_err": 70.7,
+      "savgol_err": 39.0
+    },
+    {
+      "name": "Kepler-544 b",
+      "mission": "kepler",
+      "depth_ppm": 314.5,
+      "UMI_err": 61.9,
+      "biweight_err": 67.0,
+      "welsch_err": 69.0,
+      "savgol_err": 87.3
+    },
+    {
+      "name": "Kepler-93 b",
+      "mission": "kepler",
+      "depth_ppm": 273.1,
+      "UMI_err": 17.1,
+      "biweight_err": 15.2,
+      "welsch_err": 16.1,
+      "savgol_err": 36.1
+    },
+    {
+      "name": "Kepler-131 c",
+      "mission": "kepler",
+      "depth_ppm": 66.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-450 c",
+      "mission": "kepler",
+      "depth_ppm": 264.3,
+      "UMI_err": 36.4,
+      "biweight_err": 62.2,
+      "welsch_err": 67.3,
+      "savgol_err": 86.6
+    },
+    {
+      "name": "Kepler-1890 b",
+      "mission": "kepler",
+      "depth_ppm": 40.9,
+      "UMI_err": 95.3,
+      "biweight_err": 46.2,
+      "welsch_err": 40.6,
+      "savgol_err": 86.8
+    },
+    {
+      "name": "Kepler-1419 b",
+      "mission": "kepler",
+      "depth_ppm": 685.6,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1910 b",
+      "mission": "kepler",
+      "depth_ppm": 241.5,
+      "UMI_err": 34.6,
+      "biweight_err": 40.6,
+      "welsch_err": 44.8,
+      "savgol_err": 63.0
+    },
+    {
+      "name": "Kepler-1438 b",
+      "mission": "kepler",
+      "depth_ppm": 96.4,
+      "UMI_err": 2.5,
+      "biweight_err": 7.9,
+      "welsch_err": 17.4,
+      "savgol_err": 30.8
+    },
+    {
+      "name": "Kepler-405 c",
+      "mission": "kepler",
+      "depth_ppm": 1010.2,
+      "UMI_err": 39.8,
+      "biweight_err": 59.1,
+      "welsch_err": 67.5,
+      "savgol_err": 74.7
+    },
+    {
+      "name": "Kepler-405 b",
+      "mission": "kepler",
+      "depth_ppm": 559.8,
+      "UMI_err": 36.8,
+      "biweight_err": 14.2,
+      "welsch_err": 22.3,
+      "savgol_err": 33.3
+    },
+    {
+      "name": "Kepler-1977 b",
+      "mission": "kepler",
+      "depth_ppm": 504.4,
+      "UMI_err": 31.1,
+      "biweight_err": 48.8,
+      "welsch_err": 53.1,
+      "savgol_err": 66.8
+    },
+    {
+      "name": "Kepler-1655 b",
+      "mission": "kepler",
+      "depth_ppm": 332.7,
+      "UMI_err": 25.8,
+      "biweight_err": 24.7,
+      "welsch_err": 24.3,
+      "savgol_err": 25.5
+    },
+    {
+      "name": "Kepler-1983 b",
+      "mission": "kepler",
+      "depth_ppm": 277.8,
+      "UMI_err": 28.5,
+      "biweight_err": 25.4,
+      "welsch_err": 26.6,
+      "savgol_err": 8.0
+    },
+    {
+      "name": "Kepler-1897 b",
+      "mission": "kepler",
+      "depth_ppm": 806.3,
+      "UMI_err": 131.0,
+      "biweight_err": 80.0,
+      "welsch_err": 80.7,
+      "savgol_err": 8.1
+    },
+    {
+      "name": "Kepler-1401 b",
+      "mission": "kepler",
+      "depth_ppm": 219.9,
+      "UMI_err": 21.2,
+      "biweight_err": 26.1,
+      "welsch_err": 35.9,
+      "savgol_err": 34.3
+    },
+    {
+      "name": "Kepler-510 b",
+      "mission": "kepler",
+      "depth_ppm": 298.9,
+      "UMI_err": 43.7,
+      "biweight_err": 68.7,
+      "welsch_err": 71.3,
+      "savgol_err": 94.6
+    },
+    {
+      "name": "Kepler-1423 b",
+      "mission": "kepler",
+      "depth_ppm": 228.7,
+      "UMI_err": 67.1,
+      "biweight_err": 59.5,
+      "welsch_err": 88.1,
+      "savgol_err": 97.8
+    },
+    {
+      "name": "Kepler-1403 b",
+      "mission": "kepler",
+      "depth_ppm": 272.9,
+      "UMI_err": 20.1,
+      "biweight_err": 17.0,
+      "welsch_err": 21.5,
+      "savgol_err": 29.9
+    },
+    {
+      "name": "Kepler-1405 b",
+      "mission": "kepler",
+      "depth_ppm": 1113.4,
+      "UMI_err": 20.8,
+      "biweight_err": 35.2,
+      "welsch_err": 17.5,
+      "savgol_err": 79.3
+    },
+    {
+      "name": "Kepler-1898 b",
+      "mission": "kepler",
+      "depth_ppm": 67.5,
+      "UMI_err": 58.0,
+      "biweight_err": 60.0,
+      "welsch_err": 44.0,
+      "savgol_err": 87.5
+    },
+    {
+      "name": "Kepler-98 b",
+      "mission": "kepler",
+      "depth_ppm": 296.5,
+      "UMI_err": 21.3,
+      "biweight_err": 23.6,
+      "welsch_err": 23.5,
+      "savgol_err": 41.7
+    },
+    {
+      "name": "Kepler-1406 b",
+      "mission": "kepler",
+      "depth_ppm": 88.0,
+      "UMI_err": 39.7,
+      "biweight_err": 40.5,
+      "welsch_err": 8.6,
+      "savgol_err": 70.6
+    },
+    {
+      "name": "Kepler-130 c",
+      "mission": "kepler",
+      "depth_ppm": 639.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1989 b",
+      "mission": "kepler",
+      "depth_ppm": 1653.9,
+      "UMI_err": 32.6,
+      "biweight_err": 36.9,
+      "welsch_err": 30.0,
+      "savgol_err": 62.0
+    },
+    {
+      "name": "Kepler-548 b",
+      "mission": "kepler",
+      "depth_ppm": 16041.5,
+      "UMI_err": 14.3,
+      "biweight_err": 14.0,
+      "welsch_err": 14.3,
+      "savgol_err": 16.9
+    },
+    {
+      "name": "Kepler-65 c",
+      "mission": "kepler",
+      "depth_ppm": 322.8,
+      "UMI_err": 0.4,
+      "biweight_err": 11.7,
+      "welsch_err": 0.6,
+      "savgol_err": 61.7
+    },
+    {
+      "name": "Kepler-289 e",
+      "mission": "kepler",
+      "depth_ppm": 616.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-573 b",
+      "mission": "kepler",
+      "depth_ppm": 748.1,
+      "UMI_err": 3.3,
+      "biweight_err": 36.2,
+      "welsch_err": 36.1,
+      "savgol_err": 70.8
+    },
+    {
+      "name": "Kepler-575 b",
+      "mission": "kepler",
+      "depth_ppm": 563.5,
+      "UMI_err": 65.5,
+      "biweight_err": 60.9,
+      "welsch_err": 71.4,
+      "savgol_err": 88.4
+    },
+    {
+      "name": "Kepler-65 b",
+      "mission": "kepler",
+      "depth_ppm": 99.7,
+      "UMI_err": 0.9,
+      "biweight_err": 10.7,
+      "welsch_err": 5.3,
+      "savgol_err": 49.1
+    },
+    {
+      "name": "Kepler-167 b",
+      "mission": "kepler",
+      "depth_ppm": 447.2,
+      "UMI_err": 20.9,
+      "biweight_err": 26.0,
+      "welsch_err": 23.5,
+      "savgol_err": 46.8
+    },
+    {
+      "name": "Kepler-102 e",
+      "mission": "kepler",
+      "depth_ppm": 941.1,
+      "UMI_err": 29.7,
+      "biweight_err": 42.0,
+      "welsch_err": 34.5,
+      "savgol_err": 68.8
+    },
+    {
+      "name": "Kepler-167 e",
+      "mission": "kepler",
+      "depth_ppm": 19045.6,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-10 b",
+      "mission": "kepler",
+      "depth_ppm": 190.4,
+      "UMI_err": 16.9,
+      "biweight_err": 18.5,
+      "welsch_err": 18.5,
+      "savgol_err": 34.8
+    },
+    {
+      "name": "Kepler-167 c",
+      "mission": "kepler",
+      "depth_ppm": 417.9,
+      "UMI_err": 6.0,
+      "biweight_err": 18.0,
+      "welsch_err": 19.8,
+      "savgol_err": 35.6
+    },
+    {
+      "name": "Kepler-167 d",
+      "mission": "kepler",
+      "depth_ppm": 246.4,
+      "UMI_err": 55.7,
+      "biweight_err": 85.5,
+      "welsch_err": 82.6,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-576 b",
+      "mission": "kepler",
+      "depth_ppm": 942.0,
+      "UMI_err": 28.0,
+      "biweight_err": 49.2,
+      "welsch_err": 53.4,
+      "savgol_err": 73.6
+    },
+    {
+      "name": "Kepler-577 b",
+      "mission": "kepler",
+      "depth_ppm": 1130.8,
+      "UMI_err": 34.3,
+      "biweight_err": 49.1,
+      "welsch_err": 48.0,
+      "savgol_err": 63.4
+    },
+    {
+      "name": "Kepler-4 b",
+      "mission": "kepler",
+      "depth_ppm": 727.8,
+      "UMI_err": 19.2,
+      "biweight_err": 32.1,
+      "welsch_err": 29.3,
+      "savgol_err": 60.7
+    },
+    {
+      "name": "Kepler-65 d",
+      "mission": "kepler",
+      "depth_ppm": 111.8,
+      "UMI_err": 7.1,
+      "biweight_err": 20.8,
+      "welsch_err": 26.9,
+      "savgol_err": 61.5
+    },
+    {
+      "name": "Kepler-554 b",
+      "mission": "kepler",
+      "depth_ppm": 2343.5,
+      "UMI_err": 11.2,
+      "biweight_err": 11.6,
+      "welsch_err": 11.5,
+      "savgol_err": 21.1
+    },
+    {
+      "name": "Kepler-156 c",
+      "mission": "kepler",
+      "depth_ppm": 924.7,
+      "UMI_err": 18.3,
+      "biweight_err": 49.2,
+      "welsch_err": 36.1,
+      "savgol_err": 71.5
+    },
+    {
+      "name": "Kepler-156 b",
+      "mission": "kepler",
+      "depth_ppm": 741.6,
+      "UMI_err": 4.1,
+      "biweight_err": 1.7,
+      "welsch_err": 3.0,
+      "savgol_err": 25.0
+    },
+    {
+      "name": "Kepler-578 b",
+      "mission": "kepler",
+      "depth_ppm": 437.3,
+      "UMI_err": 46.7,
+      "biweight_err": 32.0,
+      "welsch_err": 44.5,
+      "savgol_err": 35.1
+    },
+    {
+      "name": "Kepler-168 c",
+      "mission": "kepler",
+      "depth_ppm": 585.7,
+      "UMI_err": 24.3,
+      "biweight_err": 39.4,
+      "welsch_err": 43.8,
+      "savgol_err": 64.2
+    },
+    {
+      "name": "Kepler-102 d",
+      "mission": "kepler",
+      "depth_ppm": 275.9,
+      "UMI_err": 25.2,
+      "biweight_err": 32.5,
+      "welsch_err": 33.1,
+      "savgol_err": 55.7
+    },
+    {
+      "name": "Kepler-168 b",
+      "mission": "kepler",
+      "depth_ppm": 179.0,
+      "UMI_err": 28.9,
+      "biweight_err": 56.3,
+      "welsch_err": 49.1,
+      "savgol_err": 73.9
+    },
+    {
+      "name": "Kepler-157 c",
+      "mission": "kepler",
+      "depth_ppm": 461.0,
+      "UMI_err": 26.8,
+      "biweight_err": 33.9,
+      "welsch_err": 36.3,
+      "savgol_err": 65.4
+    },
+    {
+      "name": "Kepler-157 b",
+      "mission": "kepler",
+      "depth_ppm": 182.4,
+      "UMI_err": 0.6,
+      "biweight_err": 2.8,
+      "welsch_err": 6.8,
+      "savgol_err": 28.7
+    },
+    {
+      "name": "Kepler-157 d",
+      "mission": "kepler",
+      "depth_ppm": 190.7,
+      "UMI_err": 7.8,
+      "biweight_err": 18.0,
+      "welsch_err": 14.3,
+      "savgol_err": 49.5
+    },
+    {
+      "name": "Kepler-555 b",
+      "mission": "kepler",
+      "depth_ppm": 758.3,
+      "UMI_err": 1.6,
+      "biweight_err": 48.5,
+      "welsch_err": 39.1,
+      "savgol_err": 90.8
+    },
+    {
+      "name": "Kepler-556 b",
+      "mission": "kepler",
+      "depth_ppm": 492.2,
+      "UMI_err": 42.2,
+      "biweight_err": 55.5,
+      "welsch_err": 42.3,
+      "savgol_err": 71.4
+    },
+    {
+      "name": "Kepler-579 b",
+      "mission": "kepler",
+      "depth_ppm": 411.7,
+      "UMI_err": 25.9,
+      "biweight_err": 25.5,
+      "welsch_err": 22.6,
+      "savgol_err": 43.0
+    },
+    {
+      "name": "Kepler-80 b",
+      "mission": "kepler",
+      "depth_ppm": 1480.1,
+      "UMI_err": 19.6,
+      "biweight_err": 33.9,
+      "welsch_err": 31.4,
+      "savgol_err": 43.6
+    },
+    {
+      "name": "Kepler-80 c",
+      "mission": "kepler",
+      "depth_ppm": 1491.3,
+      "UMI_err": 19.4,
+      "biweight_err": 20.9,
+      "welsch_err": 21.9,
+      "savgol_err": 45.6
+    },
+    {
+      "name": "Kepler-80 d",
+      "mission": "kepler",
+      "depth_ppm": 539.0,
+      "UMI_err": 5.5,
+      "biweight_err": 21.3,
+      "welsch_err": 20.7,
+      "savgol_err": 39.1
+    },
+    {
+      "name": "Kepler-80 e",
+      "mission": "kepler",
+      "depth_ppm": 565.5,
+      "UMI_err": 27.7,
+      "biweight_err": 39.2,
+      "welsch_err": 36.3,
+      "savgol_err": 57.8
+    },
+    {
+      "name": "Kepler-596 b",
+      "mission": "kepler",
+      "depth_ppm": 659.8,
+      "UMI_err": 30.4,
+      "biweight_err": 42.4,
+      "welsch_err": 35.8,
+      "savgol_err": 73.8
+    },
+    {
+      "name": "Kepler-22 b",
+      "mission": "kepler",
+      "depth_ppm": 529.1,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-10 c",
+      "mission": "kepler",
+      "depth_ppm": 477.1,
+      "UMI_err": 46.5,
+      "biweight_err": 63.3,
+      "welsch_err": 66.1,
+      "savgol_err": 85.6
+    },
+    {
+      "name": "Kepler-159 b",
+      "mission": "kepler",
+      "depth_ppm": 1155.9,
+      "UMI_err": 12.3,
+      "biweight_err": 10.4,
+      "welsch_err": 9.2,
+      "savgol_err": 44.7
+    },
+    {
+      "name": "Kepler-159 c",
+      "mission": "kepler",
+      "depth_ppm": 1708.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-80 f",
+      "mission": "kepler",
+      "depth_ppm": 450.0,
+      "UMI_err": 60.6,
+      "biweight_err": 61.0,
+      "welsch_err": 60.3,
+      "savgol_err": 74.9
+    },
+    {
+      "name": "Kepler-102 f",
+      "mission": "kepler",
+      "depth_ppm": 136.4,
+      "UMI_err": 56.7,
+      "biweight_err": 52.8,
+      "welsch_err": 63.0,
+      "savgol_err": 73.8
+    },
+    {
+      "name": "Kepler-597 b",
+      "mission": "kepler",
+      "depth_ppm": 607.0,
+      "UMI_err": 53.6,
+      "biweight_err": 56.8,
+      "welsch_err": 64.7,
+      "savgol_err": 80.1
+    },
+    {
+      "name": "Kepler-183 c",
+      "mission": "kepler",
+      "depth_ppm": 604.3,
+      "UMI_err": 11.2,
+      "biweight_err": 23.0,
+      "welsch_err": 21.4,
+      "savgol_err": 44.8
+    },
+    {
+      "name": "Kepler-183 b",
+      "mission": "kepler",
+      "depth_ppm": 476.4,
+      "UMI_err": 51.8,
+      "biweight_err": 47.6,
+      "welsch_err": 40.0,
+      "savgol_err": 77.1
+    },
+    {
+      "name": "Kepler-730 c",
+      "mission": "kepler",
+      "depth_ppm": 114.9,
+      "UMI_err": 66.1,
+      "biweight_err": 52.5,
+      "welsch_err": 50.9,
+      "savgol_err": 46.4
+    },
+    {
+      "name": "Kepler-620 b",
+      "mission": "kepler",
+      "depth_ppm": 487.9,
+      "UMI_err": 51.3,
+      "biweight_err": 61.3,
+      "welsch_err": 53.5,
+      "savgol_err": 79.6
+    },
+    {
+      "name": "Kepler-581 b",
+      "mission": "kepler",
+      "depth_ppm": 657.5,
+      "UMI_err": 41.6,
+      "biweight_err": 45.7,
+      "welsch_err": 35.9,
+      "savgol_err": 66.1
+    },
+    {
+      "name": "Kepler-598 b",
+      "mission": "kepler",
+      "depth_ppm": 288.3,
+      "UMI_err": 48.1,
+      "biweight_err": 38.0,
+      "welsch_err": 32.1,
+      "savgol_err": 57.4
+    },
+    {
+      "name": "Kepler-598 c",
+      "mission": "kepler",
+      "depth_ppm": 995.2,
+      "UMI_err": 59.2,
+      "biweight_err": 67.4,
+      "welsch_err": 68.8,
+      "savgol_err": 89.5
+    },
+    {
+      "name": "Kepler-582 b",
+      "mission": "kepler",
+      "depth_ppm": 1655.5,
+      "UMI_err": 55.1,
+      "biweight_err": 49.8,
+      "welsch_err": 86.3,
+      "savgol_err": 61.3
+    },
+    {
+      "name": "Kepler-102 c",
+      "mission": "kepler",
+      "depth_ppm": 65.7,
+      "UMI_err": 2.7,
+      "biweight_err": 1.1,
+      "welsch_err": 4.3,
+      "savgol_err": 51.2
+    },
+    {
+      "name": "Kepler-1722 b",
+      "mission": "kepler",
+      "depth_ppm": 796.5,
+      "UMI_err": 6.9,
+      "biweight_err": 24.7,
+      "welsch_err": 14.1,
+      "savgol_err": 46.8
+    },
+    {
+      "name": "Kepler-149 b",
+      "mission": "kepler",
+      "depth_ppm": 2047.2,
+      "UMI_err": 11.8,
+      "biweight_err": 43.8,
+      "welsch_err": 13.3,
+      "savgol_err": 36.0
+    },
+    {
+      "name": "Kepler-149 d",
+      "mission": "kepler",
+      "depth_ppm": 1552.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-149 c",
+      "mission": "kepler",
+      "depth_ppm": 325.7,
+      "UMI_err": 84.7,
+      "biweight_err": 91.9,
+      "welsch_err": 77.5,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-150 c",
+      "mission": "kepler",
+      "depth_ppm": 1433.8,
+      "UMI_err": 32.0,
+      "biweight_err": 34.6,
+      "welsch_err": 34.1,
+      "savgol_err": 51.7
+    },
+    {
+      "name": "Kepler-150 d",
+      "mission": "kepler",
+      "depth_ppm": 923.1,
+      "UMI_err": 33.1,
+      "biweight_err": 43.2,
+      "welsch_err": 46.8,
+      "savgol_err": 62.3
+    },
+    {
+      "name": "Kepler-150 e",
+      "mission": "kepler",
+      "depth_ppm": 742.2,
+      "UMI_err": 70.5,
+      "biweight_err": 67.2,
+      "welsch_err": 74.7,
+      "savgol_err": 84.0
+    },
+    {
+      "name": "Kepler-150 b",
+      "mission": "kepler",
+      "depth_ppm": 178.4,
+      "UMI_err": 23.4,
+      "biweight_err": 35.4,
+      "welsch_err": 33.6,
+      "savgol_err": 59.8
+    },
+    {
+      "name": "Kepler-545 b",
+      "mission": "kepler",
+      "depth_ppm": 647.6,
+      "UMI_err": 21.4,
+      "biweight_err": 25.6,
+      "welsch_err": 14.7,
+      "savgol_err": 60.5
+    },
+    {
+      "name": "Kepler-102 b",
+      "mission": "kepler",
+      "depth_ppm": 41.5,
+      "UMI_err": 25.9,
+      "biweight_err": 15.9,
+      "welsch_err": 29.4,
+      "savgol_err": 28.2
+    },
+    {
+      "name": "Kepler-583 b",
+      "mission": "kepler",
+      "depth_ppm": 602.8,
+      "UMI_err": 32.5,
+      "biweight_err": 39.3,
+      "welsch_err": 41.4,
+      "savgol_err": 54.0
+    },
+    {
+      "name": "Kepler-605 b",
+      "mission": "kepler",
+      "depth_ppm": 255.7,
+      "UMI_err": 29.9,
+      "biweight_err": 32.3,
+      "welsch_err": 27.6,
+      "savgol_err": 40.5
+    },
+    {
+      "name": "Kepler-605 c",
+      "mission": "kepler",
+      "depth_ppm": 94.1,
+      "UMI_err": 9.3,
+      "biweight_err": 3.9,
+      "welsch_err": 20.0,
+      "savgol_err": 10.8
+    },
+    {
+      "name": "Kepler-151 b",
+      "mission": "kepler",
+      "depth_ppm": 1124.8,
+      "UMI_err": 19.6,
+      "biweight_err": 21.5,
+      "welsch_err": 17.5,
+      "savgol_err": 38.3
+    },
+    {
+      "name": "Kepler-151 c",
+      "mission": "kepler",
+      "depth_ppm": 650.6,
+      "UMI_err": 50.3,
+      "biweight_err": 52.0,
+      "welsch_err": 51.9,
+      "savgol_err": 59.1
+    },
+    {
+      "name": "Kepler-585 b",
+      "mission": "kepler",
+      "depth_ppm": 791.9,
+      "UMI_err": 24.5,
+      "biweight_err": 25.1,
+      "welsch_err": 24.5,
+      "savgol_err": 40.0
+    },
+    {
+      "name": "Kepler-19 b",
+      "mission": "kepler",
+      "depth_ppm": 691.7,
+      "UMI_err": 14.2,
+      "biweight_err": 15.0,
+      "welsch_err": 14.4,
+      "savgol_err": 31.9
+    },
+    {
+      "name": "Kepler-625 c",
+      "mission": "kepler",
+      "depth_ppm": 120.0,
+      "UMI_err": 57.9,
+      "biweight_err": 60.7,
+      "welsch_err": 65.5,
+      "savgol_err": 77.3
+    },
+    {
+      "name": "Kepler-626 b",
+      "mission": "kepler",
+      "depth_ppm": 457.1,
+      "UMI_err": 20.9,
+      "biweight_err": 38.2,
+      "welsch_err": 38.9,
+      "savgol_err": 57.5
+    },
+    {
+      "name": "Kepler-627 b",
+      "mission": "kepler",
+      "depth_ppm": 429.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-628 b",
+      "mission": "kepler",
+      "depth_ppm": 4253.2,
+      "UMI_err": 63.1,
+      "biweight_err": 93.6,
+      "welsch_err": 96.3,
+      "savgol_err": 92.6
+    },
+    {
+      "name": "Kepler-629 b",
+      "mission": "kepler",
+      "depth_ppm": 268.2,
+      "UMI_err": 56.7,
+      "biweight_err": 53.2,
+      "welsch_err": 56.1,
+      "savgol_err": 66.2
+    },
+    {
+      "name": "Kepler-630 b",
+      "mission": "kepler",
+      "depth_ppm": 828.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1725 b",
+      "mission": "kepler",
+      "depth_ppm": 523.1,
+      "UMI_err": 15.7,
+      "biweight_err": 20.9,
+      "welsch_err": 8.8,
+      "savgol_err": 53.1
+    },
+    {
+      "name": "Kepler-645 b",
+      "mission": "kepler",
+      "depth_ppm": 274.9,
+      "UMI_err": 17.0,
+      "biweight_err": 30.3,
+      "welsch_err": 32.3,
+      "savgol_err": 59.0
+    },
+    {
+      "name": "Kepler-199 b",
+      "mission": "kepler",
+      "depth_ppm": 1102.2,
+      "UMI_err": 22.0,
+      "biweight_err": 43.0,
+      "welsch_err": 18.2,
+      "savgol_err": 86.8
+    },
+    {
+      "name": "Kepler-199 c",
+      "mission": "kepler",
+      "depth_ppm": 1254.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-631 b",
+      "mission": "kepler",
+      "depth_ppm": 459.1,
+      "UMI_err": 38.5,
+      "biweight_err": 53.4,
+      "welsch_err": 50.8,
+      "savgol_err": 82.4
+    },
+    {
+      "name": "Kepler-632 b",
+      "mission": "kepler",
+      "depth_ppm": 655.3,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-213 b",
+      "mission": "kepler",
+      "depth_ppm": 180.1,
+      "UMI_err": 47.3,
+      "biweight_err": 51.9,
+      "welsch_err": 50.9,
+      "savgol_err": 58.8
+    },
+    {
+      "name": "Kepler-213 c",
+      "mission": "kepler",
+      "depth_ppm": 332.1,
+      "UMI_err": 1.2,
+      "biweight_err": 10.7,
+      "welsch_err": 4.8,
+      "savgol_err": 22.0
+    },
+    {
+      "name": "Kepler-103 b",
+      "mission": "kepler",
+      "depth_ppm": 482.2,
+      "UMI_err": 16.7,
+      "biweight_err": 24.2,
+      "welsch_err": 13.7,
+      "savgol_err": 71.2
+    },
+    {
+      "name": "Kepler-633 b",
+      "mission": "kepler",
+      "depth_ppm": 188.9,
+      "UMI_err": 23.1,
+      "biweight_err": 24.9,
+      "welsch_err": 30.0,
+      "savgol_err": 38.3
+    },
+    {
+      "name": "Kepler-633 c",
+      "mission": "kepler",
+      "depth_ppm": 256.5,
+      "UMI_err": null,
+      "biweight_err": 20.5,
+      "welsch_err": 4.8,
+      "savgol_err": 75.1
+    },
+    {
+      "name": "Kepler-634 b",
+      "mission": "kepler",
+      "depth_ppm": 210.6,
+      "UMI_err": 29.5,
+      "biweight_err": 55.6,
+      "welsch_err": 52.2,
+      "savgol_err": 89.6
+    },
+    {
+      "name": "Kepler-635 b",
+      "mission": "kepler",
+      "depth_ppm": 315.6,
+      "UMI_err": 69.4,
+      "biweight_err": 78.0,
+      "welsch_err": 75.0,
+      "savgol_err": 94.9
+    },
+    {
+      "name": "Kepler-1665 b",
+      "mission": "kepler",
+      "depth_ppm": 903.4,
+      "UMI_err": 12.1,
+      "biweight_err": 11.1,
+      "welsch_err": 11.5,
+      "savgol_err": 20.0
+    },
+    {
+      "name": "Kepler-636 b",
+      "mission": "kepler",
+      "depth_ppm": 3076.0,
+      "UMI_err": 10.2,
+      "biweight_err": 8.8,
+      "welsch_err": 9.2,
+      "savgol_err": 30.2
+    },
+    {
+      "name": "Kepler-103 c",
+      "mission": "kepler",
+      "depth_ppm": 1273.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-201 b",
+      "mission": "kepler",
+      "depth_ppm": 387.1,
+      "UMI_err": 40.5,
+      "biweight_err": 66.3,
+      "welsch_err": 56.9,
+      "savgol_err": 84.3
+    },
+    {
+      "name": "Kepler-201 c",
+      "mission": "kepler",
+      "depth_ppm": 360.6,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1726 b",
+      "mission": "kepler",
+      "depth_ppm": 680.2,
+      "UMI_err": 35.1,
+      "biweight_err": 34.2,
+      "welsch_err": 49.1,
+      "savgol_err": 50.1
+    },
+    {
+      "name": "Kepler-203 b",
+      "mission": "kepler",
+      "depth_ppm": 503.7,
+      "UMI_err": 26.2,
+      "biweight_err": 30.2,
+      "welsch_err": 29.6,
+      "savgol_err": 47.1
+    },
+    {
+      "name": "Kepler-203 c",
+      "mission": "kepler",
+      "depth_ppm": 491.3,
+      "UMI_err": 32.0,
+      "biweight_err": 36.4,
+      "welsch_err": 30.6,
+      "savgol_err": 50.5
+    },
+    {
+      "name": "Kepler-203 d",
+      "mission": "kepler",
+      "depth_ppm": 162.4,
+      "UMI_err": 22.3,
+      "biweight_err": 15.2,
+      "welsch_err": 13.0,
+      "savgol_err": 62.6
+    },
+    {
+      "name": "Kepler-637 b",
+      "mission": "kepler",
+      "depth_ppm": 342.5,
+      "UMI_err": 26.3,
+      "biweight_err": 44.6,
+      "welsch_err": 45.1,
+      "savgol_err": 83.9
+    },
+    {
+      "name": "Kepler-621 b",
+      "mission": "kepler",
+      "depth_ppm": 936.8,
+      "UMI_err": 28.8,
+      "biweight_err": 36.1,
+      "welsch_err": 31.9,
+      "savgol_err": 50.6
+    },
+    {
+      "name": "Kepler-1710 b",
+      "mission": "kepler",
+      "depth_ppm": 864.5,
+      "UMI_err": 13.4,
+      "biweight_err": 25.6,
+      "welsch_err": 14.4,
+      "savgol_err": 38.9
+    },
+    {
+      "name": "Kepler-641 b",
+      "mission": "kepler",
+      "depth_ppm": 262.2,
+      "UMI_err": 21.4,
+      "biweight_err": 30.2,
+      "welsch_err": 30.9,
+      "savgol_err": 54.5
+    },
+    {
+      "name": "Kepler-7 b",
+      "mission": "kepler",
+      "depth_ppm": 7458.4,
+      "UMI_err": 8.6,
+      "biweight_err": 8.9,
+      "welsch_err": 8.7,
+      "savgol_err": 9.0
+    },
+    {
+      "name": "Kepler-198 b",
+      "mission": "kepler",
+      "depth_ppm": 871.4,
+      "UMI_err": 45.6,
+      "biweight_err": 45.7,
+      "welsch_err": 51.4,
+      "savgol_err": 73.6
+    },
+    {
+      "name": "Kepler-198 c",
+      "mission": "kepler",
+      "depth_ppm": 730.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-198 d",
+      "mission": "kepler",
+      "depth_ppm": 245.1,
+      "UMI_err": 48.7,
+      "biweight_err": 32.6,
+      "welsch_err": 42.3,
+      "savgol_err": 45.2
+    },
+    {
+      "name": "Kepler-624 b",
+      "mission": "kepler",
+      "depth_ppm": 378.7,
+      "UMI_err": 7.2,
+      "biweight_err": 16.9,
+      "welsch_err": 0.8,
+      "savgol_err": 61.2
+    },
+    {
+      "name": "Kepler-625 b",
+      "mission": "kepler",
+      "depth_ppm": 407.3,
+      "UMI_err": 19.4,
+      "biweight_err": 27.8,
+      "welsch_err": 20.2,
+      "savgol_err": 60.7
+    },
+    {
+      "name": "Kepler-379 b",
+      "mission": "kepler",
+      "depth_ppm": 157.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1938 b",
+      "mission": "kepler",
+      "depth_ppm": 464.3,
+      "UMI_err": 94.1,
+      "biweight_err": 74.5,
+      "welsch_err": null,
+      "savgol_err": 79.5
+    },
+    {
+      "name": "Kepler-1549 b",
+      "mission": "kepler",
+      "depth_ppm": 759.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1943 b",
+      "mission": "kepler",
+      "depth_ppm": 64.5,
+      "UMI_err": 29.2,
+      "biweight_err": 8.2,
+      "welsch_err": 34.1,
+      "savgol_err": 51.8
+    },
+    {
+      "name": "Kepler-1982 b",
+      "mission": "kepler",
+      "depth_ppm": 47.2,
+      "UMI_err": 36.2,
+      "biweight_err": 16.7,
+      "welsch_err": 51.1,
+      "savgol_err": 20.9
+    },
+    {
+      "name": "Kepler-1154 c",
+      "mission": "kepler",
+      "depth_ppm": 258.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1944 b",
+      "mission": "kepler",
+      "depth_ppm": 626.4,
+      "UMI_err": 6.6,
+      "biweight_err": 14.4,
+      "welsch_err": 20.6,
+      "savgol_err": 46.0
+    },
+    {
+      "name": "Kepler-1550 b",
+      "mission": "kepler",
+      "depth_ppm": 754.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1551 b",
+      "mission": "kepler",
+      "depth_ppm": 449.1,
+      "UMI_err": 90.8,
+      "biweight_err": null,
+      "welsch_err": 85.0,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1942 b",
+      "mission": "kepler",
+      "depth_ppm": 346.9,
+      "UMI_err": 39.1,
+      "biweight_err": 39.1,
+      "welsch_err": 38.0,
+      "savgol_err": 36.3
+    },
+    {
+      "name": "Kepler-1181 c",
+      "mission": "kepler",
+      "depth_ppm": 135.9,
+      "UMI_err": 99.0,
+      "biweight_err": null,
+      "welsch_err": 90.6,
+      "savgol_err": 48.5
+    },
+    {
+      "name": "Kepler-1561 b",
+      "mission": "kepler",
+      "depth_ppm": 97.5,
+      "UMI_err": 20.6,
+      "biweight_err": 5.2,
+      "welsch_err": 4.2,
+      "savgol_err": 12.6
+    },
+    {
+      "name": "Kepler-1552 b",
+      "mission": "kepler",
+      "depth_ppm": 951.4,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-371 c",
+      "mission": "kepler",
+      "depth_ppm": 321.8,
+      "UMI_err": null,
+      "biweight_err": 78.4,
+      "welsch_err": 82.4,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1553 b",
+      "mission": "kepler",
+      "depth_ppm": 187.6,
+      "UMI_err": 25.4,
+      "biweight_err": 6.7,
+      "welsch_err": 15.1,
+      "savgol_err": 2.4
+    },
+    {
+      "name": "Kepler-1934 b",
+      "mission": "kepler",
+      "depth_ppm": 60.9,
+      "UMI_err": 46.5,
+      "biweight_err": 28.6,
+      "welsch_err": 46.9,
+      "savgol_err": 36.6
+    },
+    {
+      "name": "Kepler-1935 b",
+      "mission": "kepler",
+      "depth_ppm": 405.7,
+      "UMI_err": 29.6,
+      "biweight_err": 32.4,
+      "welsch_err": 37.0,
+      "savgol_err": 47.4
+    },
+    {
+      "name": "Kepler-378 c",
+      "mission": "kepler",
+      "depth_ppm": 99.0,
+      "UMI_err": 56.5,
+      "biweight_err": 59.2,
+      "welsch_err": 64.9,
+      "savgol_err": 57.4
+    },
+    {
+      "name": "Kepler-1556 b",
+      "mission": "kepler",
+      "depth_ppm": 368.6,
+      "UMI_err": 10.0,
+      "biweight_err": 52.3,
+      "welsch_err": 40.1,
+      "savgol_err": 61.0
+    },
+    {
+      "name": "Kepler-1955 b",
+      "mission": "kepler",
+      "depth_ppm": 66.3,
+      "UMI_err": 58.6,
+      "biweight_err": 42.2,
+      "welsch_err": 76.2,
+      "savgol_err": 71.5
+    },
+    {
+      "name": "Kepler-1602 b",
+      "mission": "kepler",
+      "depth_ppm": 90.6,
+      "UMI_err": 14.2,
+      "biweight_err": 12.6,
+      "welsch_err": 21.2,
+      "savgol_err": 21.1
+    },
+    {
+      "name": "Kepler-1592 b",
+      "mission": "kepler",
+      "depth_ppm": 144.0,
+      "UMI_err": 44.0,
+      "biweight_err": 56.3,
+      "welsch_err": 72.8,
+      "savgol_err": 78.7
+    },
+    {
+      "name": "Kepler-1569 b",
+      "mission": "kepler",
+      "depth_ppm": 118.5,
+      "UMI_err": 26.5,
+      "biweight_err": 41.4,
+      "welsch_err": 54.8,
+      "savgol_err": 68.7
+    },
+    {
+      "name": "Kepler-1581 b",
+      "mission": "kepler",
+      "depth_ppm": 35.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": 85.7
+    },
+    {
+      "name": "Kepler-436 b",
+      "mission": "kepler",
+      "depth_ppm": 1112.5,
+      "UMI_err": 15.9,
+      "biweight_err": 47.8,
+      "welsch_err": 38.8,
+      "savgol_err": 86.7
+    },
+    {
+      "name": "Kepler-1582 b",
+      "mission": "kepler",
+      "depth_ppm": 1544.0,
+      "UMI_err": 14.8,
+      "biweight_err": 28.2,
+      "welsch_err": 13.8,
+      "savgol_err": 25.5
+    },
+    {
+      "name": "Kepler-1584 b",
+      "mission": "kepler",
+      "depth_ppm": 167.3,
+      "UMI_err": 8.5,
+      "biweight_err": 21.9,
+      "welsch_err": 33.4,
+      "savgol_err": 78.8
+    },
+    {
+      "name": "Kepler-391 c",
+      "mission": "kepler",
+      "depth_ppm": 89.5,
+      "UMI_err": 55.0,
+      "biweight_err": 43.7,
+      "welsch_err": 39.0,
+      "savgol_err": 65.4
+    },
+    {
+      "name": "Kepler-1576 b",
+      "mission": "kepler",
+      "depth_ppm": 90.7,
+      "UMI_err": null,
+      "biweight_err": 82.1,
+      "welsch_err": 48.3,
+      "savgol_err": 76.0
+    },
+    {
+      "name": "Kepler-1600 c",
+      "mission": "kepler",
+      "depth_ppm": 370.5,
+      "UMI_err": 42.6,
+      "biweight_err": 51.1,
+      "welsch_err": 58.2,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1951 b",
+      "mission": "kepler",
+      "depth_ppm": 98.2,
+      "UMI_err": 57.1,
+      "biweight_err": 40.2,
+      "welsch_err": 73.9,
+      "savgol_err": 60.2
+    },
+    {
+      "name": "Kepler-1589 b",
+      "mission": "kepler",
+      "depth_ppm": 77.3,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1563 b",
+      "mission": "kepler",
+      "depth_ppm": 63.2,
+      "UMI_err": 31.2,
+      "biweight_err": 42.4,
+      "welsch_err": 67.9,
+      "savgol_err": 30.5
+    },
+    {
+      "name": "Kepler-1565 b",
+      "mission": "kepler",
+      "depth_ppm": 277.2,
+      "UMI_err": 77.4,
+      "biweight_err": 95.7,
+      "welsch_err": 83.8,
+      "savgol_err": 60.7
+    },
+    {
+      "name": "Kepler-1601 b",
+      "mission": "kepler",
+      "depth_ppm": 59.8,
+      "UMI_err": 42.9,
+      "biweight_err": 50.1,
+      "welsch_err": 40.9,
+      "savgol_err": 58.8
+    },
+    {
+      "name": "Kepler-1567 b",
+      "mission": "kepler",
+      "depth_ppm": 792.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-390 c",
+      "mission": "kepler",
+      "depth_ppm": 106.8,
+      "UMI_err": 75.7,
+      "biweight_err": 69.6,
+      "welsch_err": 71.6,
+      "savgol_err": 78.5
+    },
+    {
+      "name": "Kepler-1653 b",
+      "mission": "kepler",
+      "depth_ppm": 567.7,
+      "UMI_err": 50.6,
+      "biweight_err": 64.6,
+      "welsch_err": 51.7,
+      "savgol_err": 89.0
+    },
+    {
+      "name": "Kepler-1911 b",
+      "mission": "kepler",
+      "depth_ppm": 69.9,
+      "UMI_err": 76.7,
+      "biweight_err": 45.8,
+      "welsch_err": 69.9,
+      "savgol_err": 46.3
+    },
+    {
+      "name": "Kepler-1609 b",
+      "mission": "kepler",
+      "depth_ppm": 239.8,
+      "UMI_err": 48.1,
+      "biweight_err": 57.9,
+      "welsch_err": 59.8,
+      "savgol_err": 72.9
+    },
+    {
+      "name": "Kepler-1618 b",
+      "mission": "kepler",
+      "depth_ppm": 61.1,
+      "UMI_err": 73.0,
+      "biweight_err": 63.6,
+      "welsch_err": 62.4,
+      "savgol_err": 57.5
+    },
+    {
+      "name": "Kepler-1972 b",
+      "mission": "kepler",
+      "depth_ppm": 22.2,
+      "UMI_err": 0.7,
+      "biweight_err": 79.3,
+      "welsch_err": 88.1,
+      "savgol_err": 64.0
+    },
+    {
+      "name": "Kepler-1961 b",
+      "mission": "kepler",
+      "depth_ppm": 210.0,
+      "UMI_err": 23.3,
+      "biweight_err": 17.0,
+      "welsch_err": 44.2,
+      "savgol_err": 17.8
+    },
+    {
+      "name": "Kepler-1965 b",
+      "mission": "kepler",
+      "depth_ppm": 150.7,
+      "UMI_err": null,
+      "biweight_err": 82.4,
+      "welsch_err": 89.2,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1966 b",
+      "mission": "kepler",
+      "depth_ppm": 154.9,
+      "UMI_err": 36.2,
+      "biweight_err": 46.9,
+      "welsch_err": 67.5,
+      "savgol_err": 50.8
+    },
+    {
+      "name": "Kepler-1962 b",
+      "mission": "kepler",
+      "depth_ppm": 145.0,
+      "UMI_err": 40.2,
+      "biweight_err": 15.8,
+      "welsch_err": 20.2,
+      "savgol_err": 42.6
+    },
+    {
+      "name": "Kepler-1608 b",
+      "mission": "kepler",
+      "depth_ppm": 470.5,
+      "UMI_err": 80.3,
+      "biweight_err": 64.6,
+      "welsch_err": 72.9,
+      "savgol_err": 78.6
+    },
+    {
+      "name": "Kepler-274 b",
+      "mission": "kepler",
+      "depth_ppm": 292.3,
+      "UMI_err": 49.5,
+      "biweight_err": 46.9,
+      "welsch_err": 57.8,
+      "savgol_err": 75.7
+    },
+    {
+      "name": "Kepler-1464 b",
+      "mission": "kepler",
+      "depth_ppm": 262.0,
+      "UMI_err": 40.9,
+      "biweight_err": 40.3,
+      "welsch_err": 53.9,
+      "savgol_err": 65.5
+    },
+    {
+      "name": "Kepler-450 d",
+      "mission": "kepler",
+      "depth_ppm": 36.3,
+      "UMI_err": 50.7,
+      "biweight_err": 49.5,
+      "welsch_err": 64.7,
+      "savgol_err": 91.9
+    },
+    {
+      "name": "Kepler-274 c",
+      "mission": "kepler",
+      "depth_ppm": 336.7,
+      "UMI_err": 18.9,
+      "biweight_err": 3.5,
+      "welsch_err": 2.9,
+      "savgol_err": 51.4
+    },
+    {
+      "name": "Kepler-1464 c",
+      "mission": "kepler",
+      "depth_ppm": 87.2,
+      "UMI_err": 10.4,
+      "biweight_err": 51.4,
+      "welsch_err": 75.0,
+      "savgol_err": 81.7
+    },
+    {
+      "name": "Kepler-1469 b",
+      "mission": "kepler",
+      "depth_ppm": 871.0,
+      "UMI_err": 83.2,
+      "biweight_err": 45.8,
+      "welsch_err": 52.5,
+      "savgol_err": 66.0
+    },
+    {
+      "name": "Kepler-1468 d",
+      "mission": "kepler",
+      "depth_ppm": 297.0,
+      "UMI_err": 6.5,
+      "biweight_err": 52.5,
+      "welsch_err": 53.8,
+      "savgol_err": 88.1
+    },
+    {
+      "name": "Kepler-1468 b",
+      "mission": "kepler",
+      "depth_ppm": 251.0,
+      "UMI_err": 32.6,
+      "biweight_err": 36.7,
+      "welsch_err": 45.3,
+      "savgol_err": 75.6
+    },
+    {
+      "name": "Kepler-1468 c",
+      "mission": "kepler",
+      "depth_ppm": 119.2,
+      "UMI_err": 48.5,
+      "biweight_err": 55.6,
+      "welsch_err": 52.7,
+      "savgol_err": 74.2
+    },
+    {
+      "name": "Kepler-1470 b",
+      "mission": "kepler",
+      "depth_ppm": 197.9,
+      "UMI_err": 48.8,
+      "biweight_err": 29.7,
+      "welsch_err": 51.3,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1623 b",
+      "mission": "kepler",
+      "depth_ppm": 189.2,
+      "UMI_err": 61.0,
+      "biweight_err": 68.5,
+      "welsch_err": 82.3,
+      "savgol_err": 89.4
+    },
+    {
+      "name": "Kepler-1913 b",
+      "mission": "kepler",
+      "depth_ppm": 196.2,
+      "UMI_err": 36.6,
+      "biweight_err": 33.6,
+      "welsch_err": 48.3,
+      "savgol_err": 62.1
+    },
+    {
+      "name": "Kepler-1451 b",
+      "mission": "kepler",
+      "depth_ppm": 651.1,
+      "UMI_err": 56.7,
+      "biweight_err": 60.5,
+      "welsch_err": null,
+      "savgol_err": 66.7
+    },
+    {
+      "name": "Kepler-442 b",
+      "mission": "kepler",
+      "depth_ppm": 502.1,
+      "UMI_err": 77.3,
+      "biweight_err": 69.4,
+      "welsch_err": 65.0,
+      "savgol_err": 93.0
+    },
+    {
+      "name": "Kepler-1452 b",
+      "mission": "kepler",
+      "depth_ppm": 160.6,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1914 b",
+      "mission": "kepler",
+      "depth_ppm": 641.3,
+      "UMI_err": 20.8,
+      "biweight_err": 34.3,
+      "welsch_err": 40.2,
+      "savgol_err": 45.7
+    },
+    {
+      "name": "Kepler-1456 b",
+      "mission": "kepler",
+      "depth_ppm": 310.8,
+      "UMI_err": null,
+      "biweight_err": 83.8,
+      "welsch_err": 96.3,
+      "savgol_err": 73.2
+    },
+    {
+      "name": "Kepler-328 b",
+      "mission": "kepler",
+      "depth_ppm": 500.0,
+      "UMI_err": 32.8,
+      "biweight_err": 56.3,
+      "welsch_err": 49.2,
+      "savgol_err": 73.3
+    },
+    {
+      "name": "Kepler-1500 b",
+      "mission": "kepler",
+      "depth_ppm": 132.2,
+      "UMI_err": 60.7,
+      "biweight_err": 56.4,
+      "welsch_err": 68.0,
+      "savgol_err": 95.5
+    },
+    {
+      "name": "Kepler-1502 b",
+      "mission": "kepler",
+      "depth_ppm": 330.0,
+      "UMI_err": 7.7,
+      "biweight_err": 34.4,
+      "welsch_err": 27.2,
+      "savgol_err": 65.5
+    },
+    {
+      "name": "Kepler-1980 b",
+      "mission": "kepler",
+      "depth_ppm": 507.1,
+      "UMI_err": 77.6,
+      "biweight_err": 52.8,
+      "welsch_err": 59.2,
+      "savgol_err": 73.6
+    },
+    {
+      "name": "Kepler-1483 b",
+      "mission": "kepler",
+      "depth_ppm": 97.9,
+      "UMI_err": 86.0,
+      "biweight_err": 67.0,
+      "welsch_err": 66.9,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1484 b",
+      "mission": "kepler",
+      "depth_ppm": 472.1,
+      "UMI_err": 10.0,
+      "biweight_err": 31.5,
+      "welsch_err": 18.4,
+      "savgol_err": 79.9
+    },
+    {
+      "name": "Kepler-312 b",
+      "mission": "kepler",
+      "depth_ppm": 79.2,
+      "UMI_err": 22.3,
+      "biweight_err": 37.0,
+      "welsch_err": 59.1,
+      "savgol_err": 48.6
+    },
+    {
+      "name": "Kepler-1506 b",
+      "mission": "kepler",
+      "depth_ppm": 210.9,
+      "UMI_err": 21.6,
+      "biweight_err": 68.8,
+      "welsch_err": 69.8,
+      "savgol_err": 64.3
+    },
+    {
+      "name": "Kepler-1922 b",
+      "mission": "kepler",
+      "depth_ppm": 261.7,
+      "UMI_err": 86.2,
+      "biweight_err": 62.8,
+      "welsch_err": 60.2,
+      "savgol_err": 84.5
+    },
+    {
+      "name": "Kepler-1486 b",
+      "mission": "kepler",
+      "depth_ppm": 432.5,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1487 b",
+      "mission": "kepler",
+      "depth_ppm": 166.8,
+      "UMI_err": 8.8,
+      "biweight_err": 51.4,
+      "welsch_err": 53.1,
+      "savgol_err": 69.0
+    },
+    {
+      "name": "Kepler-1487 c",
+      "mission": "kepler",
+      "depth_ppm": 417.4,
+      "UMI_err": 41.3,
+      "biweight_err": 66.9,
+      "welsch_err": 78.8,
+      "savgol_err": 73.5
+    },
+    {
+      "name": "Kepler-1508 b",
+      "mission": "kepler",
+      "depth_ppm": 115.9,
+      "UMI_err": 42.3,
+      "biweight_err": 39.5,
+      "welsch_err": 35.5,
+      "savgol_err": 62.9
+    },
+    {
+      "name": "Kepler-1984 b",
+      "mission": "kepler",
+      "depth_ppm": 314.8,
+      "UMI_err": 18.1,
+      "biweight_err": 16.7,
+      "welsch_err": 10.7,
+      "savgol_err": 30.6
+    },
+    {
+      "name": "Kepler-1923 b",
+      "mission": "kepler",
+      "depth_ppm": 203.7,
+      "UMI_err": 55.4,
+      "biweight_err": 67.7,
+      "welsch_err": 76.4,
+      "savgol_err": 76.5
+    },
+    {
+      "name": "Kepler-967 c",
+      "mission": "kepler",
+      "depth_ppm": 2094.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1492 b",
+      "mission": "kepler",
+      "depth_ppm": 338.3,
+      "UMI_err": 10.6,
+      "biweight_err": 8.6,
+      "welsch_err": 10.1,
+      "savgol_err": 42.0
+    },
+    {
+      "name": "Kepler-1493 b",
+      "mission": "kepler",
+      "depth_ppm": 96.9,
+      "UMI_err": null,
+      "biweight_err": 96.5,
+      "welsch_err": null,
+      "savgol_err": 89.0
+    },
+    {
+      "name": "Kepler-1495 b",
+      "mission": "kepler",
+      "depth_ppm": 767.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1920 b",
+      "mission": "kepler",
+      "depth_ppm": 576.3,
+      "UMI_err": 62.4,
+      "biweight_err": 36.5,
+      "welsch_err": 53.8,
+      "savgol_err": 38.8
+    },
+    {
+      "name": "Kepler-1921 b",
+      "mission": "kepler",
+      "depth_ppm": 124.4,
+      "UMI_err": 76.8,
+      "biweight_err": 92.9,
+      "welsch_err": 77.0,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1921 c",
+      "mission": "kepler",
+      "depth_ppm": 49.7,
+      "UMI_err": 27.6,
+      "biweight_err": 27.9,
+      "welsch_err": 31.1,
+      "savgol_err": 43.2
+    },
+    {
+      "name": "Kepler-1511 b",
+      "mission": "kepler",
+      "depth_ppm": 161.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": 91.1
+    },
+    {
+      "name": "Kepler-1927 b",
+      "mission": "kepler",
+      "depth_ppm": 233.1,
+      "UMI_err": 77.6,
+      "biweight_err": 85.8,
+      "welsch_err": 98.8,
+      "savgol_err": 94.1
+    },
+    {
+      "name": "Kepler-1696 b",
+      "mission": "kepler",
+      "depth_ppm": 580.4,
+      "UMI_err": 92.6,
+      "biweight_err": 88.9,
+      "welsch_err": 85.8,
+      "savgol_err": 99.2
+    },
+    {
+      "name": "Kepler-1526 b",
+      "mission": "kepler",
+      "depth_ppm": 867.2,
+      "UMI_err": 19.9,
+      "biweight_err": 17.6,
+      "welsch_err": 20.4,
+      "savgol_err": 40.0
+    },
+    {
+      "name": "Kepler-348 c",
+      "mission": "kepler",
+      "depth_ppm": 67.9,
+      "UMI_err": 14.3,
+      "biweight_err": 26.5,
+      "welsch_err": 17.7,
+      "savgol_err": 52.6
+    },
+    {
+      "name": "Kepler-1073 c",
+      "mission": "kepler",
+      "depth_ppm": 265.3,
+      "UMI_err": 79.7,
+      "biweight_err": 75.0,
+      "welsch_err": 88.0,
+      "savgol_err": 89.3
+    },
+    {
+      "name": "Kepler-1513 b",
+      "mission": "kepler",
+      "depth_ppm": 7590.4,
+      "UMI_err": 68.1,
+      "biweight_err": 96.5,
+      "welsch_err": 98.8,
+      "savgol_err": 73.9
+    },
+    {
+      "name": "Kepler-1514 b",
+      "mission": "kepler",
+      "depth_ppm": 9148.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1521 b",
+      "mission": "kepler",
+      "depth_ppm": 1113.8,
+      "UMI_err": null,
+      "biweight_err": 66.6,
+      "welsch_err": 67.0,
+      "savgol_err": 59.2
+    },
+    {
+      "name": "Kepler-1073 d",
+      "mission": "kepler",
+      "depth_ppm": 181.1,
+      "UMI_err": 81.4,
+      "biweight_err": 86.3,
+      "welsch_err": 94.2,
+      "savgol_err": 75.0
+    },
+    {
+      "name": "Kepler-1514 c",
+      "mission": "kepler",
+      "depth_ppm": 85.4,
+      "UMI_err": 52.7,
+      "biweight_err": 51.2,
+      "welsch_err": 60.7,
+      "savgol_err": 69.1
+    },
+    {
+      "name": "Kepler-1516 b",
+      "mission": "kepler",
+      "depth_ppm": 247.5,
+      "UMI_err": 68.7,
+      "biweight_err": 65.1,
+      "welsch_err": 59.2,
+      "savgol_err": 85.6
+    },
+    {
+      "name": "Kepler-1529 b",
+      "mission": "kepler",
+      "depth_ppm": 755.5,
+      "UMI_err": null,
+      "biweight_err": 22.4,
+      "welsch_err": 67.3,
+      "savgol_err": 35.2
+    },
+    {
+      "name": "Kepler-1531 b",
+      "mission": "kepler",
+      "depth_ppm": 66.2,
+      "UMI_err": 22.1,
+      "biweight_err": 2.1,
+      "welsch_err": 17.3,
+      "savgol_err": 38.0
+    },
+    {
+      "name": "Kepler-1698 b",
+      "mission": "kepler",
+      "depth_ppm": 159.1,
+      "UMI_err": 63.7,
+      "biweight_err": 41.4,
+      "welsch_err": 60.4,
+      "savgol_err": 47.4
+    },
+    {
+      "name": "Kepler-460 b",
+      "mission": "kepler",
+      "depth_ppm": 2579.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1523 b",
+      "mission": "kepler",
+      "depth_ppm": 280.7,
+      "UMI_err": 32.6,
+      "biweight_err": 34.1,
+      "welsch_err": 32.1,
+      "savgol_err": 38.7
+    },
+    {
+      "name": "Kepler-1520 b",
+      "mission": "kepler",
+      "depth_ppm": 4595.9,
+      "UMI_err": 44.5,
+      "biweight_err": 45.5,
+      "welsch_err": 45.4,
+      "savgol_err": 55.3
+    },
+    {
+      "name": "Kepler-1065 c",
+      "mission": "kepler",
+      "depth_ppm": 224.8,
+      "UMI_err": 15.6,
+      "biweight_err": 37.6,
+      "welsch_err": 6.4,
+      "savgol_err": 19.5
+    },
+    {
+      "name": "Kepler-1085 b",
+      "mission": "kepler",
+      "depth_ppm": 3628.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1928 b",
+      "mission": "kepler",
+      "depth_ppm": 432.6,
+      "UMI_err": 21.9,
+      "biweight_err": 5.2,
+      "welsch_err": 85.3,
+      "savgol_err": 51.1
+    },
+    {
+      "name": "Kepler-1524 b",
+      "mission": "kepler",
+      "depth_ppm": 784.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-340 b",
+      "mission": "kepler",
+      "depth_ppm": 177.9,
+      "UMI_err": 74.7,
+      "biweight_err": 43.9,
+      "welsch_err": 30.9,
+      "savgol_err": 58.4
+    },
+    {
+      "name": "Kepler-1535 b",
+      "mission": "kepler",
+      "depth_ppm": 530.2,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1763 b",
+      "mission": "kepler",
+      "depth_ppm": 60.5,
+      "UMI_err": 41.0,
+      "biweight_err": 41.4,
+      "welsch_err": 25.1,
+      "savgol_err": 54.8
+    },
+    {
+      "name": "Kepler-1326 b",
+      "mission": "kepler",
+      "depth_ppm": 512.6,
+      "UMI_err": 57.7,
+      "biweight_err": 70.7,
+      "welsch_err": 82.8,
+      "savgol_err": 86.1
+    },
+    {
+      "name": "Kepler-1331 b",
+      "mission": "kepler",
+      "depth_ppm": 215.1,
+      "UMI_err": 46.3,
+      "biweight_err": 32.8,
+      "welsch_err": 45.3,
+      "savgol_err": 50.6
+    },
+    {
+      "name": "Kepler-1994 b",
+      "mission": "kepler",
+      "depth_ppm": 29.1,
+      "UMI_err": 8.1,
+      "biweight_err": 4.8,
+      "welsch_err": 10.9,
+      "savgol_err": 48.1
+    },
+    {
+      "name": "Kepler-1289 b",
+      "mission": "kepler",
+      "depth_ppm": 165.9,
+      "UMI_err": 57.5,
+      "biweight_err": 56.4,
+      "welsch_err": 75.6,
+      "savgol_err": 59.8
+    },
+    {
+      "name": "Kepler-1129 c",
+      "mission": "kepler",
+      "depth_ppm": 652.2,
+      "UMI_err": 75.8,
+      "biweight_err": 66.1,
+      "welsch_err": 65.5,
+      "savgol_err": 85.1
+    },
+    {
+      "name": "Kepler-1532 b",
+      "mission": "kepler",
+      "depth_ppm": 218.4,
+      "UMI_err": 11.5,
+      "biweight_err": 6.7,
+      "welsch_err": 22.0,
+      "savgol_err": 1.4
+    },
+    {
+      "name": "Kepler-1801 c",
+      "mission": "kepler",
+      "depth_ppm": 819.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1930 b",
+      "mission": "kepler",
+      "depth_ppm": 356.6,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-76 b",
+      "mission": "kepler",
+      "depth_ppm": 5817.3,
+      "UMI_err": 35.7,
+      "biweight_err": 37.7,
+      "welsch_err": 37.4,
+      "savgol_err": 39.4
+    },
+    {
+      "name": "Kepler-1409 b",
+      "mission": "kepler",
+      "depth_ppm": 150.2,
+      "UMI_err": 1.2,
+      "biweight_err": 13.3,
+      "welsch_err": 8.6,
+      "savgol_err": 8.5
+    },
+    {
+      "name": "Kepler-1899 b",
+      "mission": "kepler",
+      "depth_ppm": 405.5,
+      "UMI_err": 65.7,
+      "biweight_err": 42.4,
+      "welsch_err": 25.0,
+      "savgol_err": 25.1
+    },
+    {
+      "name": "Kepler-1904 b",
+      "mission": "kepler",
+      "depth_ppm": 710.0,
+      "UMI_err": 45.2,
+      "biweight_err": 48.7,
+      "welsch_err": 56.1,
+      "savgol_err": 50.8
+    },
+    {
+      "name": "Kepler-1659 b",
+      "mission": "kepler",
+      "depth_ppm": 376.1,
+      "UMI_err": 42.4,
+      "biweight_err": 43.3,
+      "welsch_err": 62.2,
+      "savgol_err": 64.4
+    },
+    {
+      "name": "Kepler-1697 b",
+      "mission": "kepler",
+      "depth_ppm": 163.5,
+      "UMI_err": 69.2,
+      "biweight_err": 66.5,
+      "welsch_err": 72.1,
+      "savgol_err": 81.1
+    },
+    {
+      "name": "Kepler-1926 b",
+      "mission": "kepler",
+      "depth_ppm": 1068.8,
+      "UMI_err": 12.8,
+      "biweight_err": 29.4,
+      "welsch_err": 32.7,
+      "savgol_err": 48.8
+    },
+    {
+      "name": "Kepler-460 c",
+      "mission": "kepler",
+      "depth_ppm": 1796.4,
+      "UMI_err": 90.0,
+      "biweight_err": 98.5,
+      "welsch_err": null,
+      "savgol_err": 99.4
+    },
+    {
+      "name": "Kepler-1624 b",
+      "mission": "kepler",
+      "depth_ppm": 13552.6,
+      "UMI_err": 14.3,
+      "biweight_err": 14.1,
+      "welsch_err": 14.0,
+      "savgol_err": 15.0
+    },
+    {
+      "name": "Kepler-1626 b",
+      "mission": "kepler",
+      "depth_ppm": 106.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1625 b",
+      "mission": "kepler",
+      "depth_ppm": 4376.9,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1632 b",
+      "mission": "kepler",
+      "depth_ppm": 348.6,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1635 b",
+      "mission": "kepler",
+      "depth_ppm": 1234.7,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1981 b",
+      "mission": "kepler",
+      "depth_ppm": 861.0,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1600 b",
+      "mission": "kepler",
+      "depth_ppm": 1336.4,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1185 b",
+      "mission": "kepler",
+      "depth_ppm": 243.8,
+      "UMI_err": null,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    },
+    {
+      "name": "Kepler-1143 c",
+      "mission": "kepler",
+      "depth_ppm": 1657.8,
+      "UMI_err": 37.6,
+      "biweight_err": 61.1,
+      "welsch_err": 61.2,
+      "savgol_err": 84.6
+    },
+    {
+      "name": "Kepler-1834 c",
+      "mission": "kepler",
+      "depth_ppm": 244.0,
+      "UMI_err": 88.3,
+      "biweight_err": 73.4,
+      "welsch_err": 84.8,
+      "savgol_err": 80.6
+    },
+    {
+      "name": "Kepler-1972 c",
+      "mission": "kepler",
+      "depth_ppm": 17.1,
+      "UMI_err": 88.8,
+      "biweight_err": null,
+      "welsch_err": null,
+      "savgol_err": null
+    }
+  ]
+}

@@ -156,18 +156,17 @@ class TestKernelMatchesSort:
 
         # Sort result (force fallback)
         os.environ["TORCHFLAT_NO_KERNEL"] = "1"
-        from torchflat._kernel_loader import _get_umi_kernel as _get_kernel
         import torchflat._kernel_loader as kl
-        old_attempted = kl._kernel_load_attempted
-        old_module = kl._kernel_module
-        kl._kernel_load_attempted = False
-        kl._kernel_module = None
+        old_attempted = kl._umi_kernel_load_attempted
+        old_module = kl._umi_kernel_module
+        kl._umi_kernel_load_attempted = False
+        kl._umi_kernel_module = None
 
         sort_result = masked_median(x, mask)
 
         # Restore
-        kl._kernel_load_attempted = old_attempted
-        kl._kernel_module = old_module
+        kl._umi_kernel_load_attempted = old_attempted
+        kl._umi_kernel_module = old_module
         os.environ.pop("TORCHFLAT_NO_KERNEL", None)
 
         both = torch.isfinite(kernel_result) & torch.isfinite(sort_result)

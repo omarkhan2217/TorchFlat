@@ -1,7 +1,6 @@
 """Tests for output determinism and reproducibility."""
 
 import numpy as np
-import pytest
 
 from torchflat.pipeline import preprocess_track_a
 

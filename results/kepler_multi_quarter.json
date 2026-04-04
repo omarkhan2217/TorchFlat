@@ -1,0 +1,119 @@
+{
+  "quarters": {
+    "2": {
+      "n_stars": 1000,
+      "depths": {
+        "0.001": {
+          "median_error_pct": 3.7,
+          "n_valid": 974
+        },
+        "0.003": {
+          "median_error_pct": 1.1,
+          "n_valid": 991
+        },
+        "0.005": {
+          "median_error_pct": 0.7,
+          "n_valid": 995
+        },
+        "0.01": {
+          "median_error_pct": 0.3,
+          "n_valid": 996
+        },
+        "0.05": {
+          "median_error_pct": 0.1,
+          "n_valid": 999
+        }
+      }
+    },
+    "5": {
+      "n_stars": 1000,
+      "depths": {
+        "0.001": {
+          "median_error_pct": 4.2,
+          "n_valid": 994
+        },
+        "0.003": {
+          "median_error_pct": 1.1,
+          "n_valid": 999
+        },
+        "0.005": {
+          "median_error_pct": 0.7,
+          "n_valid": 999
+        },
+        "0.01": {
+          "median_error_pct": 0.3,
+          "n_valid": 999
+        },
+        "0.05": {
+          "median_error_pct": 0.1,
+          "n_valid": 999
+        }
+      }
+    },
+    "9": {
+      "n_stars": 1000,
+      "depths": {
+        "0.001": {
+          "median_error_pct": 4.5,
+          "n_valid": 993
+        },
+        "0.003": {
+          "median_error_pct": 1.1,
+          "n_valid": 998
+        },
+        "0.005": {
+          "median_error_pct": 0.7,
+          "n_valid": 998
+        },
+        "0.01": {
+          "median_error_pct": 0.3,
+          "n_valid": 999
+        },
+        "0.05": {
+          "median_error_pct": 0.1,
+          "n_valid": 1000
+        }
+      }
+    },
+    "17": {
+      "n_stars": 1000,
+      "depths": {
+        "0.001": {
+          "median_error_pct": 5.2,
+          "n_valid": 997
+        },
+        "0.003": {
+          "median_error_pct": 1.6,
+          "n_valid": 997
+        },
+        "0.005": {
+          "median_error_pct": 1.0,
+          "n_valid": 1000
+        },
+        "0.01": {
+          "median_error_pct": 0.5,
+          "n_valid": 1000
+        },
+        "0.05": {
+          "median_error_pct": 0.1,
+          "n_valid": 1000
+        }
+      }
+    }
+  },
+  "config": {
+    "n_stars_target": 1000,
+    "period_days": 3.0,
+    "duration_hours": 3.0,
+    "depths": [
+      0.001,
+      0.003,
+      0.005,
+      0.01,
+      0.05
+    ],
+    "asymmetry": 2.0,
+    "window_days": 0.5
+  },
+  "total_time_sec": 485.4
+}

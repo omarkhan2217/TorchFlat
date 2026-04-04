@@ -135,5 +135,7 @@
     "passes": true,
     "max_train_test_diff": 0.703184185441021
   },
-  "conclusion": "Optimal asymmetry=1.5 found on train set (odd TIC IDs, 500 stars). Validated on held-out test set (even TIC IDs, 500 stars). Train/test difference <1% at all depths \u2014 parameter generalizes. Flat-star bias: -0.0194% (-194 ppm), below TESS noise floor."
+  "conclusion": "Optimal asymmetry=1.5 found on train set (odd TIC IDs, 500 stars). Validated on held-out test set (even TIC IDs, 500 stars). Train/test difference <1% at all depths \u2014 parameter generalizes. Flat-star bias: -0.0194% (-194 ppm), below TESS noise floor.",
+  "_status": "OLD",
+  "_superseded_by": "SUPERSEDED by asymmetry_validation_2k.json and asymmetry_10k_stars.json (larger samples)"
 }

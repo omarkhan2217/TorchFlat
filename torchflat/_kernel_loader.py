@@ -13,9 +13,11 @@ Set TORCHFLAT_NO_KERNEL=1 to disable kernels entirely.
 from __future__ import annotations
 
 import ctypes
+import glob as _glob
 import importlib.util
 import logging
 import os
+import shutil
 import subprocess
 import sys
 import sysconfig
@@ -25,6 +27,72 @@ logger = logging.getLogger("torchflat")
 
 _umi_kernel_module = None
 _umi_kernel_load_attempted = False
+
+
+# ---------------------------------------------------------------------------
+# Auto-detection of CUDA / ROCm toolkit paths
+# ---------------------------------------------------------------------------
+
+def _auto_detect_cuda_home() -> str | None:
+    """Find CUDA toolkit install path, checking env vars then common locations."""
+    for var in ("CUDA_HOME", "CUDA_PATH"):
+        val = os.environ.get(var)
+        if val and Path(val).exists():
+            return val
+
+    if sys.platform == "win32":
+        base = r"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA"
+        if Path(base).exists():
+            versions = sorted(Path(base).iterdir(), reverse=True)
+            for v in versions:
+                if (v / "bin" / "nvcc.exe").exists():
+                    return str(v)
+    else:
+        for candidate in ["/usr/local/cuda", "/opt/cuda"]:
+            if Path(candidate).exists() and (Path(candidate) / "bin" / "nvcc").exists():
+                return candidate
+        # Check versioned paths like /usr/local/cuda-12.8
+        for pattern in ["/usr/local/cuda-*"]:
+            matches = sorted(_glob.glob(pattern), reverse=True)
+            for m in matches:
+                if (Path(m) / "bin" / "nvcc").exists():
+                    return m
+    return None
+
+
+def _auto_detect_rocm_home() -> str | None:
+    """Find ROCm install path, checking env vars then common locations."""
+    for var in ("ROCM_HOME", "ROCM_PATH"):
+        val = os.environ.get(var)
+        if val and Path(val).exists():
+            return val
+
+    for candidate in ["/opt/rocm"]:
+        if Path(candidate).exists():
+            return candidate
+    return None
+
+
+def _check_compiler_available() -> tuple[bool, str]:
+    """Check if a C++ compiler is available. Returns (available, message)."""
+    if sys.platform == "win32":
+        if shutil.which("cl") or os.environ.get("VSINSTALLDIR"):
+            return True, "cl.exe found"
+        return False, (
+            "cl.exe not found. Install Visual Studio Build Tools:\n"
+            "  https://visualstudio.microsoft.com/visual-cpp-build-tools/\n"
+            "  Or run from a 'Developer Command Prompt for VS'."
+        )
+    else:
+        for cc in ("g++", "c++", "clang++"):
+            if shutil.which(cc):
+                return True, f"{cc} found"
+        return False, (
+            "No C++ compiler found. Install build tools:\n"
+            "  Ubuntu/Debian: sudo apt install build-essential\n"
+            "  Fedora: sudo dnf install gcc-c++\n"
+            "  macOS: xcode-select --install"
+        )
 
 
 def _short_path(p: str) -> str:
@@ -49,6 +117,9 @@ def _get_umi_kernel():
 
     _umi_kernel_load_attempted = True
 
+    # Ensure ROCm DLLs are findable before torch.cuda.is_available() check
+    _add_rocm_dll_dirs()
+
     import torch
 
     if not torch.cuda.is_available():
@@ -56,7 +127,7 @@ def _get_umi_kernel():
     if os.environ.get("TORCHFLAT_NO_KERNEL", "0") == "1":
         logger.warning(
             "UMI kernel disabled by TORCHFLAT_NO_KERNEL=1. "
-            "Using torch.sort fallback (6x slower). "
+            "Using torch.sort fallback (20x slower, 44x more VRAM). "
             "Unset the variable to enable the kernel."
         )
         return None
@@ -64,10 +135,21 @@ def _get_umi_kernel():
     csrc_dir = Path(__file__).parent / "csrc"
     build_dir = csrc_dir / "build"
     pyd_name = "torchflat_umi_ext"
-    pyd_path = build_dir / f"{pyd_name}.pyd"
+    ext = ".pyd" if sys.platform == "win32" else ".so"
+    pyd_path = build_dir / f"{pyd_name}{ext}"
 
-    # Ensure ROCm DLLs are findable (amdhip64.dll etc.)
-    _add_rocm_dll_dirs()
+    # Auto-detect and set CUDA_HOME if not set (needed by PyTorch JIT)
+    is_hip = getattr(torch.version, "hip", None)
+    if not is_hip and not os.environ.get("CUDA_HOME"):
+        cuda_home = _auto_detect_cuda_home()
+        if cuda_home:
+            os.environ["CUDA_HOME"] = cuda_home
+            logger.info("Auto-detected CUDA_HOME: %s", cuda_home)
+    if is_hip and not os.environ.get("ROCM_HOME"):
+        rocm_home = _auto_detect_rocm_home()
+        if rocm_home:
+            os.environ["ROCM_HOME"] = rocm_home
+            logger.info("Auto-detected ROCM_HOME: %s", rocm_home)
 
     if pyd_path.exists():
         try:
@@ -81,8 +163,41 @@ def _get_umi_kernel():
             logger.warning("Failed to load cached UMI kernel: %s", e)
             pyd_path.unlink(missing_ok=True)
 
+    # Pre-flight checks before attempting compilation
+    if is_hip:
+        # HIP uses amdclang++ from ROCm SDK, not system compiler
+        rocm_sdk = _find_rocm72_sdk()
+        if rocm_sdk is None:
+            logger.warning(
+                "UMI kernel compilation skipped: ROCm SDK not found.\n"
+                "Install with: pip install rocm-sdk-core rocm-sdk-devel\n"
+                "Using torch.sort fallback (20x slower, 44x more VRAM)."
+            )
+            return None
+    else:
+        # CUDA needs system C++ compiler + nvcc
+        compiler_ok, compiler_msg = _check_compiler_available()
+        if not compiler_ok:
+            logger.warning(
+                "UMI kernel compilation skipped: %s\n"
+                "Using torch.sort fallback (20x slower, 44x more VRAM).",
+                compiler_msg,
+            )
+            return None
+
+        nvcc = shutil.which("nvcc")
+        cuda_home = os.environ.get("CUDA_HOME")
+        if not nvcc and not cuda_home:
+            logger.warning(
+                "UMI kernel compilation skipped: nvcc not found and CUDA_HOME not set.\n"
+                "Install the CUDA toolkit: https://developer.nvidia.com/cuda-downloads\n"
+                "Then set: CUDA_HOME=/path/to/cuda (or it will be auto-detected).\n"
+                "Using torch.sort fallback (20x slower, 44x more VRAM)."
+            )
+            return None
+
     try:
-        if torch.version.hip:
+        if is_hip:
             _umi_kernel_module = _compile_hip_rocm72(
                 csrc_dir, pyd_name,
                 csrc_dir / "build" / "umi_kernel_hip.cpp",
@@ -93,8 +208,30 @@ def _get_umi_kernel():
         if _umi_kernel_module is not None:
             logger.info("UMI kernel compiled and loaded successfully")
     except Exception as e:
-        logger.warning("Failed to compile UMI kernel: %s", e)
         _umi_kernel_module = None
+        err = str(e)
+        if "nvcc" in err.lower() or "No CUDA" in err:
+            logger.warning(
+                "UMI kernel compilation failed: nvcc error.\n"
+                "  CUDA_HOME=%s\n"
+                "  Ensure CUDA toolkit is installed and nvcc is in PATH.\n"
+                "  Download: https://developer.nvidia.com/cuda-downloads\n"
+                "  Using torch.sort fallback (20x slower).",
+                os.environ.get("CUDA_HOME", "(not set)"),
+            )
+        elif "cl.exe" in err.lower() or "cl" in err.lower() and "not found" in err.lower():
+            logger.warning(
+                "UMI kernel compilation failed: C++ compiler not found.\n"
+                "  Run from a 'Developer Command Prompt for VS' or install\n"
+                "  Visual Studio Build Tools (C++ workload).\n"
+                "  Using torch.sort fallback (20x slower).",
+            )
+        else:
+            logger.warning(
+                "UMI kernel compilation failed: %s\n"
+                "  Using torch.sort fallback (20x slower, 44x more VRAM).",
+                err[-300:],
+            )
 
     return _umi_kernel_module
 

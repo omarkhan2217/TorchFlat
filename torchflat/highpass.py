@@ -72,7 +72,6 @@ def fft_highpass(
     """
     B, L = flux.shape
     device = flux.device
-    dtype = flux.dtype
     output = torch.zeros_like(flux)
 
     # Determine which stars have a single segment (common case)

@@ -3128,5 +3128,7 @@
       "n_wotan": 0,
       "n_umi": 0
     }
-  }
+  },
+  "_status": "OLD",
+  "_superseded_by": "SUPERSEDED by injection_grid_umi.json (500 stars, full grid)"
 }
