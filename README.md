@@ -16,7 +16,7 @@ Benchmarked on AMD Radeon RX 9060 XT (16 GB VRAM) with real TESS sector 6 data (
 |--------|------|-------------|---------|
 | Celix wotan 12-worker | 4.2 stars/sec | ~78 min | baseline |
 | TorchFlat v0.5.0 (hybrid) | 59.3 stars/sec | ~5.5 min | 14.2x |
-| **TorchFlat v0.9.1 + UMI kernel** | **154 stars/sec** | **~2.1 min** | **37x** |
+| **TorchFlat + UMI kernel** | **154 stars/sec** | **~2.1 min** | **37x** |
 
 ### Transit Depth Recovery Accuracy
 
@@ -33,17 +33,17 @@ Injection-recovery test on 1000 real TESS stars, median per-star error (lower = 
 
 TorchFlat is more accurate at the transit depths where most detectable planets live (0.05-0.3%). Per-star detrending is 69x faster (3.4ms vs 234ms).
 
-![Transit Depth Recovery](figures/fig1_accuracy.png)
+![Transit Depth Recovery](https://raw.githubusercontent.com/omarkhan2217/TorchFlat/main/figures/fig1_accuracy.png)
 
 ### Known Planet Recovery
 
 Validated on 802 confirmed exoplanets (81 TESS + 721 Kepler). UMI recovers more planets (425) than biweight, Welsch, and Savitzky-Golay combined (377).
 
-![Known Planet Recovery](figures/fig5_known_planets.png)
+![Known Planet Recovery](https://raw.githubusercontent.com/omarkhan2217/TorchFlat/main/figures/fig5_known_planets.png)
 
 ### Speed
 
-![Speed and Accuracy](figures/fig2_speed.png)
+![Speed and Accuracy](https://raw.githubusercontent.com/omarkhan2217/TorchFlat/main/figures/fig2_speed.png)
 
 Validated on 8 TESS sectors, 4 Kepler quarters (Q2, Q5, Q9, Q17), K2, and 10,000-star parameter validation. All results with 95% bootstrap confidence intervals. Full data in `results/`.
 

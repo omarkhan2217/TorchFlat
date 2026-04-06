@@ -1,6 +1,6 @@
 """TorchFlat: GPU-native photometric preprocessing for exoplanet transit searches."""
 
-__version__ = "0.9.1"
+__version__ = "0.9.21"
 
 from torchflat.umi import umi_detrend
 from torchflat.pipeline import preprocess_sector, preprocess_track_a, preprocess_track_b
