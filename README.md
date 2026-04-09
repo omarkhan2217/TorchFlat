@@ -2,6 +2,7 @@
 
 **GPU-native photometric preprocessing pipeline for exoplanet transit searches.**
 
+[![arXiv](https://img.shields.io/badge/arXiv-2604.06602-b31b1b.svg)](https://arxiv.org/abs/2604.06602)
 [![CI](https://github.com/omarkhan2217/TorchFlat/actions/workflows/ci.yml/badge.svg)](https://github.com/omarkhan2217/TorchFlat/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -238,11 +239,12 @@ pytest tests/ -v
 If you use TorchFlat in your research, please cite:
 
 ```bibtex
-@software{torchflat,
+@article{khan2026umi,
   author = {Khan, Omar},
-  title = {TorchFlat: GPU-Accelerated Photometric Preprocessing with UMI Detrending},
+  title = {UMI: A GPU-Accelerated Asymmetric Robust Estimator for Photometric Detrending in Exoplanet Transit Searches},
+  journal = {arXiv preprint arXiv:2604.06602},
   year = {2026},
-  url = {https://github.com/omarkhan2217/TorchFlat}
+  url = {https://arxiv.org/abs/2604.06602}
 }
 ```
 
